@@ -1,0 +1,647 @@
+Perfect! Everything is locked in. Let me craft your comprehensive Replit build prompt now.
+
+---
+
+# 🚀 COMPREHENSIVE REPLIT BUILD PROMPT: HARI RAJASHEKAR PORTFOLIO
+
+## Project Overview
+Build a modern, minimal dark-mode portfolio website for an AI-powered automation specialist. The site showcases measurable business impact through automation, AI products, and UX work, with primary goal of booking consultation calls for full-time roles and freelance clients.
+
+---
+
+## TECH STACK
+- **Framework**: React 18+ with Vite
+- **Styling**: Tailwind CSS
+- **Routing**: React Router DOM
+- **Icons**: Lucide React (for consistent iconography)
+- **Animations**: Framer Motion (for smooth micro-interactions)
+- **Forms**: React Hook Form (for contact form validation)
+
+---
+
+## COLOR PALETTE & DESIGN SYSTEM
+
+### Colors
+```css
+Primary Background: #0A0A0A (dark gray, not pure black)
+Secondary Background: #151515 (cards, sections)
+Accent Green: #10B981 (muted emerald - CTAs, highlights)
+Text Primary: #F5F5F5 (off-white)
+Text Secondary: #A3A3A3 (gray for descriptions)
+Border/Divider: #262626 (subtle borders)
+```
+
+### Typography
+```css
+Headings: 'Inter', sans-serif - Bold (700-800 weight)
+Body: 'Inter', sans-serif - Regular (400-500 weight)
+Monospace (for metrics/code): 'JetBrains Mono', monospace
+```
+
+### Spacing System (Tailwind)
+- Use consistent spacing: 4, 8, 16, 24, 32, 48, 64, 96 px
+- Mobile-first: Tighter spacing on small screens, breathing room on desktop
+
+---
+
+## SITE STRUCTURE & PAGES
+
+### 1. HOME PAGE (`/`)
+
+#### **Hero Section**
+- **Layout**: Full viewport height, centered content
+- **Content**:
+  - Name: "HARI RAJASHEKAR" (large, bold, #F5F5F5)
+  - Title: "AI-Powered Automation Specialist" (medium, #10B981 accent)
+  - Tagline (Hero Copy):
+    ```
+    I Build Automation Systems That Scale Your Business
+    
+    Voice AI agents. Multi-agent architectures. CRM workflows. 
+    From concept to deployment, I create automation that saves time, 
+    cuts costs, and drives revenue.
+    ```
+  - **Metrics Highlight** (displayed as inline badges or cards):
+    - "90% Booking Time Reduction"
+    - "10x Revenue Growth"
+    - "99.8% System Uptime"
+  - **Primary CTA**: Large button "Let's Talk" (links to /contact, #10B981 background, hover effect)
+  - **Secondary CTA**: Text link "Download Resume" (opens PDF in new tab)
+
+- **Design Notes**:
+  - Clean, spacious layout
+  - Subtle gradient overlay on background (top to bottom: slight vignette effect)
+  - Animated entrance: Fade in name → title → tagline → CTAs (staggered timing)
+
+#### **Featured Projects Section**
+- **Header**: "Featured Work" (large heading, left-aligned)
+- **Layout**: Display **3 project cards** in a grid:
+  - Desktop: 3 columns
+  - Tablet: 2 columns
+  - Mobile: 1 column (stacked)
+
+- **Top 3 Featured Projects**:
+  1. AI Voice Agent for Home Services
+  2. Nonprofit Website Redesign (10x Revenue Impact)
+  3. NutriScan Multi-Agent System
+
+- **"View All Projects" Button**: Below grid, centered, links to `/projects`
+
+#### **Quick About Section** (Optional - keeps homepage concise)
+- 2-3 sentence positioning statement:
+  ```
+  Published IEEE researcher specializing in business process automation 
+  and multi-agent AI systems. I've delivered solutions for Fortune 500 
+  pharmaceutical clients and growth-stage startups, with a track record 
+  of measurable ROI from 90% efficiency gains to 10x revenue growth.
+  ```
+- Links: LinkedIn icon, GitHub icon, Email icon (subtle, bottom-right corner)
+
+---
+
+### 2. PROJECTS PAGE (`/projects`)
+
+#### **Page Header**
+- Title: "All Projects" 
+- Subtitle: "Automation · AI Products · Research"
+
+#### **Project Grid**
+- **Layout**: Responsive grid (same as homepage featured section)
+- **All 6 Projects** (in this order):
+
+**AUTOMATION PROJECTS** (Priority - show first)
+1. **AI Voice Agent for Home Services**
+2. **Nonprofit Website Redesign**
+3. **Roche Medical Device Dashboard**
+4. **Veeva Vault QA Automation**
+
+**AI PRODUCTS**
+5. **NutriScan Multi-Agent System**
+
+**RESEARCH**
+6. **Published Research: On-Board Diagnostics & Driver Profiling**
+
+#### **Optional Filter** (if you want interactivity):
+- Simple filter buttons: [All] [Automation] [AI Products] [Research]
+- On click, filter project cards by category
+
+---
+
+### 3. CONTACT PAGE (`/contact`)
+
+#### **Page Layout** (Two-column on desktop, stacked on mobile)
+
+**Left Column: Booking Embed**
+- **Header**: "Book a Free Consultation"
+- **Subtext**: "Let's discuss how automation can transform your business. Choose a time that works for you."
+- **Cal.com Embed**: 
+  - Use provided iframe/React component code
+  - Styled to match dark theme (if Cal.com allows custom CSS)
+  - Fallback: If embed doesn't theme well, use a prominent button "Schedule on Cal.com" opening in new tab
+
+**Right Column: Contact Form**
+- **Header**: "Or Send a Message"
+- **Form Fields**:
+  - Name (required)
+  - Email (required, validated)
+  - Subject (optional)
+  - Message (textarea, required)
+  - Submit button: "Send Message" (#10B981 background)
+- **Form Handling**:
+  - Use React Hook Form for validation
+  - On submit: Show success message ("Message sent! I'll respond within 24 hours.")
+  - Integration: Can use Formspree, Web3Forms, or simple mailto fallback
+
+**Contact Information** (below form or sidebar):
+- Email: haripxls@gmail.com
+- LinkedIn: [icon + link]
+- GitHub: [icon + link]
+- Location: Austin, Texas
+
+---
+
+## NAVIGATION SYSTEM
+
+### **Bottom Navigation Bar** (Inspired by Kai Void)
+- **Position**: Fixed to bottom of viewport on all pages
+- **Layout**: Centered horizontal nav with 3 items
+- **Items**:
+  - [HOME] - links to `/`
+  - [PROJECTS] - links to `/projects`
+  - [CONTACT] - links to `/contact`
+- **Styling**:
+  - Background: #151515 with slight blur backdrop
+  - Active page indicator: #10B981 underline or dot
+  - Hover effect: Subtle scale or color change
+  - Mobile: Full width, smaller text
+
+### **Footer** (On all pages, above bottom nav)
+- **Layout**: Centered, minimal
+- **Content**:
+  - "© 2024 Hari Rajashekar" (left-aligned or centered)
+  - Right-aligned links:
+    - Download Resume (PDF)
+    - LinkedIn (external)
+    - GitHub (external)
+    - Email (mailto link)
+- **Styling**: Text in #A3A3A3, links hover to #10B981
+
+---
+
+## PROJECT CARD COMPONENT (Reusable)
+
+Each project card should be a consistent, modular component with the following structure:
+
+### **Card Layout**
+- **Container**: Dark background (#151515), subtle border (#262626), rounded corners
+- **Hover Effect**: Slight lift (translate Y), shadow increase, border color → #10B981
+
+### **Card Content Structure**
+
+1. **Category Tag** (top-left corner)
+   - Small pill badge: "AUTOMATION" / "AI PRODUCT" / "RESEARCH"
+   - Background: #10B981 with 20% opacity, text: #10B981
+
+2. **Visual Asset Area**
+   - **For projects with screenshots/videos**:
+     - Image/video thumbnail (16:9 aspect ratio)
+     - Lightbox click to expand (optional modal view)
+   - **For projects without visuals** (Roche, Veeva):
+     - Abstract icon (dashboard icon, code brackets, etc. from Lucide React)
+     - Background gradient or pattern
+
+3. **Project Title**
+   - Bold, large text (#F5F5F5)
+   - Example: "AI Voice Agent for Home Services"
+
+4. **One-Line Description**
+   - Subtitle text (#A3A3A3)
+   - Example: "AI voice agent automating appointment booking and CRM entry for home service businesses"
+
+5. **Key Impact Metric** (Hero stat)
+   - **Large, bold number** in #10B981
+   - Example: "90% Time Reduction" or "10x Revenue Growth" or "$500K+ Saved"
+   - Secondary metrics in smaller text if space allows
+
+6. **Tech Stack Pills**
+   - Horizontal row of small badges
+   - Example: [VAPI] [Make.com] [Google Calendar API]
+   - Styling: Border style, not filled, text #A3A3A3
+
+7. **CTA / Link** (if applicable)
+   - "View Project" button or arrow icon
+   - For research card: "Read Paper" → opens IEEE Xplore in new tab
+   - For projects with videos: "Watch Demo" → modal or inline video player
+
+---
+
+## DETAILED PROJECT DATA
+
+### **Project 1: AI Voice Agent for Home Services**
+```json
+{
+  "category": "AUTOMATION",
+  "title": "AI Voice Agent for Home Services",
+  "description": "AI voice agent automating appointment booking and CRM entry for home service businesses",
+  "metrics": {
+    "primary": "90% Time Reduction",
+    "secondary": "23% Pilot Conversion Rate",
+    "detail": "5 minutes → 30 seconds per booking"
+  },
+  "techStack": ["VAPI", "Make.com", "Google Calendar API", "CRM Integrations"],
+  "assets": {
+    "screenshot": "dashboard-screenshot.png",
+    "diagram": "workflow-diagram.png",
+    "video": "demo-video.mp4"
+  },
+  "cta": "Watch Demo"
+}
+```
+
+### **Project 2: Nonprofit Website Redesign**
+```json
+{
+  "category": "AUTOMATION",
+  "title": "Nonprofit Website Redesign",
+  "description": "Accessibility-first website redesign driving 10x donation growth and 20x traffic increase",
+  "metrics": {
+    "primary": "10x Revenue Growth",
+    "secondary": "20x Traffic Increase",
+    "detail": "$60/month → $600/month | 40 → 800 daily visitors"
+  },
+  "techStack": ["Figma", "WordPress", "WCAG 2.2", "SEO"],
+  "assets": {
+    "before": "nonprofit-before.png",
+    "after": "nonprofit-after.png"
+  },
+  "cta": "View Case Study"
+}
+```
+
+### **Project 3: NutriScan Multi-Agent System**
+```json
+{
+  "category": "AI PRODUCT",
+  "title": "NutriScan Multi-Agent System",
+  "description": "Multi-agent AI health app scanning food labels for personalized nutrition recommendations",
+  "metrics": {
+    "primary": "95% Accuracy",
+    "secondary": "Google Gen AI Capstone",
+    "detail": "vs 70% for single-prompt systems"
+  },
+  "techStack": ["Python", "Gemini ADK", "Multi-Agent AI", "OCR"],
+  "assets": {
+    "diagram": "nutriscan-flow.png",
+    "video": "nutriscan-demo.mp4"
+  },
+  "cta": "Watch Demo"
+}
+```
+
+### **Project 4: Roche Medical Device Dashboard**
+```json
+{
+  "category": "AUTOMATION",
+  "title": "Roche Medical Device Monitoring",
+  "description": "Global Salesforce dashboard monitoring 100+ remote medical devices across 50+ countries",
+  "metrics": {
+    "primary": "99.8% Uptime",
+    "secondary": "50% Workflow Optimization",
+    "detail": "6-continent deployment"
+  },
+  "techStack": ["Salesforce", "VMware", "Agile/Scrum"],
+  "assets": {
+    "visual": "abstract-dashboard-icon"
+  },
+  "cta": null
+}
+```
+
+### **Project 5: Veeva Vault QA Automation**
+```json
+{
+  "category": "AUTOMATION",
+  "title": "Veeva Vault QA Automation",
+  "description": "300+ automated test cases preventing $500K+ in regulatory penalties for pharma compliance",
+  "metrics": {
+    "primary": "$500K+ Saved",
+    "secondary": "50% Testing Time Reduction",
+    "detail": "80hr → 40hr per cycle"
+  },
+  "techStack": ["Veeva Vault", "Java", "Agile/Scrum", "QA Automation"],
+  "assets": {
+    "visual": "abstract-code-icon"
+  },
+  "cta": null
+}
+```
+
+### **Project 6: Published Research**
+```json
+{
+  "category": "RESEARCH",
+  "title": "On-Board Diagnostics & Driver Profiling",
+  "description": "Published IEEE research on automotive AI for driving pattern analysis and vehicle diagnostics",
+  "metrics": {
+    "primary": "15+ Citations",
+    "secondary": "500+ Views",
+    "detail": "IEEE Xplore & IRJET"
+  },
+  "techStack": ["Machine Learning", "OBD Analysis", "Python", "Research"],
+  "assets": {
+    "visual": "research-icon"
+  },
+  "cta": "Read Paper",
+  "link": "https://ieeexplore.ieee.org/document/9277449"
+}
+```
+
+---
+
+## RESPONSIVE DESIGN REQUIREMENTS
+
+### **Breakpoints** (Tailwind)
+```css
+sm: 640px   (mobile landscape)
+md: 768px   (tablet)
+lg: 1024px  (desktop)
+xl: 1280px  (large desktop)
+```
+
+### **Mobile-First Adjustments**
+- **Hero**: 
+  - Reduce font sizes (name: text-4xl → text-6xl on lg)
+  - Stack metric badges vertically on mobile
+  - Full-width CTAs on mobile
+
+- **Project Grid**:
+  - Mobile: 1 column, full width
+  - Tablet: 2 columns
+  - Desktop: 3 columns
+
+- **Bottom Nav**:
+  - Mobile: Full width, smaller text, icons optional
+  - Desktop: Centered, max-width container
+
+- **Contact Page**:
+  - Mobile: Stack booking embed above contact form
+  - Desktop: Side-by-side columns (60/40 split)
+
+---
+
+## ACCESSIBILITY REQUIREMENTS (WCAG 2.2 Compliance)
+
+### **Must-Haves** (Hari is an accessibility specialist - this is critical!)
+1. **Color Contrast**: 
+   - Text-to-background contrast ratio ≥ 4.5:1 (normal text)
+   - Large text ≥ 3:1
+   - Test with WebAIM Contrast Checker
+
+2. **Keyboard Navigation**:
+   - All interactive elements (buttons, links, forms) must be keyboard accessible
+   - Visible focus indicators (outline or ring on focus)
+   - Tab order follows logical reading order
+
+3. **Screen Reader Support**:
+   - Semantic HTML (nav, main, section, article tags)
+   - Alt text for all images/icons
+   - ARIA labels where needed (hamburger menus, modals)
+
+4. **Form Accessibility**:
+   - Label elements properly linked to inputs
+   - Error messages announced to screen readers
+   - Required fields marked with aria-required
+
+5. **Video/Media**:
+   - Captions or transcripts for demo videos (optional but recommended)
+   - Accessible video player controls
+
+6. **Motion Sensitivity**:
+   - Respect `prefers-reduced-motion` media query
+   - Disable animations for users who request it
+
+---
+
+## PERFORMANCE OPTIMIZATION
+
+1. **Image Optimization**:
+   - Use WebP format with PNG/JPG fallbacks
+   - Lazy load images below the fold
+   - Responsive images with srcset
+
+2. **Code Splitting**:
+   - Lazy load routes with React.lazy()
+   - Separate vendor bundles
+
+3. **Font Loading**:
+   - Use `font-display: swap` for web fonts
+   - Preload critical fonts
+
+4. **Lighthouse Goals**:
+   - Performance: 90+
+   - Accessibility: 100
+   - Best Practices: 90+
+   - SEO: 90+
+
+---
+
+## SEO & METADATA
+
+### **Homepage Meta Tags**
+```html
+<title>Hari Rajashekar | AI-Powered Automation Specialist</title>
+<meta name="description" content="Published IEEE researcher specializing in business process automation, multi-agent AI systems, and CRM solutions. Proven track record: 90% efficiency gains, 10x revenue growth." />
+<meta name="keywords" content="automation specialist, AI developer, business process automation, multi-agent AI, CRM solutions, voice AI, Make.com, VAPI" />
+```
+
+### **Open Graph Tags** (for social sharing)
+```html
+<meta property="og:title" content="Hari Rajashekar | AI Automation Specialist" />
+<meta property="og:description" content="I build automation systems that scale businesses. Voice AI, multi-agent architectures, and measurable ROI." />
+<meta property="og:image" content="/og-image.png" />
+<meta property="og:url" content="https://yourdomain.com" />
+```
+
+### **Structured Data** (JSON-LD)
+Add structured data for Person schema:
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Hari Rajashekar",
+  "jobTitle": "AI-Powered Automation Specialist",
+  "url": "https://yourdomain.com",
+  "sameAs": [
+    "https://linkedin.com/in/hari-rajashekar-81816818a/",
+    "https://github.com/yourusername",
+    "https://kaggle.com/code/harirajashekar/nutriscan-multi-agent-architecture"
+  ]
+}
+```
+
+---
+
+## ANIMATIONS & MICRO-INTERACTIONS (Framer Motion)
+
+### **Page Transitions**
+- Fade in on route change (opacity 0 → 1, duration 0.3s)
+
+### **Hero Section**
+- Staggered entrance:
+  1. Name fades in (delay 0s)
+  2. Title fades in (delay 0.2s)
+  3. Tagline fades in (delay 0.4s)
+  4. CTAs fade in (delay 0.6s)
+
+### **Project Cards**
+- **Hover**: 
+  - translateY(-8px)
+  - Box shadow increase
+  - Border color → #10B981
+- **On scroll**: Fade in as they enter viewport (intersection observer)
+
+### **Buttons**
+- Hover: Scale 1.05, background brightness increase
+- Click: Scale 0.95 (active state)
+
+### **Metric Badges**
+- Count-up animation on homepage load (0 → final number)
+- Use Framer Motion or CountUp.js
+
+---
+
+## ASSET INTEGRATION GUIDE
+
+### **Where to Place Files**
+```
+/public
+  /images
+    /projects
+      voice-agent-dashboard.png
+      voice-agent-workflow.png
+      nonprofit-before.png
+      nonprofit-after.png
+      nutriscan-flow.png
+  /videos
+    voice-agent-demo.mp4
+    nutriscan-demo.mp4
+  /documents
+    Hari-Rajashekar-Resume.pdf
+```
+
+### **Asset Naming Convention**
+- Use kebab-case: `voice-agent-dashboard.png`
+- Descriptive names, not generic: ❌ `image1.png` ✅ `nonprofit-after-screenshot.png`
+
+### **Video Handling**
+- Use HTML5 `<video>` element with controls
+- Poster image (thumbnail) for lazy loading
+- Fallback text for unsupported browsers
+- Consider hosting on YouTube/Vimeo for bandwidth savings (embedded with privacy-enhanced mode)
+
+---
+
+## DEVELOPMENT NOTES
+
+### **Component Structure** (Suggested)
+```
+/src
+  /components
+    - Navbar.jsx (bottom nav)
+    - Footer.jsx
+    - Hero.jsx
+    - ProjectCard.jsx (reusable)
+    - MetricBadge.jsx (reusable)
+    - ContactForm.jsx
+    - BookingEmbed.jsx
+  /pages
+    - Home.jsx
+    - Projects.jsx
+    - Contact.jsx
+  /data
+    - projects.js (all project data in JSON format)
+  /styles
+    - globals.css (Tailwind imports + custom CSS)
+  App.jsx (routing setup)
+  main.jsx
+```
+
+### **State Management**
+- No complex state needed - React Router for navigation
+- Optional: Context API for dark mode toggle (future enhancement)
+
+### **Form Submission**
+- Use Formspree (free tier: 50 submissions/month) or Web3Forms
+- Example Formspree endpoint: `https://formspree.io/f/YOUR_FORM_ID`
+- On success: Show toast notification or success message
+
+---
+
+## DEPLOYMENT CHECKLIST
+
+### **Pre-Launch**
+- [ ] Test all links (internal navigation, external links to LinkedIn, GitHub, IEEE)
+- [ ] Verify Cal.com embed works and is styled correctly
+- [ ] Test contact form submission
+- [ ] Run Lighthouse audit (all pages)
+- [ ] Test on mobile devices (iOS Safari, Android Chrome)
+- [ ] Check keyboard navigation (Tab through entire site)
+- [ ] Run WAVE accessibility checker
+- [ ] Spell-check all copy
+- [ ] Verify resume PDF downloads correctly
+
+### **Domain & Hosting**
+- Recommended: Vercel or Netlify (free tier, automatic HTTPS)
+- Custom domain: harijashekar.com or harirajashekar.dev
+- Set up analytics: Google Analytics or Plausible (privacy-friendly)
+
+---
+
+## FUTURE ENHANCEMENTS (Phase 2 - Optional)
+
+1. **Blog Section**: Share automation insights, case studies
+2. **Dark/Light Mode Toggle**: User preference (currently dark-only)
+3. **Project Detail Pages**: Dedicated page per project with full case study
+4. **Testimonials Section**: Client quotes, LinkedIn recommendations
+5. **Email Newsletter**: "Automation Insights" weekly tips
+6. **Interactive Demos**: Embedded prototypes of NutriScan or Voice Agent
+
+---
+
+## FINAL CHECKLIST FOR REPLIT
+
+- [ ] Initialize React + Vite project
+- [ ] Install dependencies: `react-router-dom`, `framer-motion`, `lucide-react`, `react-hook-form`
+- [ ] Configure Tailwind CSS with custom color palette
+- [ ] Set up routing (/, /projects, /contact)
+- [ ] Create reusable ProjectCard component
+- [ ] Build Hero section with staggered animations
+- [ ] Implement bottom navigation bar
+- [ ] Add contact form with validation
+- [ ] Integrate Cal.com booking embed
+- [ ] Add all 6 projects with correct data
+- [ ] Implement responsive grid layouts
+- [ ] Add hover effects and micro-interactions
+- [ ] Test accessibility (keyboard nav, screen reader, contrast)
+- [ ] Optimize images (WebP format)
+- [ ] Add SEO meta tags and structured data
+- [ ] Test on mobile, tablet, desktop breakpoints
+- [ ] Final QA: Links, forms, navigation
+
+---
+
+**BUILD GOAL**: A conversion-optimized, accessible, modern portfolio that positions Hari as a credible automation specialist with measurable business impact, designed to book consultation calls for full-time roles and freelance clients.
+
+**DEADLINE ESTIMATE**: 4-6 hours for a skilled developer (faster with Replit AI assistance)
+
+**SUCCESS METRICS**:
+- Mobile Lighthouse score: 90+ across all categories
+- Booking conversion rate: Track via Cal.com analytics
+- Time on site: >2 minutes average (engaging content)
+- Bounce rate: <40% (clear value proposition)
+
+---
+
+🚀 **Ready to build in Replit!** Copy this entire prompt, paste into Replit's AI agent, and let it generate your portfolio. Review the output, test thoroughly, and iterate on design details.
+
+Let me know if you need any clarifications or want to adjust any section before building! 💚
