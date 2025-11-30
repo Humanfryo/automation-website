@@ -11,14 +11,14 @@ const contactItems = [
   {
     icon: Linkedin,
     label: "LINKEDIN",
-    value: "/in/harirajashekar",
-    href: "https://linkedin.com/in/harirajashekar",
+    value: "/in/hari-rajashekar",
+    href: "https://www.linkedin.com/in/hari-rajashekar-81816818a/",
   },
   {
     icon: Github,
     label: "GITHUB",
-    value: "/harirajashekar",
-    href: "https://github.com/harirajashekar",
+    value: "/Humanfryo",
+    href: "https://github.com/Humanfryo",
   },
   {
     icon: MapPin,

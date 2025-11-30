@@ -25,7 +25,7 @@ export default function Footer() {
             variant="ghost" 
             size="icon"
             className="text-muted-foreground hover:text-primary hover:bg-transparent rounded-none"
-            onClick={() => window.open('https://linkedin.com/in/harirajashekar', '_blank')}
+            onClick={() => window.open('https://www.linkedin.com/in/hari-rajashekar-81816818a/', '_blank')}
             data-testid="footer-linkedin"
             aria-label="LinkedIn"
           >
@@ -36,7 +36,7 @@ export default function Footer() {
             variant="ghost" 
             size="icon"
             className="text-muted-foreground hover:text-primary hover:bg-transparent rounded-none"
-            onClick={() => window.open('https://github.com/harirajashekar', '_blank')}
+            onClick={() => window.open('https://github.com/Humanfryo', '_blank')}
             data-testid="footer-github"
             aria-label="GitHub"
           >
