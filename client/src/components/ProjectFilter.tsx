@@ -16,12 +16,17 @@ const filters: { value: Category; label: string }[] = [
 
 export default function ProjectFilter({ activeFilter, onFilterChange }: ProjectFilterProps) {
   return (
-    <div className="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filter projects">
+    <div className="flex flex-wrap gap-3 mb-10" role="group" aria-label="Filter projects">
       {filters.map((filter) => (
         <Button
           key={filter.value}
           variant={activeFilter === filter.value ? "default" : "outline"}
           size="sm"
+          className={`rounded-none font-mono text-xs uppercase tracking-wider ${
+            activeFilter === filter.value 
+              ? "gradient-primary border-0" 
+              : "border-border hover:border-primary hover:text-primary"
+          }`}
           onClick={() => onFilterChange(filter.value)}
           data-testid={`filter-${filter.value.toLowerCase().replace(' ', '-')}`}
         >

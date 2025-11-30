@@ -6,7 +6,6 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import {
   Form,
@@ -54,11 +53,11 @@ export default function ContactForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="flex flex-col items-center justify-center py-12 text-center"
+        className="flex flex-col items-center justify-center py-16 text-center border border-primary/30 bg-primary/5"
       >
         <CheckCircle className="w-16 h-16 text-primary mb-4" />
-        <h3 className="text-xl font-semibold mb-2">Message Sent!</h3>
-        <p className="text-muted-foreground">
+        <h3 className="text-xl font-heading font-bold mb-2">Message Sent</h3>
+        <p className="text-muted-foreground font-mono text-sm">
           I'll respond within 24 hours.
         </p>
       </motion.div>
@@ -67,16 +66,17 @@ export default function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel className="text-xs uppercase tracking-wider font-mono">Name</FormLabel>
               <FormControl>
                 <Input 
                   placeholder="Enter your name" 
+                  className="rounded-none border-border bg-card focus:border-primary"
                   {...field} 
                   data-testid="input-name"
                 />
@@ -91,11 +91,12 @@ export default function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel className="text-xs uppercase tracking-wider font-mono">Email</FormLabel>
               <FormControl>
                 <Input 
                   type="email"
-                  placeholder="Enter your email address" 
+                  placeholder="Enter your email address"
+                  className="rounded-none border-border bg-card focus:border-primary"
                   {...field}
                   data-testid="input-email"
                 />
@@ -110,10 +111,11 @@ export default function ContactForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Subject (Optional)</FormLabel>
+              <FormLabel className="text-xs uppercase tracking-wider font-mono">Subject (Optional)</FormLabel>
               <FormControl>
                 <Input 
-                  placeholder="What is this about?" 
+                  placeholder="What is this about?"
+                  className="rounded-none border-border bg-card focus:border-primary"
                   {...field}
                   data-testid="input-subject"
                 />
@@ -128,11 +130,12 @@ export default function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel className="text-xs uppercase tracking-wider font-mono">Message</FormLabel>
               <FormControl>
                 <Textarea 
                   placeholder="Your message here..."
                   rows={5}
+                  className="rounded-none border-border bg-card focus:border-primary resize-none"
                   {...field}
                   data-testid="input-message"
                 />
@@ -144,7 +147,7 @@ export default function ContactForm() {
 
         <Button 
           type="submit" 
-          className="w-full"
+          className="w-full h-12 rounded-none gradient-primary border-0 font-mono uppercase tracking-wider"
           disabled={form.formState.isSubmitting}
           data-testid="button-submit"
         >

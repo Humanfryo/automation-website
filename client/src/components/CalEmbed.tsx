@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Calendar } from "lucide-react";
 
 export default function CalEmbed() {
   return (
@@ -8,20 +9,23 @@ export default function CalEmbed() {
       transition={{ duration: 0.5 }}
       className="w-full"
     >
-      <div className="mb-6">
-        <h2 className="text-2xl md:text-3xl font-bold mb-3">
+      <div className="mb-8">
+        <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-tight mb-4">
           Book a Free Consultation
         </h2>
-        <p className="text-muted-foreground">
+        <div className="w-16 h-[2px] bg-primary mb-4" />
+        <p className="text-muted-foreground leading-relaxed">
           Let's discuss how automation can transform your business. 
           Choose a time that works for you.
         </p>
       </div>
 
       <div 
-        className="aspect-[4/3] md:aspect-[3/2] w-full rounded-md border border-border bg-card flex items-center justify-center"
+        className="aspect-[4/3] md:aspect-[3/2] w-full border border-border bg-card flex items-center justify-center relative overflow-hidden"
         data-testid="cal-embed-container"
       >
+        <div className="absolute inset-0 grid-pattern opacity-30" />
+        
         {/* todo: remove mock functionality - replace with actual Cal.com embed */}
         {/* 
           To integrate Cal.com, add their embed script or React component:
@@ -31,26 +35,14 @@ export default function CalEmbed() {
             config={{ theme: "dark" }}
           />
         */}
-        <div className="text-center p-8">
-          <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-            <svg 
-              className="w-8 h-8 text-primary" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" 
-              />
-            </svg>
+        <div className="text-center p-8 relative z-10">
+          <div className="w-20 h-20 mx-auto mb-6 border border-primary/30 flex items-center justify-center">
+            <Calendar className="w-8 h-8 text-primary" />
           </div>
-          <p className="text-muted-foreground text-sm">
-            Cal.com booking widget will appear here
+          <p className="text-muted-foreground text-sm font-mono uppercase tracking-wider mb-2">
+            Cal.com Integration
           </p>
-          <p className="text-xs text-muted-foreground mt-2">
+          <p className="text-xs text-muted-foreground">
             Book directly into my calendar
           </p>
         </div>

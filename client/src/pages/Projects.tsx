@@ -90,25 +90,28 @@ export default function Projects() {
     : allProjects.filter(p => p.category === activeFilter);
 
   return (
-    <main className="min-h-screen py-16 px-4">
+    <main className="min-h-screen py-20 px-4 relative">
+      <div className="absolute inset-0 grid-pattern opacity-30" />
+      
       <a 
         href="#projects-grid" 
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground"
       >
         Skip to projects
       </a>
       
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-[1400px] mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-8"
+          className="mb-10"
         >
-          <h1 className="text-3xl md:text-4xl font-bold mb-2" data-testid="projects-title">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold tracking-tight mb-3" data-testid="projects-title">
             All Projects
           </h1>
-          <p className="text-muted-foreground">
+          <div className="w-16 h-[2px] bg-primary mb-4" />
+          <p className="text-muted-foreground font-mono text-sm uppercase tracking-wider">
             Automation · AI Products · Research
           </p>
         </motion.div>
@@ -117,7 +120,7 @@ export default function Projects() {
 
         <motion.div
           id="projects-grid"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           layout
         >
           {filteredProjects.map((project, index) => (
@@ -126,14 +129,14 @@ export default function Projects() {
         </motion.div>
 
         {filteredProjects.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">No projects found for this filter.</p>
+          <div className="text-center py-16 border border-border">
+            <p className="text-muted-foreground font-mono">No projects found for this filter.</p>
           </div>
         )}
-      </div>
-      
-      <div className="max-w-6xl mx-auto mt-16">
-        <Footer />
+        
+        <div className="mt-20">
+          <Footer />
+        </div>
       </div>
     </main>
   );

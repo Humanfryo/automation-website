@@ -3,17 +3,17 @@ import { Button } from "@/components/ui/button";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border py-8 mb-20">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-muted-foreground">
-          &copy; 2024 Hari Rajashekar. All rights reserved.
+    <footer className="border-t border-border py-10 mb-20">
+      <div className="max-w-[1400px] mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p className="text-sm text-muted-foreground font-mono">
+          &copy; 2024 Hari Rajashekar
         </p>
         
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           <Button 
             variant="ghost" 
             size="sm"
-            className="text-muted-foreground hover:text-primary"
+            className="text-muted-foreground hover:text-primary hover:bg-transparent font-mono text-xs uppercase tracking-wider rounded-none"
             onClick={() => console.log('Download resume clicked')}
             data-testid="footer-resume"
           >
@@ -24,7 +24,7 @@ export default function Footer() {
           <Button 
             variant="ghost" 
             size="icon"
-            className="text-muted-foreground hover:text-primary"
+            className="text-muted-foreground hover:text-primary hover:bg-transparent rounded-none"
             onClick={() => window.open('https://linkedin.com/in/harirajashekar', '_blank')}
             data-testid="footer-linkedin"
             aria-label="LinkedIn"
@@ -35,7 +35,7 @@ export default function Footer() {
           <Button 
             variant="ghost" 
             size="icon"
-            className="text-muted-foreground hover:text-primary"
+            className="text-muted-foreground hover:text-primary hover:bg-transparent rounded-none"
             onClick={() => window.open('https://github.com/harirajashekar', '_blank')}
             data-testid="footer-github"
             aria-label="GitHub"
@@ -46,7 +46,7 @@ export default function Footer() {
           <Button 
             variant="ghost" 
             size="icon"
-            className="text-muted-foreground hover:text-primary"
+            className="text-muted-foreground hover:text-primary hover:bg-transparent rounded-none"
             onClick={() => window.location.href = 'mailto:haripxls@gmail.com'}
             data-testid="footer-email"
             aria-label="Email"

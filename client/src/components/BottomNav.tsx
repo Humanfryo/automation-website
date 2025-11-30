@@ -13,11 +13,11 @@ export default function BottomNav() {
 
   return (
     <nav 
-      className="fixed bottom-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-lg border-t border-border"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-xl border-t border-border"
       aria-label="Main navigation"
     >
       <div className="max-w-md mx-auto px-4">
-        <ul className="flex items-center justify-around py-3">
+        <ul className="flex items-center justify-around py-2">
           {navItems.map((item) => {
             const isActive = location === item.path;
             const Icon = item.icon;
@@ -26,7 +26,7 @@ export default function BottomNav() {
               <li key={item.path}>
                 <Link href={item.path}>
                   <motion.div
-                    className={`flex flex-col items-center gap-1 px-4 py-2 rounded-md transition-colors relative ${
+                    className={`flex flex-col items-center gap-1.5 px-6 py-3 transition-colors relative ${
                       isActive 
                         ? "text-primary" 
                         : "text-muted-foreground hover:text-foreground"
@@ -35,11 +35,11 @@ export default function BottomNav() {
                     data-testid={`nav-${item.label.toLowerCase()}`}
                   >
                     <Icon className="w-5 h-5" />
-                    <span className="text-xs font-medium">{item.label}</span>
+                    <span className="text-[10px] font-mono uppercase tracking-wider">{item.label}</span>
                     {isActive && (
                       <motion.div
                         layoutId="activeTab"
-                        className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary"
+                        className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-[2px] bg-primary"
                         transition={{ type: "spring", stiffness: 500, damping: 30 }}
                       />
                     )}

@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ProjectCard, { type Project } from "./ProjectCard";
+import SectionDivider from "./SectionDivider";
 
 import voiceAgentImage from '@assets/generated_images/ai_voice_agent_visualization.png';
 import nonprofitImage from '@assets/generated_images/nonprofit_website_redesign_visual.png';
@@ -47,20 +48,27 @@ const featuredProjects: Project[] = [
 
 export default function FeaturedWork() {
   return (
-    <section className="py-16 px-4" id="featured-work">
-      <div className="max-w-6xl mx-auto">
-        <motion.h2
+    <section className="py-20 px-4" id="featured-work">
+      <div className="max-w-[1400px] mx-auto">
+        <SectionDivider className="mb-12" />
+        
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-2xl md:text-3xl font-bold mb-8"
-          data-testid="featured-work-title"
+          className="mb-12"
         >
-          Featured Work
-        </motion.h2>
+          <h2 
+            className="text-3xl md:text-4xl font-heading font-bold tracking-tight"
+            data-testid="featured-work-title"
+          >
+            Featured Work
+          </h2>
+          <div className="w-16 h-[2px] bg-primary mt-4" />
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {featuredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
@@ -74,7 +82,12 @@ export default function FeaturedWork() {
           className="flex justify-center"
         >
           <Link href="/projects">
-            <Button variant="outline" size="lg" data-testid="view-all-projects">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="rounded-none border-primary text-primary hover:bg-primary hover:text-primary-foreground font-mono uppercase tracking-wider"
+              data-testid="view-all-projects"
+            >
               View All Projects
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>

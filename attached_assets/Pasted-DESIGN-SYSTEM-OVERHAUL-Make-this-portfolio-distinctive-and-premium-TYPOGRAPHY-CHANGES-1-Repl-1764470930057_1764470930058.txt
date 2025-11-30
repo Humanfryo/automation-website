@@ -1,0 +1,69 @@
+DESIGN SYSTEM OVERHAUL - Make this portfolio distinctive and premium
+
+TYPOGRAPHY CHANGES:
+1. Replace Inter with a more distinctive font pairing:
+   - Headings: "Space Grotesk" (geometric, technical feel) - Bold 700-800
+   - Body text: "DM Sans" (clean, professional) - Regular 400-500
+   - Monospace/Metrics: "JetBrains Mono" (keep this - it's perfect for code/data aesthetic)
+   
+2. Import from Google Fonts in index.html:
+   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+CARD & BUTTON STYLING CHANGES:
+1. Remove rounded corners - make everything sharper:
+   - Cards: rounded-none (no border-radius) OR minimal rounded-sm (2px max)
+   - Buttons: rounded-none OR sharp edges with subtle chamfer effect
+   
+2. Border treatment:
+   - Instead of soft rounded cards, use sharp rectangular cards with:
+     * 1px solid border in #262626
+     * Subtle inner glow effect on hover (box-shadow: inset)
+     * Corner accent lines (small green lines in top-left/bottom-right corners using ::before/::after pseudo-elements)
+   
+3. Button redesign:
+   - Primary CTA ("Let's Talk"): 
+     * Sharp rectangular shape (no rounded corners)
+     * Background: Linear gradient (slight angle) from #10B981 to #059669
+     * Hover: Shift gradient OR add animated border glow
+     * Size: Larger, more commanding (px-8 py-4)
+   - Secondary buttons ("Download Resume"):
+     * Outlined style: 1px border #10B981, transparent background
+     * Hover: Fill with #10B981 background
+     
+VISUAL HIERARCHY IMPROVEMENTS:
+1. Hero metrics badges:
+   - Make them look more like "data readouts" than generic pills
+   - Use monospace font (JetBrains Mono)
+   - Add subtle scan-line animation effect (thin horizontal line moving across)
+   - Border style: Sharp edges with corner brackets [ ]
+   
+2. Project cards:
+   - Add category label as a sharp corner ribbon (top-left corner)
+   - Use asymmetric layout: Image on left (60%), content on right (40%) for desktop
+   - Mobile: Stack vertically
+   - Hover effect: Shift card slightly up AND add green accent line that animates from left to right on bottom border
+   
+3. Section dividers:
+   - Add thin horizontal lines with center accent (small green dot or line break)
+   - Subtle grid pattern in background (very faint, like technical blueprint aesthetic)
+
+COLOR ADJUSTMENTS:
+- Keep the palette but add depth:
+  * Primary BG: #0A0A0A (unchanged)
+  * Card BG: #111111 (slightly lighter than current #151515 for more contrast)
+  * Accent Green: #10B981 (unchanged - this is good)
+  * Add new accent: #14F195 (brighter green for highlights/hover states)
+  * Border: #1F1F1F (slightly lighter than #262626 for sharper definition)
+
+MICRO-INTERACTIONS TO ADD:
+1. Project cards: On hover, reveal a thin animated border that traces the perimeter (clockwise)
+2. Metric numbers: Add count-up animation on page load (0 → final number)
+3. Navigation: Active page indicator should be a sharp underline, not a dot
+4. Cursor effect: Custom cursor trail with green glow (optional - only if not too distracting)
+
+SPACING REFINEMENT:
+- Increase whitespace between sections (more breathing room)
+- Desktop: Use max-width of 1400px (instead of full width) for better readability
+- Project grid: Larger gaps between cards (gap-8 instead of gap-4)
+
+IMPLEMENT THESE CHANGES while keeping all existing functionality, content, and structure. The goal is to move away from the "Replit template" aesthetic toward a more bespoke, technical, premium feel that matches the sophistication of the work being showcased.
