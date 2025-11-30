@@ -9,15 +9,14 @@ import voiceAgentImage from '@assets/generated_images/ai_voice_agent_visualizati
 import nonprofitImage from '@assets/generated_images/nonprofit_website_redesign_visual.png';
 import nutriscanImage from '@assets/generated_images/nutriscan_ai_health_app_visual.png';
 
-// todo: remove mock functionality - replace with real data
 const featuredProjects: Project[] = [
   {
     id: "voice-agent",
     category: "AUTOMATION",
     title: "AI Voice Agent for Home Services",
-    description: "AI voice agent automating appointment booking and CRM entry for home service businesses",
+    description: "End-to-end AI voice automation handling customer calls, scheduling appointments, and updating CRM records automatically. Processes 100+ calls monthly with 23% pilot conversion rate.",
     primaryMetric: "90% Time Reduction",
-    secondaryMetric: "5 minutes → 30 seconds per booking",
+    secondaryMetric: "5 min → 30 sec per booking",
     techStack: ["VAPI", "Make.com", "Google Calendar API", "CRM"],
     image: voiceAgentImage,
     cta: "Watch Demo"
@@ -26,9 +25,9 @@ const featuredProjects: Project[] = [
     id: "nonprofit-redesign",
     category: "AUTOMATION",
     title: "Nonprofit Website Redesign",
-    description: "Accessibility-first website redesign driving 10x donation growth and 20x traffic increase",
+    description: "WCAG 2.2 accessibility-first redesign for Seattle historic preservation nonprofit. Streamlined donation flow, mobile-first design, and SEO optimization drove massive growth.",
     primaryMetric: "10x Revenue Growth",
-    secondaryMetric: "$60/month → $600/month donations",
+    secondaryMetric: "$60 → $600/month donations",
     techStack: ["Figma", "WordPress", "WCAG 2.2", "SEO"],
     image: nonprofitImage,
     cta: "View Case Study"
@@ -37,9 +36,9 @@ const featuredProjects: Project[] = [
     id: "nutriscan",
     category: "AI PRODUCT",
     title: "NutriScan Multi-Agent System",
-    description: "Multi-agent AI health app scanning food labels for personalized nutrition recommendations",
+    description: "Google Gen AI Capstone project using 4 specialized AI agents to analyze food labels and generate personalized health recommendations based on user profiles.",
     primaryMetric: "95% Accuracy",
-    secondaryMetric: "Google Gen AI Capstone Project",
+    secondaryMetric: "vs 70% single-prompt systems",
     techStack: ["Python", "Gemini ADK", "Multi-Agent AI", "OCR"],
     image: nutriscanImage,
     cta: "Watch Demo"

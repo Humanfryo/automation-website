@@ -11,15 +11,14 @@ import rocheImage from '@assets/generated_images/roche_medical_device_dashboard.
 import veevaImage from '@assets/generated_images/veeva_qa_automation_visual.png';
 import researchImage from '@assets/generated_images/published_research_obd_visual.png';
 
-// todo: remove mock functionality - replace with real data
 const allProjects: Project[] = [
   {
     id: "voice-agent",
     category: "AUTOMATION",
     title: "AI Voice Agent for Home Services",
-    description: "AI voice agent automating appointment booking and CRM entry for home service businesses",
+    description: "End-to-end AI voice automation for HVAC, landscaping, cleaning, and roofing businesses. Handles customer calls, schedules appointments, and updates CRM records automatically. Processes 100+ calls monthly with 23% pilot conversion from cold outreach to 100+ businesses.",
     primaryMetric: "90% Time Reduction",
-    secondaryMetric: "5 minutes → 30 seconds per booking",
+    secondaryMetric: "5 min → 30 sec per booking",
     techStack: ["VAPI", "Make.com", "Google Calendar API", "CRM"],
     image: voiceAgentImage,
     cta: "Watch Demo"
@@ -28,9 +27,9 @@ const allProjects: Project[] = [
     id: "nonprofit-redesign",
     category: "AUTOMATION",
     title: "Nonprofit Website Redesign",
-    description: "Accessibility-first website redesign driving 10x donation growth and 20x traffic increase",
+    description: "WCAG 2.2 accessibility-first redesign for Seattle historic preservation nonprofit. Implemented streamlined donation flow, mobile-first responsive design, and structured data markup. Reduced bounce rate by 50% and improved SEO rankings by 30%.",
     primaryMetric: "10x Revenue Growth",
-    secondaryMetric: "$60/month → $600/month donations",
+    secondaryMetric: "$60 → $600/month donations",
     techStack: ["Figma", "WordPress", "WCAG 2.2", "SEO"],
     image: nonprofitImage,
     cta: "View Case Study"
@@ -39,9 +38,9 @@ const allProjects: Project[] = [
     id: "roche-dashboard",
     category: "AUTOMATION",
     title: "Roche Medical Device Monitoring",
-    description: "Global Salesforce dashboard monitoring 100+ remote medical devices across 50+ countries",
+    description: "Mission-critical Salesforce dashboard for Roche ($63B pharmaceutical leader) monitoring 100+ remote medical devices across 50+ countries on 6 continents. Provides real-time status monitoring, predictive maintenance alerts, and performance analytics.",
     primaryMetric: "99.8% Uptime",
-    secondaryMetric: "6-continent deployment",
+    secondaryMetric: "50% workflow optimization",
     techStack: ["Salesforce", "VMware", "Agile/Scrum"],
     image: rocheImage,
   },
@@ -49,9 +48,9 @@ const allProjects: Project[] = [
     id: "veeva-qa",
     category: "AUTOMATION",
     title: "Veeva Vault QA Automation",
-    description: "300+ automated test cases preventing $500K+ in regulatory penalties for pharma compliance",
+    description: "Comprehensive automated testing framework for Veeva Vault's pharmaceutical compliance platform. Covers 300+ test cases serving 10,000+ end users across Fortune 500 pharma clients. Led QA for global deployments with zero critical defects in production.",
     primaryMetric: "$500K+ Saved",
-    secondaryMetric: "80hr → 40hr per cycle",
+    secondaryMetric: "80hr → 40hr per test cycle",
     techStack: ["Veeva Vault", "Java", "Agile/Scrum", "QA"],
     image: veevaImage,
   },
@@ -59,9 +58,9 @@ const allProjects: Project[] = [
     id: "nutriscan",
     category: "AI PRODUCT",
     title: "NutriScan Multi-Agent System",
-    description: "Multi-agent AI health app scanning food labels for personalized nutrition recommendations",
+    description: "Google Gen AI Capstone project using 4 specialized AI agents: Parser (OCR/NLP extraction), Health Analyzer (nutritional scoring), Personalizer (user health profiles), and Recommender (1-5 ratings with consumption advice). Outperforms single-prompt systems significantly.",
     primaryMetric: "95% Accuracy",
-    secondaryMetric: "Google Gen AI Capstone Project",
+    secondaryMetric: "vs 70% single-prompt systems",
     techStack: ["Python", "Gemini ADK", "Multi-Agent AI", "OCR"],
     image: nutriscanImage,
     cta: "Watch Demo"
@@ -70,9 +69,9 @@ const allProjects: Project[] = [
     id: "research-obd",
     category: "RESEARCH",
     title: "On-Board Diagnostics & Driver Profiling",
-    description: "Published IEEE research on automotive AI for driving pattern analysis and vehicle diagnostics",
+    description: "Peer-reviewed IEEE research on ML algorithms analyzing OBD port data to assess driver safety profiles and optimize fuel economy. Addresses consumer protection by distinguishing genuine mechanical problems from false error codes.",
     primaryMetric: "15+ Citations",
-    secondaryMetric: "IEEE Xplore & IRJET",
+    secondaryMetric: "500+ views on IEEE Xplore",
     techStack: ["Machine Learning", "OBD Analysis", "Python"],
     image: researchImage,
     cta: "Read Paper",

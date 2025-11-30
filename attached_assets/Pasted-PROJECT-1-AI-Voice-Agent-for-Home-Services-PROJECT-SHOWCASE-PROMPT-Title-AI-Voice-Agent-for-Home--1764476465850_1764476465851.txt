@@ -1,0 +1,243 @@
+PROJECT 1: AI Voice Agent for Home Services
+PROJECT SHOWCASE PROMPT
+
+Title: AI Voice Agent for Home Services
+
+Category: AUTOMATION
+
+One-Line Description:
+"AI voice agent automating appointment booking and CRM entry for home service businesses"
+
+Full Description (2-3 paragraphs):
+Built an end-to-end AI voice automation system for home service businesses (HVAC, landscaping, cleaning, roofing) that handles customer calls, schedules appointments, and updates CRM records automatically. The system processes 100+ customer calls monthly, eliminating manual data entry and dramatically reducing booking friction.
+
+Conducted cold outreach to 100+ small businesses, achieving 23% pilot conversion rate through live product demos. The solution integrates VAPI's voice AI engine with Make.com's workflow automation and Google Calendar API to create a seamless customer experience that converts callers to booked appointments in under 30 seconds.
+
+This project demonstrates expertise in voice AI orchestration, business process automation, and product-market fit validation through direct customer engagement.
+
+Key Metrics:
+- Primary: "90% Time Reduction" (5 minutes → 30 seconds per booking)
+- Secondary: "23% Pilot Conversion Rate" (23 businesses requested demos/trials out of 100 reached)
+- Additional: "100+ Calls/Month Processing Capacity"
+
+Tech Stack:
+- VAPI (Voice AI platform)
+- Make.com (Workflow automation)
+- Google Calendar API
+- CRM Integrations (custom connectors)
+
+Visual Assets Available:
+- Dashboard screenshot (showing call analytics, booking stats)
+- Workflow diagram (VAPI → Make.com → Google Calendar → CRM flowchart)
+- Demo video (screen recording of voice agent in action)
+
+CTA: "Watch Demo" (opens video modal or plays inline)
+
+Business Impact:
+This automation saves home service businesses 15+ hours per week in administrative work, allowing them to focus on service delivery instead of phone tag. The 90% reduction in booking time directly improves customer satisfaction and conversion rates.
+
+Target Use Case:
+Small-to-medium home service businesses (1-20 employees) looking to professionalize their customer intake process without hiring additional staff.
+
+PROJECT 2: Nonprofit Website Redesign
+PROJECT SHOWCASE PROMPT
+
+Title: Nonprofit Website Redesign (10x Revenue Impact)
+
+Category: AUTOMATION / UX
+
+One-Line Description:
+"Accessibility-first website redesign driving 10x donation growth and 20x traffic increase"
+
+Full Description (2-3 paragraphs):
+Redesigned a Seattle-based historic preservation nonprofit's website with focus on WCAG 2.2 accessibility compliance and conversion optimization. The previous site had a confusing donation flow, poor mobile experience, and low search visibility, resulting in only $60/month in donations and 40 daily visitors.
+
+Through comprehensive accessibility audits, user flow optimization, and SEO improvements, transformed the digital presence into a high-performing fundraising platform. Implemented streamlined donation process, mobile-first responsive design, and structured data markup for improved search rankings.
+
+Within the first month post-launch, donations increased from $60/month to $600/month (10x growth) while daily traffic surged from 40 to 800 visitors (20x increase). The redesign also reduced bounce rate by 50%, indicating significantly improved user engagement.
+
+Key Metrics:
+- Primary: "10x Revenue Growth" ($60/month → $600/month in donations)
+- Secondary: "20x Traffic Increase" (40 → 800 daily visitors)
+- Additional: "50% Bounce Rate Reduction" | "30% SEO Improvement"
+
+Tech Stack:
+- Figma (Design & prototyping)
+- WordPress (CMS)
+- WCAG 2.2 Standards (Accessibility compliance)
+- SEO Optimization (Structured data, meta tags, performance)
+
+Visual Assets Available:
+- Before screenshot (old site design)
+- After screenshot (new site design)
+- Optional: Side-by-side comparison or annotated improvement callouts
+
+CTA: "View Case Study" (links to detailed breakdown or before/after comparison)
+
+Business Impact:
+Proves that accessibility isn't just compliance—it's a growth driver. By making the site easier to use for everyone (including people with disabilities, mobile users, and search engines), we unlocked 10x revenue growth.
+
+Key Learnings:
+- Accessible design benefits all users, not just those with disabilities
+- Simplified donation flows dramatically improve conversion rates
+- SEO and accessibility go hand-in-hand for organic growth
+
+PROJECT 3: NutriScan Multi-Agent System
+PROJECT SHOWCASE PROMPT
+
+Title: NutriScan Multi-Agent AI System
+
+Category: AI PRODUCT
+
+One-Line Description:
+"Multi-agent AI health app scanning food labels for personalized nutrition recommendations"
+
+Full Description (2-3 paragraphs):
+Developed as the capstone project for Google's Gen AI Intensive Course, NutriScan is a mobile health application that uses a multi-agent AI architecture to analyze food product labels and generate personalized health recommendations. Users simply scan a product's ingredient list, and the system translates complex chemical names into easy-to-understand health insights tailored to their body type and medical conditions.
+
+The system employs four specialized AI agents working collaboratively: (1) The Parser extracts ingredients via OCR/NLP, (2) The Health Analyzer assigns nutritional scores based on scientific research, (3) The Personalizer adjusts recommendations for user-specific health profiles, and (4) The Recommender generates final ratings (1-5 scale) with consumption frequency advice.
+
+This multi-agent approach achieved 95% accuracy and consistency in health recommendations, compared to only 70% for single-prompt AI systems—demonstrating the power of specialized agent orchestration over monolithic AI models.
+
+Key Metrics:
+- Primary: "95% Accuracy" (vs 70% for single-prompt systems)
+- Secondary: "Google Gen AI Capstone Project" (competitive selection)
+- Additional: "4 Specialized AI Agents" | "Real-time OCR Processing"
+
+Tech Stack:
+- Python (Core application logic)
+- Android Development Kit (Gemini API integration)
+- Multi-agent AI frameworks (orchestration)
+- OCR & NLP (text extraction and processing)
+
+Visual Assets Available:
+- User flow diagram (showing 4-agent architecture)
+- Demo video (scanning product → receiving recommendation)
+- Optional: Screenshots of mobile interface
+
+CTA: "Watch Demo" (plays video demonstration)
+
+Technical Innovation:
+Demonstrates advanced AI capabilities beyond simple prompt engineering—shows understanding of agent-based systems, task decomposition, and how to architect reliable AI products that outperform naive implementations.
+
+Use Case:
+Consumers with dietary restrictions (diabetes, allergies, heart conditions) who struggle to decode ingredient labels and need personalized guidance on food choices.
+
+PROJECT 4: Roche Medical Device Monitoring
+PROJECT SHOWCASE PROMPT
+
+Title: Roche Medical Device Monitoring Dashboard
+
+Category: AUTOMATION
+
+One-Line Description:
+"Global Salesforce dashboard monitoring 100+ remote medical devices across 50+ countries"
+
+Full Description (2-3 paragraphs):
+Designed and maintained a mission-critical Salesforce dashboard for Roche (global pharmaceutical leader, $63B revenue) that monitors 100+ remote medical devices deployed across 50+ countries on 6 continents. The system provides real-time status monitoring, predictive maintenance alerts, and performance analytics to ensure 99.8% uptime for devices supporting critical healthcare operations.
+
+Optimized workflow processes for the global equipment monitoring network, reducing manual dashboard update time by 50% and improving real-time status visibility for stakeholders across multiple time zones. Conducted rigorous system testing to ensure production environment reliability and seamless data flow.
+
+This project required working with international development teams using Agile/Scrum methodology, presenting technical findings to 30+ stakeholder groups, and maintaining compliance with healthcare industry regulations for data security and reliability.
+
+Key Metrics:
+- Primary: "99.8% System Uptime" (mission-critical reliability)
+- Secondary: "50% Workflow Optimization" (dashboard update efficiency)
+- Additional: "6-Continent Deployment" | "100+ Devices Monitored"
+
+Tech Stack:
+- Salesforce (Dashboard development & data management)
+- VMware (Infrastructure & virtualization)
+- Agile/Scrum (Project methodology)
+
+Visual Assets Available:
+- None (company proprietary/confidential)
+- Design approach: Use abstract dashboard icon, focus on metrics in text
+
+CTA: None (read-only card, no clickthrough)
+
+Business Impact:
+Preventing medical device downtime in healthcare settings is critical—equipment failures can impact patient care. This monitoring system provides early warning for issues, enabling proactive maintenance and ensuring continuous availability of life-supporting technology.
+
+Scale & Complexity:
+Managing a system that spans 50+ countries requires handling multiple time zones, languages, regulatory environments, and network conditions—demonstrating ability to work on enterprise-scale, globally distributed systems.
+
+PROJECT 5: Veeva Vault QA Automation
+PROJECT SHOWCASE PROMPT
+
+Title: Veeva Vault QA Automation
+
+Category: AUTOMATION
+
+One-Line Description:
+"300+ automated test cases preventing $500K+ in regulatory penalties for pharma compliance"
+
+Full Description (2-3 paragraphs):
+Architected a comprehensive automated testing framework for Veeva Vault's pharmaceutical compliance platform, covering 300+ test cases that identify critical bugs before they reach production. The system serves 10,000+ end users across Fortune 500 pharmaceutical clients, where compliance failures can result in massive regulatory penalties and operational shutdowns.
+
+Reduced regression testing workflows by 50%, cutting bi-weekly testing cycles from 80 hours to 40 hours while maintaining 100% test coverage. Led quality assurance for global deployments, presenting critical findings to 30+ stakeholder teams across 5 countries in daily Scrum meetings, ensuring zero critical defects reached production.
+
+This automation framework prevented potential $500K+ in regulatory penalties by catching compliance violations early in the development cycle—demonstrating how quality assurance automation directly protects business value in heavily regulated industries.
+
+Key Metrics:
+- Primary: "$500K+ Saved" (prevented regulatory penalties)
+- Secondary: "50% Testing Time Reduction" (80hr → 40hr per cycle)
+- Additional: "300+ Automated Test Cases" | "Zero Critical Defects in Production"
+
+Tech Stack:
+- Veeva Vault (Pharma compliance CRM)
+- Java (Test automation scripting)
+- Agile/Scrum (Development methodology)
+- QA Automation Tools (testing frameworks)
+
+Visual Assets Available:
+- None (company proprietary/confidential)
+- Design approach: Use abstract code/testing icon, focus on impact metrics
+
+CTA: None (read-only card, no clickthrough)
+
+Business Impact:
+In pharmaceutical industries, regulatory compliance isn't optional—it's survival. Automated testing ensures that every deployment meets strict FDA and international standards, protecting both patient safety and company finances.
+
+Technical Depth:
+Building a reliable test automation framework for a complex CRM platform requires deep understanding of both the business domain (pharmaceutical compliance) and technical implementation (test case architecture, CI/CD integration, defect tracking).
+
+PROJECT 6: Published Research - On-Board Diagnostics
+PROJECT SHOWCASE PROMPT
+
+Title: On-Board Diagnostics & Driver Profiling
+
+Category: RESEARCH
+
+One-Line Description:
+"Published IEEE research on automotive AI for driving pattern analysis and vehicle diagnostics"
+
+Full Description (2-3 paragraphs):
+Published peer-reviewed research in IEEE Xplore Digital Library exploring machine learning applications for automotive safety and consumer protection. Developed ML algorithms that analyze driving patterns through OBD (On-Board Diagnostics) port data to assess driver safety profiles and optimize fuel economy.
+
+The research addresses a critical consumer problem: preventing unnecessary vehicle repairs by identifying real issues before service appointments. By analyzing real-time OBD data, the system can distinguish between genuine mechanical problems and false error codes, protecting consumers from overcharging and unnecessary repairs.
+
+This work has generated 15+ academic citations and 500+ views on IEEE Xplore, demonstrating its contribution to the automotive AI research community. Published in both IEEE (6 citations) and IRJET (9 citations) with 17 supporting references.
+
+Key Metrics:
+- Primary: "15+ Citations" (academic impact)
+- Secondary: "500+ Views" (IEEE Xplore)
+- Additional: "Published in 2 Peer-Reviewed Journals" (IEEE & IRJET)
+
+Tech Stack:
+- Machine Learning (Pattern analysis algorithms)
+- OBD Analysis (Automotive diagnostics data)
+- Python (Implementation language)
+- Research Methodology (Academic rigor)
+
+Visual Assets Available:
+- None (research paper format)
+- Design approach: Use research/paper icon, focus on citation metrics
+
+CTA: "Read Paper" (external link to IEEE Xplore: https://ieeexplore.ieee.org/document/9277449)
+
+Research Impact:
+Demonstrates ability to conduct rigorous academic research, publish in prestigious venues, and contribute original ideas to the AI/ML field—establishing technical credibility beyond just implementation skills.
+
+Practical Applications:
+The research has real-world consumer protection implications—helping drivers avoid predatory repair practices and optimize vehicle performance through data-driven insights.
