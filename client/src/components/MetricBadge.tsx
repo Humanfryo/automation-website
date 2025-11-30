@@ -58,7 +58,7 @@ export default function MetricBadge({ label, value, delay = 0 }: MetricBadgeProp
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      className="relative flex flex-col items-center px-8 py-5 border border-border bg-card corner-brackets scan-line"
+      className="relative flex flex-col items-center px-8 py-5 border border-border bg-card corner-brackets"
       data-testid={`metric-badge-${label.toLowerCase().replace(/\s+/g, '-')}`}
     >
       <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2 font-mono">
