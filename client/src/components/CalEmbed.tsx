@@ -1,7 +1,51 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 
+declare global {
+  interface Window {
+    Cal?: any;
+  }
+}
+
 export default function CalEmbed() {
+  useEffect(() => {
+    (function (C: any, A: string, L: string) {
+      let p = function (a: any, ar: any) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          (api as any).q = (api as any).q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    window.Cal("init", "15min", { origin: "https://app.cal.com" });
+    window.Cal.ns["15min"]("ui", {
+      "theme": "dark",
+      "hideEventTypeDetails": false,
+      "layout": "month_view"
+    });
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -21,31 +65,30 @@ export default function CalEmbed() {
       </div>
 
       <div 
-        className="aspect-[4/3] md:aspect-[3/2] w-full border border-border bg-card flex items-center justify-center relative overflow-hidden"
+        className="border border-border bg-card p-8 md:p-12 flex flex-col items-center justify-center text-center"
         data-testid="cal-embed-container"
       >
-        <div className="absolute inset-0 grid-pattern opacity-30" />
-        
-        {/* todo: remove mock functionality - replace with actual Cal.com embed */}
-        {/* 
-          To integrate Cal.com, add their embed script or React component:
-          <Cal 
-            calLink="harirajashekar/consultation"
-            style={{ width: "100%", height: "100%" }}
-            config={{ theme: "dark" }}
-          />
-        */}
-        <div className="text-center p-8 relative z-10">
-          <div className="w-20 h-20 mx-auto mb-6 border border-primary/30 flex items-center justify-center">
-            <Calendar className="w-8 h-8 text-primary" />
-          </div>
-          <p className="text-muted-foreground text-sm font-mono uppercase tracking-wider mb-2">
-            Cal.com Integration
-          </p>
-          <p className="text-xs text-muted-foreground">
-            Book directly into my calendar
-          </p>
+        <div className="w-20 h-20 border border-primary/30 flex items-center justify-center mb-6">
+          <Calendar className="w-8 h-8 text-primary" />
         </div>
+        
+        <h3 className="text-xl font-heading font-bold mb-2">
+          15-Minute Discovery Call
+        </h3>
+        <p className="text-muted-foreground text-sm mb-6 max-w-md">
+          Quick intro call to understand your automation needs and explore how I can help scale your business.
+        </p>
+        
+        <Button
+          className="gradient-primary rounded-none font-mono uppercase tracking-wider h-12 px-8"
+          data-cal-link="humanfryo/15min"
+          data-cal-namespace="15min"
+          data-cal-config='{"layout":"month_view","theme":"dark"}'
+          data-testid="cal-book-button"
+        >
+          <Calendar className="w-4 h-4 mr-2" />
+          Schedule a Call
+        </Button>
       </div>
     </motion.div>
   );
