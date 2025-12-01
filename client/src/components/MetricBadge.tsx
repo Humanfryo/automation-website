@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface MetricBadgeProps {
-  label: string;
   value: string;
   subtext: string;
   delay?: number;
@@ -53,29 +52,23 @@ function AnimatedNumber({ value, delay }: { value: string; delay: number }) {
   return <span>{displayValue}</span>;
 }
 
-export default function MetricBadge({ label, value, subtext, delay = 0 }: MetricBadgeProps) {
+export default function MetricBadge({ value, subtext, delay = 0 }: MetricBadgeProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      className="relative flex flex-col items-center px-8 py-6 border border-border bg-card corner-brackets min-w-[200px]"
-      data-testid={`metric-badge-${label.toLowerCase().replace(/\s+/g, '-')}`}
+      className="relative flex flex-col items-center justify-center px-10 py-8 border border-border bg-card corner-brackets min-w-[220px]"
+      data-testid={`metric-badge-${value.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`}
     >
       <span 
-        className="text-[11px] uppercase tracking-[0.15em] mb-3 font-heading font-bold"
-        style={{ color: '#F5F5F5' }}
-      >
-        {label}
-      </span>
-      <span 
-        className="text-4xl md:text-5xl font-mono font-bold tracking-tight mb-2"
+        className="text-5xl md:text-[56px] font-mono font-bold tracking-tight mb-3"
         style={{ color: '#10B981' }}
       >
         <AnimatedNumber value={value} delay={delay + 0.5} />
       </span>
       <span 
-        className="text-xs font-sans text-center leading-relaxed"
+        className="text-[13px] font-sans text-center leading-relaxed"
         style={{ color: '#A3A3A3' }}
       >
         {subtext}
