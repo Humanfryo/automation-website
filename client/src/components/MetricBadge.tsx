@@ -1,9 +1,10 @@
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface MetricBadgeProps {
   label: string;
   value: string;
+  subtext: string;
   delay?: number;
 }
 
@@ -11,14 +12,14 @@ function AnimatedNumber({ value, delay }: { value: string; delay: number }) {
   const [displayValue, setDisplayValue] = useState("0");
   
   useEffect(() => {
-    const numericMatch = value.match(/^([\d.]+)/);
+    const numericMatch = value.match(/([\d.]+)/);
     if (numericMatch) {
       const targetNum = parseFloat(numericMatch[1]);
-      const suffix = value.replace(numericMatch[1], '');
+      const prefix = value.substring(0, value.indexOf(numericMatch[1]));
+      const suffix = value.substring(value.indexOf(numericMatch[1]) + numericMatch[1].length);
       const duration = 1.5;
       
       const timer = setTimeout(() => {
-        let start = 0;
         const startTime = Date.now();
         
         const updateNumber = () => {
@@ -28,9 +29,9 @@ function AnimatedNumber({ value, delay }: { value: string; delay: number }) {
           const current = targetNum * eased;
           
           if (targetNum >= 10) {
-            setDisplayValue(Math.round(current) + suffix);
+            setDisplayValue(prefix + Math.round(current) + suffix);
           } else {
-            setDisplayValue(current.toFixed(1) + suffix);
+            setDisplayValue(prefix + current.toFixed(1) + suffix);
           }
           
           if (progress < 1) {
@@ -52,20 +53,32 @@ function AnimatedNumber({ value, delay }: { value: string; delay: number }) {
   return <span>{displayValue}</span>;
 }
 
-export default function MetricBadge({ label, value, delay = 0 }: MetricBadgeProps) {
+export default function MetricBadge({ label, value, subtext, delay = 0 }: MetricBadgeProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      className="relative flex flex-col items-center px-8 py-5 border border-border bg-card corner-brackets"
+      className="relative flex flex-col items-center px-8 py-6 border border-border bg-card corner-brackets min-w-[200px]"
       data-testid={`metric-badge-${label.toLowerCase().replace(/\s+/g, '-')}`}
     >
-      <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2 font-mono">
+      <span 
+        className="text-[11px] uppercase tracking-[0.15em] mb-3 font-heading font-bold"
+        style={{ color: '#F5F5F5' }}
+      >
         {label}
       </span>
-      <span className="text-3xl md:text-4xl font-mono font-bold text-primary tracking-tight">
+      <span 
+        className="text-4xl md:text-5xl font-mono font-bold tracking-tight mb-2"
+        style={{ color: '#10B981' }}
+      >
         <AnimatedNumber value={value} delay={delay + 0.5} />
+      </span>
+      <span 
+        className="text-xs font-sans text-center leading-relaxed"
+        style={{ color: '#A3A3A3' }}
+      >
+        {subtext}
       </span>
     </motion.div>
   );

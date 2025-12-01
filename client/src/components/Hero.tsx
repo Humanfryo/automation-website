@@ -52,9 +52,24 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row flex-wrap justify-center gap-6 mb-14"
         >
-          <MetricBadge label="Booking Time Reduction" value="90%" delay={0.4} />
-          <MetricBadge label="Revenue Growth" value="10x" delay={0.5} />
-          <MetricBadge label="System Uptime" value="99.8%" delay={0.6} />
+          <MetricBadge 
+            label="$500K+ SAVED" 
+            value="$500K+" 
+            subtext="Fortune 500 pharma compliance"
+            delay={0.4} 
+          />
+          <MetricBadge 
+            label="10x REVENUE" 
+            value="10x" 
+            subtext="$60 → $600/month donations"
+            delay={0.5} 
+          />
+          <MetricBadge 
+            label="99.8% UPTIME" 
+            value="99.8%" 
+            subtext="50+ countries (Roche devices)"
+            delay={0.6} 
+          />
         </motion.div>
 
         <motion.div
