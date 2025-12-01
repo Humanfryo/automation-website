@@ -55,19 +55,19 @@ export default function Hero() {
           <MetricBadge 
             label="$500K+ SAVED" 
             value="$500K+" 
-            subtext="Fortune 500 pharma compliance"
+            subtext="Fortune 500 pharma"
             delay={0.4} 
           />
           <MetricBadge 
             label="10x REVENUE" 
             value="10x" 
-            subtext="$60 → $600/month donations"
+            subtext="$60 → $600/mo"
             delay={0.5} 
           />
           <MetricBadge 
             label="99.8% UPTIME" 
             value="99.8%" 
-            subtext="50+ countries (Roche devices)"
+            subtext="50+ countries"
             delay={0.6} 
           />
         </motion.div>
