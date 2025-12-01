@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface MetricBadgeProps {
+  label: string;
   value: string;
   subtext: string;
   delay?: number;
@@ -52,15 +53,21 @@ function AnimatedNumber({ value, delay }: { value: string; delay: number }) {
   return <span>{displayValue}</span>;
 }
 
-export default function MetricBadge({ value, subtext, delay = 0 }: MetricBadgeProps) {
+export default function MetricBadge({ label, value, subtext, delay = 0 }: MetricBadgeProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       className="relative flex flex-col items-center justify-center px-10 py-8 border border-border bg-card corner-brackets min-w-[220px]"
-      data-testid={`metric-badge-${value.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`}
+      data-testid={`metric-badge-${label.toLowerCase()}`}
     >
+      <span 
+        className="text-[10px] uppercase tracking-[0.1em] font-semibold mb-4"
+        style={{ color: '#A3A3A3' }}
+      >
+        {label}
+      </span>
       <span 
         className="text-5xl md:text-[56px] font-mono font-bold tracking-tight mb-3"
         style={{ color: '#10B981' }}
