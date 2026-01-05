@@ -5,9 +5,9 @@ import { ArrowRight } from "lucide-react";
 import ProjectCard, { type Project } from "./ProjectCard";
 import SectionDivider from "./SectionDivider";
 
-import voiceAgentImage from '@assets/generated_images/ai_voice_agent_visualization.png';
-import nonprofitImage from '@assets/generated_images/nonprofit_website_redesign_visual.png';
-import nutriscanImage from '@assets/generated_images/nutriscan_ai_health_app_visual.png';
+import voiceAgentImage from '@assets/generated_images/ai_voice_agent_yellow_waves.png';
+import nonprofitImage from '@assets/generated_images/nonprofit_website_redesign_mockup.png';
+import nutriscanImage from '@assets/generated_images/nutriscan_multi-agent_ai_network.png';
 
 const featuredProjects: Project[] = [
   {
