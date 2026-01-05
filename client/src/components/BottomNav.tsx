@@ -1,10 +1,11 @@
 import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
-import { Home, Briefcase, Mail } from "lucide-react";
+import { Home, Briefcase, Workflow, Mail } from "lucide-react";
 
 const navItems = [
   { path: "/", label: "Home", icon: Home },
   { path: "/projects", label: "Projects", icon: Briefcase },
+  { path: "/workflows", label: "Workflows", icon: Workflow },
   { path: "/contact", label: "Contact", icon: Mail },
 ];
 

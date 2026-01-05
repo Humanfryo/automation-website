@@ -7,6 +7,7 @@ import BottomNav from "@/components/BottomNav";
 import Home from "@/pages/Home";
 import Projects from "@/pages/Projects";
 import ProjectDetail from "@/pages/ProjectDetail";
+import Workflows from "@/pages/Workflows";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
 
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/projects" component={Projects} />
       <Route path="/projects/:id" component={ProjectDetail} />
+      <Route path="/workflows" component={Workflows} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
