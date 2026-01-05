@@ -25,7 +25,7 @@ export default function Footer() {
     <footer className="border-t border-border py-10 mb-20">
       <div className="max-w-[1400px] mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground font-mono">
-          &copy; 2024 Hari Rajashekar
+          &copy; 2026 Hari Rajashekar
         </p>
         
         <div className="flex items-center gap-1">
