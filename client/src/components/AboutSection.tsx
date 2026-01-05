@@ -17,10 +17,10 @@ export default function AboutSection() {
             transition={{ duration: 0.5 }}
             className="text-muted-foreground text-lg leading-relaxed mb-8"
           >
-            Published IEEE researcher specializing in business process automation 
-            and multi-agent AI systems. I've delivered solutions for Fortune 500 
-            pharmaceutical clients and growth-stage startups, with a track record 
-            of measurable ROI from 90% efficiency gains to 10x revenue growth.
+            I'm a published IEEE researcher who genuinely loves solving complex automation 
+            challenges. Whether it's Fortune 500 pharma clients or scrappy startups, 
+            I bring the same energy: build systems that actually work and deliver real results.
+            Let's create something awesome together.
           </motion.p>
 
           <motion.div

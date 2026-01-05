@@ -55,12 +55,12 @@ export default function CalEmbed() {
     >
       <div className="mb-8">
         <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-tight mb-4">
-          Book a Free Consultation
+          Let's Have a Chat
         </h2>
         <div className="w-16 h-[2px] bg-primary mb-4" />
         <p className="text-muted-foreground leading-relaxed">
-          Let's discuss how automation can transform your business. 
-          Choose a time that works for you.
+          I'd love to hear about what you're working on. Pick a time that works 
+          and let's explore how automation can help you out.
         </p>
       </div>
 
@@ -73,10 +73,10 @@ export default function CalEmbed() {
         </div>
         
         <h3 className="text-xl font-heading font-bold mb-2">
-          15-Minute Discovery Call
+          15-Minute Coffee Chat
         </h3>
         <p className="text-muted-foreground text-sm mb-6 max-w-md">
-          Quick intro call to understand your automation needs and explore how I can help scale your business.
+          No pressure, just a friendly conversation about your goals and how I might be able to help.
         </p>
         
         <Button

@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Download, ArrowRight } from "lucide-react";
 import MetricBadge from "./MetricBadge";
+import hariImage from "@assets/1724367522958_1767642079072.jpeg";
 
 export default function Hero() {
   return (
@@ -10,25 +11,40 @@ export default function Hero() {
       <div className="absolute inset-0 grid-pattern opacity-50" />
       
       <div className="relative z-10 max-w-5xl mx-auto">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold tracking-tight mb-6"
-          data-testid="hero-name"
+          className="mb-8"
         >
-          HARI RAJASHEKAR
-        </motion.h1>
-        
+          <img 
+            src={hariImage} 
+            alt="Hari Rajashekar" 
+            className="w-32 h-32 md:w-40 md:h-40 mx-auto object-cover border-4 border-primary"
+            style={{ borderRadius: '50%' }}
+            data-testid="hero-image"
+          />
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-lg md:text-xl text-primary font-mono uppercase tracking-[0.2em] mb-8"
-          data-testid="hero-title"
+          className="text-lg md:text-xl text-primary font-mono uppercase tracking-[0.2em] mb-4"
+          data-testid="hero-greeting"
         >
-          AI-Powered Automation Specialist
+          Hey, I'm Hari
         </motion.p>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight mb-6"
+          data-testid="hero-name"
+        >
+          I help businesses automate & scale
+        </motion.h1>
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,13 +52,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-2xl mx-auto mb-12"
         >
-          <p className="text-muted-foreground text-lg md:text-xl leading-relaxed font-light">
-            I Build Automation Systems That Scale Your Business
-          </p>
-          <p className="text-muted-foreground text-sm md:text-base mt-3 leading-relaxed">
-            Voice AI agents. Multi-agent architectures. CRM workflows.
-            From concept to deployment, I create automation that saves time,
-            cuts costs, and drives revenue.
+          <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
+            Voice AI agents, multi-agent systems, and CRM workflows that actually work.
+            I love turning complex problems into elegant automation solutions.
           </p>
         </motion.div>
 
@@ -84,7 +96,7 @@ export default function Hero() {
               className="min-w-[180px] h-14 text-base font-mono uppercase tracking-wider gradient-primary border-0 rounded-none hover:opacity-90 transition-opacity" 
               data-testid="cta-lets-talk"
             >
-              Let's Talk
+              Let's Chat
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </Link>
