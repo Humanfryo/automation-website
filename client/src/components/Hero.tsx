@@ -2,8 +2,17 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Download, ArrowRight } from "lucide-react";
+import { SiLinkedin, SiUpwork } from "react-icons/si";
 import MetricBadge from "./MetricBadge";
 import hariImage from "@assets/1724367522958_1767642079072.jpeg";
+
+function N8NIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-.5 4.5h1v3h-1v-3zm-4 4h3v1h-3v-1zm9 0h3v1h-3v-1zm-4 1.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm-5 4.5h3v1h-3v-1zm9 0h3v1h-3v-1zm-4.5 1.5h1v3h-1v-3z"/>
+    </svg>
+  );
+}
 
 export default function Hero() {
   return (
@@ -30,11 +39,49 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-lg md:text-xl text-primary font-mono uppercase tracking-[0.2em] mb-4"
+          className="text-lg md:text-xl text-primary font-mono uppercase tracking-[0.2em] mb-3"
           data-testid="hero-greeting"
         >
           Hey, I'm Hari
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.12 }}
+          className="flex items-center justify-center gap-4 mb-6"
+        >
+          <a
+            href="https://www.linkedin.com/in/hari-rajashekar-81816818a"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+            data-testid="link-linkedin"
+            aria-label="LinkedIn Profile"
+          >
+            <SiLinkedin className="w-5 h-5" />
+          </a>
+          <a
+            href="https://www.upwork.com/freelancers/~0160930c7ee1c74265"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+            data-testid="link-upwork"
+            aria-label="Upwork Profile"
+          >
+            <SiUpwork className="w-5 h-5" />
+          </a>
+          <a
+            href="https://n8n.io/creators/hari"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+            data-testid="link-n8n"
+            aria-label="N8N Creator Profile"
+          >
+            <N8NIcon className="w-5 h-5" />
+          </a>
+        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
