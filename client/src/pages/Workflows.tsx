@@ -15,8 +15,20 @@ interface Workflow {
 }
 
 const contentEngineWorkflow = {
-  "name": "V4 Content Engine Linkedin",
   "nodes": [
+    {
+      "parameters": {
+        "content": "## SETUP REQUIRED\n\n1. Double-click the \"Copy Template\" node.\n2. In the \"File ID\" field, select YOUR own Google Slides template file.\n\n(See the template description for the required placeholder tags like {{hook_title}})",
+        "height": 257,
+        "width": 307,
+        "color": 6
+      },
+      "id": "sticky-note-setup",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [500, 80]
+    },
     {
       "parameters": {
         "formTitle": "Loom to Carousel Generator",
@@ -38,7 +50,7 @@ const contentEngineWorkflow = {
         "options": {}
       },
       "id": "6ac0d6f8-41fe-48da-9a58-63a82a5d23e3",
-      "name": "Paste Transcript Here1",
+      "name": "Paste Transcript Here",
       "type": "n8n-nodes-base.formTrigger",
       "typeVersion": 2.2,
       "position": [112, 288],
@@ -47,12 +59,22 @@ const contentEngineWorkflow = {
     {
       "parameters": {
         "resource": "chat",
-        "model": "gpt-5.2",
+        "model": "gpt-4o",
         "prompt": {
           "messages": [
             {
               "role": "system",
               "content": "You are an expert ghostwriter for an Automation Specialist named Hari. Your task is to convert a messy video transcript into a structured, high-value LinkedIn Carousel (PDF)."
+            },
+            {
+              "content": "Transcript: 'So basically, a lot of people mess up their receipts. I use this tool called Butler to auto-sort them. It basically looks at the Gmail subject line, if it says Receipt, it labels it Finance. Then I have a script that pushes it to Drive. It saves me like 5 hours a week.'"
+            },
+            {
+              "role": "assistant",
+              "content": "{\"hook_title\": \"Stop Manually Sorting Receipts\", \"hook_subtitle\": \"The 2-step system to automate your finance admin forever.\"}"
+            },
+            {
+              "content": "=Transcript: {{ $('Paste Transcript Here').item.json.Transcript }}"
             }
           ]
         },
@@ -61,7 +83,7 @@ const contentEngineWorkflow = {
         "requestOptions": {}
       },
       "id": "29b6db17-b45d-4c26-93f6-c48ceab826ba",
-      "name": "Generate Content1",
+      "name": "Generate Content",
       "type": "n8n-nodes-base.openAi",
       "typeVersion": 1,
       "position": [336, 288],
@@ -72,24 +94,37 @@ const contentEngineWorkflow = {
         "operation": "copy",
         "fileId": {
           "__rl": true,
-          "value": "1tYt__UCzZJJgpNLlmShLc_oEF3oHIVfIBl8rpd-xDmM",
+          "value": "",
           "mode": "list",
-          "cachedResultName": "Hari_Personal_Brand_Template"
+          "cachedResultName": ""
         },
-        "sameFolder": true
+        "name": "={{ $('Paste Transcript Here').item.json['Video Title (Optional)'] }}",
+        "sameFolder": "={{ true }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "options": {}
       },
       "id": "cf6a61cc-b167-464a-8283-78dddde9b8b7",
-      "name": "Copy Template1",
+      "name": "Copy Template",
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [560, 288]
     },
     {
       "parameters": {
-        "jsCode": "// Prepare batch payload for Google Slides API"
+        "jsCode": "// Get the ID of the newly copied presentation\nconst newPresentationId = items[0].json.id;\n// Prepare batch payload for Google Slides API"
       },
       "id": "77470e03-03c9-4a3d-9c0b-09f90abebfdc",
-      "name": "Prepare Batch Payload1",
+      "name": "Prepare Batch Payload",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [784, 288]
@@ -97,12 +132,22 @@ const contentEngineWorkflow = {
     {
       "parameters": {
         "method": "POST",
-        "url": "https://slides.googleapis.com/v1/presentations/{{ $json.presentationId }}:batchUpdate",
+        "url": "=https://slides.googleapis.com/v1/presentations/{{ $json.presentationId }}:batchUpdate",
         "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "googleSlidesOAuth2Api"
+        "nodeCredentialType": "googleSlidesOAuth2Api",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "requests",
+              "value": "={{ $json.requests }}"
+            }
+          ]
+        },
+        "options": {}
       },
       "id": "3ac5a7a9-46bb-42f1-ba7c-2c2f583fd96b",
-      "name": "Update Slides (Batch)1",
+      "name": "Update Slides (Batch)",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [992, 288]
@@ -110,6 +155,11 @@ const contentEngineWorkflow = {
     {
       "parameters": {
         "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.presentationId }}",
+          "mode": "id"
+        },
         "options": {
           "googleFileConversion": {
             "conversion": {
@@ -119,7 +169,7 @@ const contentEngineWorkflow = {
         }
       },
       "id": "764f1956-8229-4155-9985-e0f6681e4b3e",
-      "name": "Download PDF1",
+      "name": "Download PDF",
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [1216, 288]
@@ -128,25 +178,31 @@ const contentEngineWorkflow = {
       "parameters": {
         "authentication": "oAuth2",
         "select": "channel",
-        "text": "Here is your new Carousel PDF!"
+        "channelId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": ""
+        },
+        "text": "Here is your new Carousel PDF!",
+        "otherOptions": {}
       },
       "id": "691d4d79-1a41-4cda-a632-aac96576f33c",
-      "name": "Send to Slack1",
+      "name": "Send to Slack",
       "type": "n8n-nodes-base.slack",
       "typeVersion": 2,
       "position": [1440, 288]
     }
   ],
   "connections": {
-    "Paste Transcript Here1": { "main": [[{ "node": "Generate Content1", "type": "main", "index": 0 }]] },
-    "Generate Content1": { "main": [[{ "node": "Copy Template1", "type": "main", "index": 0 }]] },
-    "Copy Template1": { "main": [[{ "node": "Prepare Batch Payload1", "type": "main", "index": 0 }]] },
-    "Prepare Batch Payload1": { "main": [[{ "node": "Update Slides (Batch)1", "type": "main", "index": 0 }]] },
-    "Update Slides (Batch)1": { "main": [[{ "node": "Download PDF1", "type": "main", "index": 0 }]] },
-    "Download PDF1": { "main": [[{ "node": "Send to Slack1", "type": "main", "index": 0 }]] }
+    "Paste Transcript Here": { "main": [[{ "node": "Generate Content", "type": "main", "index": 0 }]] },
+    "Generate Content": { "main": [[{ "node": "Copy Template", "type": "main", "index": 0 }]] },
+    "Copy Template": { "main": [[{ "node": "Prepare Batch Payload", "type": "main", "index": 0 }]] },
+    "Prepare Batch Payload": { "main": [[{ "node": "Update Slides (Batch)", "type": "main", "index": 0 }]] },
+    "Update Slides (Batch)": { "main": [[{ "node": "Download PDF", "type": "main", "index": 0 }]] },
+    "Download PDF": { "main": [[{ "node": "Send to Slack", "type": "main", "index": 0 }]] }
   },
-  "active": false,
-  "settings": { "executionOrder": "v1" }
+  "pinData": {}
 };
 
 const workflows: Workflow[] = [
