@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Download, Copy, Check, ChevronDown, ChevronUp } from "lucide-react";
+import { Download, Copy, Check, ChevronDown, ChevronUp, Play } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Footer from "@/components/Footer";
 
@@ -12,6 +12,7 @@ interface Workflow {
   category: string;
   tools: string[];
   json: object;
+  tutorialUrl?: string;
 }
 
 const contentEngineWorkflow = {
@@ -212,7 +213,8 @@ const workflows: Workflow[] = [
     description: "Transform Loom video transcripts into polished LinkedIn carousel PDFs. Uses OpenAI to structure content, Google Slides for design, and Slack for delivery.",
     category: "Content Creation",
     tools: ["n8n", "OpenAI", "Google Slides", "Google Drive", "Slack"],
-    json: contentEngineWorkflow
+    json: contentEngineWorkflow,
+    tutorialUrl: "https://www.loom.com/share/03f18d537f3944ab87ff5a1725fd8ee1"
   }
 ];
 
@@ -290,7 +292,7 @@ function WorkflowCard({ workflow }: { workflow: Workflow }) {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-3">
           <Button
             onClick={handleDownload}
             className="gradient-primary rounded-none font-mono uppercase tracking-wider"
@@ -317,6 +319,19 @@ function WorkflowCard({ workflow }: { workflow: Workflow }) {
               </>
             )}
           </Button>
+          {workflow.tutorialUrl && (
+            <Button
+              asChild
+              variant="outline"
+              className="rounded-none font-mono uppercase tracking-wider border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              data-testid={`tutorial-${workflow.id}`}
+            >
+              <a href={workflow.tutorialUrl} target="_blank" rel="noopener noreferrer">
+                <Play className="w-4 h-4 mr-2" />
+                Watch Tutorial
+              </a>
+            </Button>
+          )}
           <Button
             onClick={() => setShowJson(!showJson)}
             variant="ghost"
