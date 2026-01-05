@@ -8,8 +8,18 @@ import hariImage from "@assets/1724367522958_1767642079072.jpeg";
 
 function N8NIcon({ className }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-.5 4.5h1v3h-1v-3zm-4 4h3v1h-3v-1zm9 0h3v1h-3v-1zm-4 1.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm-5 4.5h3v1h-3v-1zm9 0h3v1h-3v-1zm-4.5 1.5h1v3h-1v-3z"/>
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="4" cy="12" r="2" />
+      <circle cx="9" cy="12" r="2" />
+      <circle cx="16" cy="8" r="2" />
+      <circle cx="16" cy="16" r="2" />
+      <circle cx="21" cy="8" r="2" />
+      <circle cx="21" cy="16" r="2" />
+      <path d="M6 12h1" />
+      <path d="M11 12h2c1 0 2-1 2-2v-2" />
+      <path d="M11 12h2c1 0 2 1 2 2v2" />
+      <path d="M18 8h1" />
+      <path d="M18 16h1" />
     </svg>
   );
 }

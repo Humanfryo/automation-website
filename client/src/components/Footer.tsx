@@ -1,5 +1,24 @@
 import { Download, Linkedin, Github, Mail } from "lucide-react";
+import { SiUpwork } from "react-icons/si";
 import { Button } from "@/components/ui/button";
+
+function N8NIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="4" cy="12" r="2" />
+      <circle cx="9" cy="12" r="2" />
+      <circle cx="16" cy="8" r="2" />
+      <circle cx="16" cy="16" r="2" />
+      <circle cx="21" cy="8" r="2" />
+      <circle cx="21" cy="16" r="2" />
+      <path d="M6 12h1" />
+      <path d="M11 12h2c1 0 2-1 2-2v-2" />
+      <path d="M11 12h2c1 0 2 1 2 2v2" />
+      <path d="M18 8h1" />
+      <path d="M18 16h1" />
+    </svg>
+  );
+}
 
 export default function Footer() {
   return (
@@ -52,6 +71,28 @@ export default function Footer() {
             aria-label="Email"
           >
             <Mail className="w-4 h-4" />
+          </Button>
+          
+          <Button 
+            variant="ghost" 
+            size="icon"
+            className="text-muted-foreground hover:text-primary hover:bg-transparent rounded-none"
+            onClick={() => window.open('https://www.upwork.com/freelancers/~0160930c7ee1c74265', '_blank')}
+            data-testid="footer-upwork"
+            aria-label="Upwork"
+          >
+            <SiUpwork className="w-4 h-4" />
+          </Button>
+          
+          <Button 
+            variant="ghost" 
+            size="icon"
+            className="text-muted-foreground hover:text-primary hover:bg-transparent rounded-none"
+            onClick={() => window.open('https://n8n.io/creators/hari', '_blank')}
+            data-testid="footer-n8n"
+            aria-label="N8N Creator Profile"
+          >
+            <N8NIcon className="w-4 h-4" />
           </Button>
         </div>
       </div>
