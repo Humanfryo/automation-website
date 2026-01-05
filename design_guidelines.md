@@ -5,7 +5,7 @@
 ### Color Palette
 - **Primary Background**: #0A0A0A (dark gray, not pure black)
 - **Secondary Background**: #151515 (cards, sections)
-- **Accent Green**: #10B981 (muted emerald - CTAs, highlights)
+- **Brand Yellow**: #F5C744 (warm golden yellow - CTAs, highlights)
 - **Text Primary**: #F5F5F5 (off-white)
 - **Text Secondary**: #A3A3A3 (gray for descriptions)
 - **Border/Divider**: #262626 (subtle borders)
@@ -26,10 +26,10 @@ Mobile-first: Tighter spacing on small screens, breathing room on desktop
 ### Home Page Hero Section
 - **Full viewport height**, centered content
 - **Name**: "HARI RAJASHEKAR" (large, bold, #F5F5F5)
-- **Title**: "AI-Powered Automation Specialist" (medium, #10B981 accent)
+- **Title**: "AI-Powered Automation Specialist" (medium, #F5C744 accent)
 - **Tagline**: Multi-line hero copy about building automation systems that scale
 - **Metrics Badges**: Display as inline cards showing "90% Booking Time Reduction", "10x Revenue Growth", "99.8% System Uptime"
-- **Primary CTA**: Large button "Let's Talk" (#10B981 background, hover effect)
+- **Primary CTA**: Large button "Let's Talk" (#F5C744 background, hover effect)
 - **Secondary CTA**: Text link "Download Resume"
 - **Background**: Subtle gradient overlay, slight vignette effect
 - **Animation**: Staggered fade-in (name → title → tagline → CTAs)
@@ -54,7 +54,7 @@ Mobile-first: Tighter spacing on small screens, breathing room on desktop
 - **Right Column (40%)**:
   - Header: "Or Send a Message"
   - Form fields: Name, Email, Subject, Message (textarea)
-  - Submit button: "Send Message" (#10B981)
+  - Submit button: "Send Message" (#F5C744)
   - Success message on submit
 - **Contact Info**: Email, LinkedIn, GitHub, Location (Austin, Texas)
 
@@ -62,12 +62,12 @@ Mobile-first: Tighter spacing on small screens, breathing room on desktop
 
 ### Structure (Reusable for all projects)
 1. **Container**: #151515 background, #262626 border, rounded corners
-2. **Hover Effect**: Lift (translate Y), shadow increase, border → #10B981
-3. **Category Tag**: Top-left pill badge (AUTOMATION/AI PRODUCT/RESEARCH), #10B981 with 20% opacity
+2. **Hover Effect**: Lift (translate Y), shadow increase, border → #F5C744
+3. **Category Tag**: Top-left pill badge (AUTOMATION/AI PRODUCT/RESEARCH), #F5C744 with 20% opacity
 4. **Visual Asset**: 16:9 image/video thumbnail OR abstract icon for projects without visuals
 5. **Title**: Bold, large (#F5F5F5)
 6. **Description**: Subtitle (#A3A3A3), one-line
-7. **Hero Metric**: Large bold number in #10B981 (e.g., "90% Time Reduction")
+7. **Hero Metric**: Large bold number in #F5C744 (e.g., "90% Time Reduction")
 8. **Tech Stack Pills**: Horizontal row, border style, #A3A3A3 text
 9. **CTA**: "View Project", "Watch Demo", or "Read Paper" button/link
 
