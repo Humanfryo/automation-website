@@ -50,7 +50,7 @@ function AnimatedNumber({ value, delay }: { value: string; delay: number }) {
     }
   }, [value, delay]);
   
-  return <span>{displayValue}</span>;
+  return <span className="text-[#f6ca46]">{displayValue}</span>;
 }
 
 export default function MetricBadge({ label, value, subtext, delay = 0 }: MetricBadgeProps) {
