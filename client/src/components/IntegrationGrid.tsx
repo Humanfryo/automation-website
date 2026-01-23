@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MessageSquare, Zap, Bot, Box, Share2, Cloud, Shield, Layers } from 'lucide-react';
+import { MessageSquare, Zap, Bot, Box, Share2, Cloud, Shield, Layers, Database, Globe, Lock, Cpu, Server, Wifi, Code, GitBranch } from 'lucide-react';
 
 const integrations = [
     { name: 'Salesforce', icon: Cloud },
@@ -11,42 +11,52 @@ const integrations = [
     { name: 'Notion', icon: Box },
     { name: 'Stripe', icon: Shield },
     { name: 'Jira', icon: Layers },
+    { name: 'Postgres', icon: Database },
+    { name: 'Webhooks', icon: Globe },
+    { name: 'Auth0', icon: Lock },
+    { name: 'AWS', icon: Server },
+    { name: 'Grafana', icon: Activity }, // Assuming Activity fits
+    { name: 'Python', icon: Code },
+    { name: 'GitHub', icon: GitBranch },
+    { name: 'API', icon: Wifi },
 ];
+
+import { Activity } from 'lucide-react';
 
 const IntegrationGrid = () => {
     return (
-        <section className="py-24 bg-rich-black relative border-t border-gray-dark border-b">
+        <section className="py-32 bg-black relative border-t border-gray-dark border-b">
             <div className="container mx-auto px-4 text-center">
-                <div className="mb-20">
-                    <h2 className="text-4xl md:text-[56px] font-bold text-white mb-6 relative inline-block pb-2">
-                        Works With Your Entire Stack
-                        <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-yellow"></span>
+                <div className="mb-24">
+                    <h2 className="text-5xl md:text-[64px] font-bold text-white mb-6">
+                        Works With Your <span className="text-yellow">Entire Stack</span>
                     </h2>
-                    <p className="text-xl text-gray-lightest max-w-2xl mx-auto mt-6">
-                        Seamlessly connect with your existing tools and platforms for unified automation.
+                    <p className="text-xl text-[#A0A0A0] mt-4 font-medium uppercase tracking-widest">
+                        Connects to 150+ tools out of the box
                     </p>
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-6 md:gap-8 max-w-4xl mx-auto">
+                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-8 max-w-[1400px] mx-auto">
                     {integrations.map((tool, index) => (
                         <motion.div
                             key={index}
-                            className="w-20 h-20 md:w-28 md:h-28 bg-black border border-gray-dark rounded-lg flex flex-col items-center justify-center gap-3 group cursor-default relative z-10 transition-colors"
-                            whileHover={{ scale: 1.1, borderColor: '#FDB72C' }}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            className="aspect-square bg-[#1A1A1A] border border-gray-dark rounded-lg flex flex-col items-center justify-center p-6 group cursor-default relative z-10 transition-all hover:bg-rich-black"
+                            whileHover={{ scale: 1.05, borderColor: '#FFB800', boxShadow: '0 0 20px rgba(255, 184, 0, 0.1)' }}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.05 }}
+                            transition={{ delay: index * 0.02 }}
                         >
-                            <tool.icon className="text-gray-medium group-hover:text-yellow transition-colors w-6 h-6 md:w-8 md:h-8" strokeWidth={1.5} />
-                            <span className="text-[10px] md:text-xs uppercase font-bold text-gray-medium group-hover:text-white transition-colors tracking-wider">{tool.name}</span>
+                            <tool.icon className="text-[#A0A0A0] group-hover:text-yellow transition-colors w-10 h-10 mb-3" strokeWidth={1.5} />
+                            <span className="text-[10px] uppercase font-bold text-[#737373] group-hover:text-white transition-colors tracking-wider">{tool.name}</span>
                         </motion.div>
                     ))}
                 </div>
 
-                <div className="mt-16">
-                    <p className="text-gray-lightest mb-4">Connect to 50+ tools out of the box</p>
-                    <button className="text-yellow font-semibold hover:underline decoration-2 underline-offset-4 text-sm uppercase tracking-wide">View all integrations →</button>
+                <div className="mt-20">
+                    <button className="bg-transparent border border-gray-dark text-white hover:border-yellow px-8 py-4 rounded font-bold uppercase tracking-wide transition-all hover:bg-yellow/10">
+                        View Integration Library
+                    </button>
                 </div>
             </div>
         </section>

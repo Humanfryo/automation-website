@@ -5,14 +5,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        black: '#0A0A0A',
+        black: '#000000',
         'rich-black': '#151515',
+        'card-dark': '#1A1A1A',
         white: '#FFFFFF',
         'off-white': '#F5F5F5',
         yellow: {
-          DEFAULT: '#FDB72C',
-          light: '#FEC85C',
-          dark: '#D99B24'
+          DEFAULT: '#FFB800',
+          light: '#FFC933',
+          dark: '#CC9300'
         },
         gray: {
           lightest: '#A3A3A3',

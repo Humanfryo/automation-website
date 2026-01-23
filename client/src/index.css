@@ -6,9 +6,15 @@
 
 @layer base {
   body {
-    @apply bg-black text-white font-sans;
+    @apply bg-black text-white font-sans text-lg leading-relaxed;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
 }

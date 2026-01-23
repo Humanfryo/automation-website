@@ -10,21 +10,21 @@ interface MetricCardProps {
 const MetricCard: React.FC<MetricCardProps> = ({ label, value, description }) => {
     return (
         <motion.div
-            className="bg-rich-black border border-gray-dark p-8 relative group cursor-default"
+            className="bg-rich-black border border-gray-dark p-10 relative group cursor-default rounded"
             whileHover={{
                 y: -8,
-                boxShadow: "0 0 30px rgba(253, 183, 44, 0.2)",
-                borderColor: "#FDB72C"
+                boxShadow: "0 4px 20px rgba(255, 184, 0, 0.15)",
+                borderColor: "#FFB800"
             }}
             transition={{ duration: 0.3 }}
         >
-            <div className="text-[13px] text-gray-lightest uppercase tracking-widest mb-4 font-semibold">
+            <div className="text-sm text-[#A0A0A0] uppercase tracking-widest mb-4 font-semibold">
                 {label}
             </div>
-            <div className="text-[64px] font-bold text-yellow leading-none mb-4 tracking-tighter">
+            <div className="text-[64px] font-bold text-yellow leading-none mb-4 tracking-tighter shadow-yellow-glow">
                 {value}
             </div>
-            <div className="text-gray-lightest text-base font-normal">
+            <div className="text-white text-lg font-normal">
                 {description}
             </div>
         </motion.div>
