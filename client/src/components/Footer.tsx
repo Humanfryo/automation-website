@@ -1,101 +1,67 @@
-import { Download, Linkedin, Github, Mail } from "lucide-react";
-import { SiUpwork } from "react-icons/si";
-import { Button } from "@/components/ui/button";
+import React from 'react';
 
-function N8NIcon({ className }: { className?: string }) {
+const Footer = () => {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="4" cy="12" r="2" />
-      <circle cx="9" cy="12" r="2" />
-      <circle cx="16" cy="8" r="2" />
-      <circle cx="16" cy="16" r="2" />
-      <circle cx="21" cy="8" r="2" />
-      <circle cx="21" cy="16" r="2" />
-      <path d="M6 12h1" />
-      <path d="M11 12h2c1 0 2-1 2-2v-2" />
-      <path d="M11 12h2c1 0 2 1 2 2v2" />
-      <path d="M18 8h1" />
-      <path d="M18 16h1" />
-    </svg>
-  );
-}
+    <footer className="bg-black border-t border-gray-dark pt-20 pb-10">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
+          {/* Brand */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-2 mb-6">
+              <div className="w-6 h-6 bg-yellow transform rotate-45"></div>
+              <span className="text-white font-bold text-xl tracking-tight">Spartan Flow</span>
+            </div>
+            <p className="text-gray-medium text-sm mb-6 max-w-xs leading-relaxed">
+              Enterprise AI Automation for modern revenue teams. Scalable, secure, and ready for compliant workflows.
+            </p>
+            <div className="text-gray-medium text-xs">
+              Powered by Embarqi
+            </div>
+          </div>
 
-export default function Footer() {
-  return (
-    <footer className="border-t border-border py-10 mb-20">
-      <div className="max-w-[1400px] mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-muted-foreground font-mono">
-          &copy; 2026 Hari Rajashekar
-        </p>
-        
-        <div className="flex items-center gap-1">
-          <Button 
-            variant="ghost" 
-            size="sm"
-            className="text-muted-foreground hover:text-primary hover:bg-transparent font-mono text-xs uppercase tracking-wider rounded-none"
-            onClick={() => console.log('Download resume clicked')}
-            data-testid="footer-resume"
-          >
-            <Download className="w-4 h-4 mr-2" />
-            Resume
-          </Button>
-          
-          <Button 
-            variant="ghost" 
-            size="icon"
-            className="text-muted-foreground hover:text-primary hover:bg-transparent rounded-none"
-            onClick={() => window.open('https://www.linkedin.com/in/hari-rajashekar-81816818a/', '_blank')}
-            data-testid="footer-linkedin"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-4 h-4" />
-          </Button>
-          
-          <Button 
-            variant="ghost" 
-            size="icon"
-            className="text-muted-foreground hover:text-primary hover:bg-transparent rounded-none"
-            onClick={() => window.open('https://github.com/Humanfryo', '_blank')}
-            data-testid="footer-github"
-            aria-label="GitHub"
-          >
-            <Github className="w-4 h-4" />
-          </Button>
-          
-          <Button 
-            variant="ghost" 
-            size="icon"
-            className="text-muted-foreground hover:text-primary hover:bg-transparent rounded-none"
-            onClick={() => window.location.href = 'mailto:haripxls@gmail.com'}
-            data-testid="footer-email"
-            aria-label="Email"
-          >
-            <Mail className="w-4 h-4" />
-          </Button>
-          
-          <Button 
-            variant="ghost" 
-            size="icon"
-            className="text-muted-foreground hover:text-primary hover:bg-transparent rounded-none"
-            onClick={() => window.open('https://www.upwork.com/freelancers/~0160930c7ee1c74265', '_blank')}
-            data-testid="footer-upwork"
-            aria-label="Upwork"
-          >
-            <SiUpwork className="w-4 h-4" />
-          </Button>
-          
-          <Button 
-            variant="ghost" 
-            size="icon"
-            className="text-muted-foreground hover:text-primary hover:bg-transparent rounded-none"
-            onClick={() => window.open('https://n8n.io/creators/hari', '_blank')}
-            data-testid="footer-n8n"
-            aria-label="N8N Creator Profile"
-          >
-            <N8NIcon className="w-4 h-4" />
-          </Button>
+          {/* Links */}
+          <div>
+            <h4 className="text-white font-semibold mb-6">Product</h4>
+            <ul className="space-y-4">
+              <li><a href="#" className="text-gray-lightest hover:text-yellow text-sm transition-colors">Features</a></li>
+              <li><a href="#" className="text-gray-lightest hover:text-yellow text-sm transition-colors">Integrations</a></li>
+              <li><a href="#" className="text-gray-lightest hover:text-yellow text-sm transition-colors">Enterprise</a></li>
+              <li><a href="#" className="text-gray-lightest hover:text-yellow text-sm transition-colors">Pricing</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-6">Company</h4>
+            <ul className="space-y-4">
+              <li><a href="#" className="text-gray-lightest hover:text-yellow text-sm transition-colors">About</a></li>
+              <li><a href="#" className="text-gray-lightest hover:text-yellow text-sm transition-colors">Blog</a></li>
+              <li><a href="#" className="text-gray-lightest hover:text-yellow text-sm transition-colors">Careers</a></li>
+              <li><a href="#" className="text-gray-lightest hover:text-yellow text-sm transition-colors">Contact</a></li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h4 className="text-white font-semibold mb-6">Stay Updated</h4>
+            <div className="flex flex-col gap-3">
+              <input type="email" placeholder="Email address" className="bg-rich-black border border-gray-dark px-4 py-2 text-sm text-white focus:border-yellow outline-none rounded-sm transition-colors" />
+              <button className="bg-yellow text-black text-sm font-bold py-2 rounded-sm hover:bg-yellow-light transition-colors">Subscribe</button>
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-gray-dark flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-gray-medium text-xs">
+            © 2024 Spartan Flow. All rights reserved.
+          </div>
+          <div className="flex gap-6">
+            <a href="#" className="text-gray-medium hover:text-white text-xs transition-colors">Privacy Policy</a>
+            <a href="#" className="text-gray-medium hover:text-white text-xs transition-colors">Terms of Service</a>
+            <a href="#" className="text-gray-medium hover:text-white text-xs transition-colors">Cookies Settings</a>
+          </div>
         </div>
       </div>
     </footer>
   );
-}
+};
+export default Footer;

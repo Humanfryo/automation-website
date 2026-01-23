@@ -1,174 +1,86 @@
-import { motion } from "framer-motion";
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Download, ArrowRight } from "lucide-react";
-import { SiLinkedin, SiUpwork } from "react-icons/si";
-import MetricBadge from "./MetricBadge";
-import hariImage from "@assets/1724367522958_1767642079072.jpeg";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, FileText } from 'lucide-react';
+import MetricCard from './MetricCard';
 
-function N8NIcon({ className }: { className?: string }) {
+const Hero = () => {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="4" cy="12" r="2" />
-      <circle cx="9" cy="12" r="2" />
-      <circle cx="16" cy="8" r="2" />
-      <circle cx="16" cy="16" r="2" />
-      <circle cx="21" cy="8" r="2" />
-      <circle cx="21" cy="16" r="2" />
-      <path d="M6 12h1" />
-      <path d="M11 12h2c1 0 2-1 2-2v-2" />
-      <path d="M11 12h2c1 0 2 1 2 2v2" />
-      <path d="M18 8h1" />
-      <path d="M18 16h1" />
-    </svg>
-  );
-}
+    <section className="relative bg-black min-h-screen flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden">
+      {/* Noise Texture Overlay */}
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
-export default function Hero() {
-  return (
-    <section className="min-h-[90vh] flex flex-col items-center justify-center px-4 py-20 text-center relative">
-      <div className="absolute inset-0 grid-pattern opacity-50" />
-      
-      <div className="relative z-10 max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8"
-        >
-          <img 
-            src={hariImage} 
-            alt="Hari Rajashekar" 
-            className="w-32 h-32 md:w-40 md:h-40 mx-auto object-cover border-4 border-primary"
-            style={{ borderRadius: '50%' }}
-            data-testid="hero-image"
-          />
-        </motion.div>
+      <div className="container mx-auto px-4 flex flex-col items-center relative z-10 cursor-default">
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-lg md:text-xl text-primary font-mono uppercase tracking-[0.2em] mb-3"
-          data-testid="hero-greeting"
-        >
-          Hey, I'm Hari
-        </motion.p>
+        {/* Profile Badge - Placeholder */}
+        {/* <div className="w-[120px] h-[120px] rounded-full border-[3px] border-yellow flex items-center justify-center mb-10 overflow-hidden bg-rich-black">
+           <span className="text-4xl">🚀</span> 
+        </div> */}
 
+        {/* Small Intro */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.12 }}
-          className="flex items-center justify-center gap-4 mb-6"
+          className="flex items-center gap-2 mb-6"
         >
-          <a
-            href="https://www.linkedin.com/in/hari-rajashekar-81816818a"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
-            data-testid="link-linkedin"
-            aria-label="LinkedIn Profile"
-          >
-            <SiLinkedin className="w-5 h-5" />
-          </a>
-          <a
-            href="https://www.upwork.com/freelancers/~0160930c7ee1c74265"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
-            data-testid="link-upwork"
-            aria-label="Upwork Profile"
-          >
-            <SiUpwork className="w-5 h-5" />
-          </a>
-          <a
-            href="https://n8n.io/creators/hari"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
-            data-testid="link-n8n"
-            aria-label="N8N Creator Profile"
-          >
-            <N8NIcon className="w-5 h-5" />
-          </a>
+          <div className="w-1.5 h-1.5 rounded-full bg-yellow"></div>
+          <span className="text-[13px] uppercase tracking-[0.15em] text-gray-lightest font-semibold">
+            AI-POWERED AUTOMATION • EST 2024
+          </span>
         </motion.div>
 
+        {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight mb-6"
-          data-testid="hero-name"
+          transition={{ delay: 0.1 }}
+          className="text-5xl md:text-[80px] font-bold text-white text-center leading-[1.1] tracking-tight max-w-[1000px] mb-8"
         >
-          I help businesses automate & scale
+          We Help Businesses <br />
+          <span className="text-white">Automate & Scale</span> <br />
+          <span className="text-white">Revenue Operations</span>
         </motion.h1>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+
+        {/* Subheadline */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-2xl mx-auto mb-12"
+          transition={{ delay: 0.2 }}
+          className="text-lg md:text-xl text-off-white text-center max-w-[700px] font-normal leading-relaxed mb-16 opacity-90"
         >
-          <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-            Voice AI agents, multi-agent systems, and CRM workflows that actually work.
-            I love turning complex problems into elegant automation solutions.
-          </p>
+          Voice AI agents, multi-agent systems, and CRM workflows that actually work. We turn complex problems into elegant automation solutions.
+        </motion.p>
+
+        {/* Metric Cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-[1100px] mb-20"
+        >
+          <MetricCard label="REVENUE" value="$500K+" description="Pipeline ROI (proven compliance)" />
+          <MetricCard label="EFFICIENCY" value="10x" description="Faster workflows vs manual" />
+          <MetricCard label="ACCURACY" value="99%" description="AI agent precision rate" />
         </motion.div>
 
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row flex-wrap justify-center gap-6 mb-14"
+          transition={{ delay: 0.4 }}
+          className="flex flex-col md:flex-row gap-5"
         >
-          <MetricBadge 
-            label="SAVED"
-            value="$500K+" 
-            subtext="Fortune 500 pharma compliance"
-            delay={0.4} 
-          />
-          <MetricBadge 
-            label="BOOSTED"
-            value="10x" 
-            subtext="$60 → $600/month donations"
-            delay={0.5} 
-          />
-          <MetricBadge 
-            label="UPTIME"
-            value="99.8%" 
-            subtext="50+ countries (Roche devices)"
-            delay={0.6} 
-          />
+          <button className="bg-yellow text-black h-14 px-8 rounded text-base font-semibold flex items-center justify-center gap-2 hover:bg-yellow-light transition-all hover:-translate-y-0.5 shadow-[0_4px_14px_rgba(253,183,44,0.3)]">
+            LET'S CHAT <ArrowRight size={20} />
+          </button>
+
+          <button className="bg-transparent border-2 border-gray-dark text-white h-14 px-8 rounded text-base font-semibold flex items-center justify-center gap-2 hover:border-yellow hover:bg-yellow/5 transition-all hover:text-white">
+            <FileText size={20} /> VIEW CASE STUDIES
+          </button>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <Link href="/contact">
-            <Button 
-              size="lg" 
-              className="min-w-[180px] h-14 text-base font-mono uppercase tracking-wider gradient-primary border-0 rounded-none hover:opacity-90 transition-opacity" 
-              data-testid="cta-lets-talk"
-            >
-              Let's Chat
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </Link>
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="min-w-[180px] h-14 text-base font-mono uppercase tracking-wider rounded-none border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
-            onClick={() => console.log('Download resume')}
-            data-testid="cta-resume"
-          >
-            <Download className="w-4 h-4 mr-2" />
-            Resume
-          </Button>
-        </motion.div>
       </div>
     </section>
   );
-}
+};
+
+export default Hero;
