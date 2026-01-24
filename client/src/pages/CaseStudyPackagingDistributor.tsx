@@ -1,5 +1,6 @@
 import React from 'react';
 import { FileText, CheckCircle, ArrowRight, AlertTriangle, Zap, Check } from 'lucide-react';
+import { Link } from 'wouter';
 
 const CaseStudyPackagingDistributor = () => {
     return (
@@ -12,7 +13,7 @@ const CaseStudyPackagingDistributor = () => {
                 <div className="container mx-auto px-4 max-w-[900px]">
                     {/* Breadcrumb */}
                     <div className="text-sm text-[#A0A0A0] mb-8 font-medium">
-                        <a href="/" className="hover:text-yellow transition-colors">Home</a> &gt; <a href="/#results" className="hover:text-yellow transition-colors">Results</a> &gt; <span className="text-white">Packaging Distributor Case Study</span>
+                        <Link href="/" className="hover:text-yellow transition-colors">Home</Link> &gt; <a href="/#results" className="hover:text-yellow transition-colors">Results</a> &gt; <span className="text-white">Packaging Distributor Case Study</span>
                     </div>
 
                     <div className="text-center">
@@ -372,7 +373,7 @@ Southeast Packaging Solutions`}
                 </section>
 
                 <div className="mt-20 pt-10 border-t border-gray-dark flex justify-between text-sm font-bold uppercase tracking-wider text-[#A0A0A0]">
-                    <a href="/case-studies/precision-parts-47-meetings-90-days" className="hover:text-yellow flex items-center gap-2">← Case Study #1: Precision Parts</a>
+                    <Link href="/case-studies/precision-parts-47-meetings-90-days" className="hover:text-yellow flex items-center gap-2">← Case Study #1: Precision Parts</Link>
                     <a href="#" className="hover:text-yellow flex items-center gap-2">Case Study #3: Chemical Manufacturer →</a>
                 </div>
             </div>

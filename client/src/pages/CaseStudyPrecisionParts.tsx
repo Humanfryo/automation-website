@@ -1,6 +1,6 @@
-import React from 'react';
 import { FileText, CheckCircle, ArrowRight, User } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'wouter';
 
 const CaseStudyPrecisionParts = () => {
     return (
@@ -13,7 +13,7 @@ const CaseStudyPrecisionParts = () => {
                 <div className="container mx-auto px-4 max-w-[900px]">
                     {/* Breadcrumb */}
                     <div className="text-sm text-[#A0A0A0] mb-8 font-medium">
-                        <a href="/" className="hover:text-yellow transition-colors">Home</a> &gt; <a href="/#results" className="hover:text-yellow transition-colors">Results</a> &gt; <span className="text-white">Precision Parts Case Study</span>
+                        <Link href="/" className="hover:text-yellow transition-colors">Home</Link> &gt; <a href="/#results" className="hover:text-yellow transition-colors">Results</a> &gt; <span className="text-white">Precision Parts Case Study</span>
                     </div>
 
                     <div className="text-center">

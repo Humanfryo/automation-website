@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'wouter';
 
 interface FeatureCardProps {
     category: string;
@@ -60,9 +61,9 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ category, title, description,
 
             <div className="mt-auto pt-6 border-t border-gray-dark/50">
                 {link ? (
-                    <a href={link} className="text-yellow text-base font-bold uppercase tracking-wide flex items-center gap-2 group-hover:gap-4 transition-all">
+                    <Link href={link} className="text-yellow text-base font-bold uppercase tracking-wide flex items-center gap-2 group-hover:gap-4 transition-all">
                         View Case Study <ArrowRight size={20} className="group-hover:drop-shadow-[0_0_8px_rgba(255,184,0,0.8)]" />
-                    </a>
+                    </Link>
                 ) : (
                     <button className="text-yellow text-base font-bold uppercase tracking-wide flex items-center gap-2 group-hover:gap-4 transition-all">
                         View Case Study <ArrowRight size={20} className="group-hover:drop-shadow-[0_0_8px_rgba(255,184,0,0.8)]" />
