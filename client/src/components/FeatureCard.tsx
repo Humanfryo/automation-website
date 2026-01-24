@@ -10,9 +10,10 @@ interface FeatureCardProps {
     subMetric: string;
     tags: string[];
     visual?: React.ReactNode;
+    link?: string;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ category, title, description, metric, subMetric, tags, visual }) => {
+const FeatureCard: React.FC<FeatureCardProps> = ({ category, title, description, metric, subMetric, tags, visual, link }) => {
     return (
         <motion.div
             className="bg-rich-black border border-gray-dark rounded-lg p-8 md:p-10 relative overflow-hidden group hover:border-yellow transition-all duration-300 flex flex-col h-full shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
@@ -58,9 +59,15 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ category, title, description,
             </div>
 
             <div className="mt-auto pt-6 border-t border-gray-dark/50">
-                <button className="text-yellow text-base font-bold uppercase tracking-wide flex items-center gap-2 group-hover:gap-4 transition-all">
-                    View Case Study <ArrowRight size={20} className="group-hover:drop-shadow-[0_0_8px_rgba(255,184,0,0.8)]" />
-                </button>
+                {link ? (
+                    <a href={link} className="text-yellow text-base font-bold uppercase tracking-wide flex items-center gap-2 group-hover:gap-4 transition-all">
+                        View Case Study <ArrowRight size={20} className="group-hover:drop-shadow-[0_0_8px_rgba(255,184,0,0.8)]" />
+                    </a>
+                ) : (
+                    <button className="text-yellow text-base font-bold uppercase tracking-wide flex items-center gap-2 group-hover:gap-4 transition-all">
+                        View Case Study <ArrowRight size={20} className="group-hover:drop-shadow-[0_0_8px_rgba(255,184,0,0.8)]" />
+                    </button>
+                )}
             </div>
         </motion.div>
     );
