@@ -45,7 +45,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ category, title, description,
             </p>
 
             <div className="mb-8 p-6 bg-black/30 rounded border border-gray-dark/50">
-                <div className="text-[48px] font-bold text-yellow mb-1 shadow-yellow-glow">{metric}</div>
+                <div className="text-4xl md:text-5xl font-bold text-yellow mb-2 shadow-yellow-glow leading-tight">{metric}</div>
                 <div className="text-sm text-[#A0A0A0] font-medium uppercase tracking-wide">{subMetric}</div>
             </div>
 
