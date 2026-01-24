@@ -18,7 +18,7 @@ const steps = [
     {
         icon: Rocket,
         title: "3. Campaign Launch",
-        description: "We send 500 personalized emails per week to qualified manufacturing buyers",
+        description: "We send 500 personalized emails per week to qualified industrial buyers",
         timeline: "Week 4+"
     },
     {
@@ -34,9 +34,10 @@ const HowItWorks = () => {
         <section id="how-it-works" className="py-24 bg-black relative border-t border-gray-dark">
             <div className="container mx-auto px-4">
                 <div className="mb-16 text-center">
+                    <span className="text-[13px] text-yellow uppercase tracking-[0.1em] font-bold mb-4 block">OUR PROCESS</span>
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">How It Works</h2>
                     <p className="text-[#A0A0A0] text-xl max-w-2xl mx-auto">
-                        Four simple steps to fill your pipeline with qualified manufacturing buyers
+                        Four simple steps to fill your pipeline with qualified industrial buyers
                     </p>
                 </div>
 

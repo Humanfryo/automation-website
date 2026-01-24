@@ -46,7 +46,7 @@ const App = () => {
                   <span className="absolute bottom-1 left-0 w-full h-1 bg-yellow origin-left transform scale-x-50"></span>
                 </h2>
                 <p className="text-[#A0A0A0] text-xl max-w-xl">
-                  See how manufacturing leaders are filling their pipelines with qualified buyers.
+                  See how industrial leaders are filling their pipelines with qualified buyers.
                 </p>
               </div>
               <button className="text-yellow text-base font-bold uppercase tracking-wide flex items-center gap-2 hover:gap-3 transition-all">

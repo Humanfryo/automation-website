@@ -21,7 +21,7 @@ const Hero = () => {
         >
           <div className="w-2 h-2 rounded-full bg-yellow shadow-[0_0_10px_#FFB800]"></div>
           <span className="text-sm uppercase tracking-[0.2em] text-gray-lightest font-bold">
-            APPOINTMENT SETTING FOR MANUFACTURING
+            APPOINTMENT SETTING FOR INDUSTRIAL COMPANIES
           </span>
         </motion.div>
 
@@ -33,7 +33,7 @@ const Hero = () => {
           className="text-5xl md:text-[80px] font-bold text-white leading-[1.05] tracking-tight max-w-[1200px] mb-8"
         >
           Fill Your Sales Calendar with <br />
-          <span className="text-white">Qualified Manufacturing Buyers</span>
+          <span className="text-white">Qualified Industrial Buyers</span>
         </motion.h1>
 
         {/* Subheadline */}
@@ -43,7 +43,7 @@ const Hero = () => {
           transition={{ delay: 0.2 }}
           className="text-lg md:text-xl text-off-white max-w-[800px] font-normal leading-relaxed mb-16"
         >
-          We book 8-12 qualified meetings per month with decision-makers at mid-market manufacturing companies. Your team focuses on closing, not prospecting.
+          We book 8-12 qualified meetings per month with decision-makers at mid-market industrial companies—including manufacturing, distribution, and supply chain. Your team focuses on closing, not prospecting.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -63,7 +63,7 @@ const Hero = () => {
             </button>
           </div>
           <p className="text-gray-medium text-sm">
-            60-day money-back guarantee • No contracts • Manufacturing-focused
+            60-day money-back guarantee • No contracts • Industrial-focused
           </p>
         </motion.div>
 

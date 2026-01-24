@@ -10,7 +10,7 @@ interface MetricCardProps {
 const MetricCard: React.FC<MetricCardProps> = ({ label, value, description }) => {
     return (
         <motion.div
-            className="bg-rich-black border border-gray-dark p-10 relative group cursor-default rounded"
+            className="bg-[#151515] border border-gray-dark p-10 relative group cursor-default rounded"
             whileHover={{
                 y: -8,
                 boxShadow: "0 4px 20px rgba(255, 184, 0, 0.15)",

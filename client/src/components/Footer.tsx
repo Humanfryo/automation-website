@@ -13,7 +13,7 @@ const Footer = () => {
               <span className="text-white font-bold text-xl tracking-tight">Spartan Flow</span>
             </div>
             <p className="text-white font-bold text-sm mb-6 leading-relaxed">
-              Appointment Setting for Manufacturing Companies
+              Appointment Setting for Industrial Companies
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-[#A0A0A0] hover:text-yellow transition-colors"><Linkedin size={20} /></a>
@@ -61,6 +61,8 @@ const Footer = () => {
               <li><a href="#" className="text-[#A0A0A0] hover:text-yellow text-sm transition-colors">Precision Parts</a></li>
               <li><a href="#" className="text-[#A0A0A0] hover:text-yellow text-sm transition-colors">Chemical Manufacturing</a></li>
               <li><a href="#" className="text-[#A0A0A0] hover:text-yellow text-sm transition-colors">Packaging & Distribution</a></li>
+              <li><a href="#" className="text-[#A0A0A0] hover:text-yellow text-sm transition-colors">Automotive Parts</a></li>
+              <li><a href="#" className="text-[#A0A0A0] hover:text-yellow text-sm transition-colors">Supply Chain</a></li>
             </ul>
           </div>
         </div>
@@ -81,7 +83,7 @@ const Footer = () => {
 
         <div className="mt-8 text-center max-w-3xl mx-auto">
           <p className="text-[#444] text-xs leading-relaxed">
-            SpartanFlow specializes in appointment setting for mid-market manufacturing companies ($10M-$100M revenue). We generate 8-12 qualified meetings per month so your sales team can focus on closing deals.
+            SpartanFlow specializes in appointment setting for mid-market industrial companies ($10M-$100M revenue)—manufacturing, distribution, and supply chain. We generate 8-12 qualified meetings per month so your sales team can focus on closing deals.
           </p>
         </div>
       </div>
