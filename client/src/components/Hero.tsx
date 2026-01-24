@@ -21,7 +21,7 @@ const Hero = () => {
         >
           <div className="w-2 h-2 rounded-full bg-yellow shadow-[0_0_10px_#FFB800]"></div>
           <span className="text-sm uppercase tracking-[0.2em] text-gray-lightest font-bold">
-            Enterprise AI Automation
+            APPOINTMENT SETTING FOR MANUFACTURING
           </span>
         </motion.div>
 
@@ -30,10 +30,10 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-6xl md:text-[88px] font-bold text-white leading-[1.05] tracking-tight max-w-[1200px] mb-8"
+          className="text-5xl md:text-[80px] font-bold text-white leading-[1.05] tracking-tight max-w-[1200px] mb-8"
         >
-          Automate & Scale <br />
-          <span className="text-white">Revenue Operations</span>
+          Fill Your Sales Calendar with <br />
+          <span className="text-white">Qualified Manufacturing Buyers</span>
         </motion.h1>
 
         {/* Subheadline */}
@@ -41,9 +41,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-xl md:text-2xl text-[#A0A0A0] max-w-[800px] font-normal leading-relaxed mb-16"
+          className="text-lg md:text-xl text-off-white max-w-[800px] font-normal leading-relaxed mb-16"
         >
-          Voice AI agents, multi-agent systems, and CRM workflows used by Fortune 500 companies.
+          We book 8-12 qualified meetings per month with decision-makers at mid-market manufacturing companies. Your team focuses on closing, not prospecting.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -51,27 +51,32 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="flex flex-col md:flex-row items-center gap-6 mb-24"
+          className="flex flex-col items-center gap-4 mb-24"
         >
-          <button className="bg-yellow text-black h-16 text-lg px-10 rounded font-bold flex items-center gap-3 hover:scale-[1.02] hover:shadow-[0_4px_20px_rgba(255,184,0,0.3)] transition-all">
-            Book a Demo <ArrowRight size={22} strokeWidth={2.5} />
-          </button>
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <button className="bg-yellow text-black h-16 text-lg px-10 rounded font-bold flex items-center gap-3 hover:scale-[1.02] hover:shadow-[0_4px_20px_rgba(255,184,0,0.3)] transition-all">
+              Book a Strategy Call <ArrowRight size={22} strokeWidth={2.5} />
+            </button>
 
-          <button className="bg-transparent border border-yellow/50 text-white h-16 text-lg px-10 rounded font-medium flex items-center gap-3 hover:bg-yellow/10 transition-all">
-            <FileText size={22} /> View Case Studies
-          </button>
+            <button className="bg-transparent border border-gray-dark text-white h-16 text-lg px-10 rounded font-medium flex items-center gap-3 hover:bg-white/5 transition-all">
+              <FileText size={22} /> How It Works
+            </button>
+          </div>
+          <p className="text-gray-medium text-sm">
+            60-day money-back guarantee • No contracts • Manufacturing-focused
+          </p>
         </motion.div>
 
-        {/* Metric Cards - Moved 500+ Companies here */}
+        {/* Metric Cards */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-[1200px]"
         >
-          <MetricCard label="REVENUE IMPACT" value="$500K+" description="Monthly pipeline ROI" />
-          <MetricCard label="ADOPTION" value="500+" description="Enterprise companies" />
-          <MetricCard label="EFFICIENCY" value="99.8%" description="AI accuracy rate" />
+          <MetricCard label="AVERAGE RESULTS" value="8-12" description="Qualified meetings per month" />
+          <MetricCard label="COST EFFICIENCY" value="$312" description="Average cost per meeting" />
+          <MetricCard label="EMAIL PERFORMANCE" value="22%" description="Average open rate (vs 15% avg)" />
         </motion.div>
 
       </div>

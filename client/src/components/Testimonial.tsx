@@ -1,7 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
-import { Star, Quote, Building2 } from 'lucide-react';
+import { Star, Quote, Building2, ShieldCheck, Mail, CalendarCheck } from 'lucide-react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -21,100 +21,91 @@ const swiperStyles = `
 `;
 
 const metrics = [
-    { value: "2.4M+", label: "Leads Generated" },
-    { value: "$1.2B", label: "Pipeline Value" },
-    { value: "4.9/5", label: "G2 Crowd Rating" },
+    { value: "8-12", label: "QUALIFIED MEETINGS/MONTH" },
+    { value: "$312", label: "COST PER MEETING" },
+    { value: "75%+", label: "MEETING SHOW RATE" },
+    { value: "60-Day", label: "MONEY-BACK GUARANTEE" },
 ];
 
 const testimonials = [
     {
-        name: "Sarah Chen",
-        role: "VP of Operations",
-        company: "TechFlow",
-        quote: "Spartan Flow completely transformed our outbound process. We went from manual chaos to a fully automated machine that prints meetings.",
+        name: "John Martinez",
+        role: "VP Sales",
+        company: "Industrial Equipment Manufacturer",
+        revenue: "$45M Revenue",
+        quote: "We went from 2 meetings per month to 12. SpartanFlow handles all the prospecting so my team can focus on closing deals. Worth every penny.",
     },
     {
-        name: "Michael Ross",
-        role: "CRO",
-        company: "GrowthWave",
-        quote: "The ROI was immediate. The AI agents handle the repetitive work so my team can focus on closing. It's not just a tool, it's a multiplier.",
+        name: "Lisa Chen",
+        role: "Director of Business Development",
+        company: "Precision Parts Manufacturer",
+        revenue: "$28M Revenue",
+        quote: "The 3-week setup seemed long at first, but once campaigns launched, we had qualified meetings every week. Best outsourcing decision we've made.",
     },
     {
-        name: "David Park",
-        role: "Founder",
-        company: "ScaleUp Labs",
-        quote: "I was skeptical about AI automation, but the accuracy is insane. 99.8% is not a marketing number, it's reality. Highly recommended.",
-    },
-    {
-        name: "Elena Rodriguez",
-        role: "Director of Sales",
-        company: "Veritas",
-        quote: "Setup was surprisingly fast. We were live in 3 days and saw 10x efficiency gains in our first month. The support team is also top tier.",
+        name: "David Thompson",
+        role: "Sales Director",
+        company: "Chemical Distribution",
+        revenue: "$60M Revenue",
+        quote: "We tried hiring SDRs internally but turnover killed us. SpartanFlow delivers consistent meetings month after month without the hiring headaches.",
     }
 ];
 
 const Testimonial = () => {
     return (
-        <section className="py-32 bg-black relative overflow-hidden">
+        <section id="results" className="py-24 bg-black relative border-t border-gray-dark">
             <style>{swiperStyles}</style>
 
-            {/* Trusted By Strip */}
-            <div className="container mx-auto px-4 mb-32">
-                <p className="text-center text-[#A0A0A0] text-sm font-bold uppercase tracking-widest mb-10">Trusted by Fortune 500 Companies</p>
-                <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                    {[1, 2, 3, 4, 5, 6].map((_, i) => (
-                        <div key={i} className="h-8 md:h-10 bg-[#333] w-32 md:w-40 rounded animate-pulse"></div> // Placeholder for logos
-                    ))}
-                </div>
-            </div>
+            <div className="container mx-auto px-4">
 
-            <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-
-                {/* Vertical Metrics (Left Side) */}
-                <div className="lg:col-span-4 flex flex-col gap-12 border-l border-gray-dark pl-8">
+                {/* Large Stats Row */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24 border-b border-gray-dark/50 pb-16">
                     {metrics.map((m, i) => (
-                        <div key={i} className="flex flex-col">
-                            <div className="text-[72px] font-bold text-yellow leading-none mb-2 tracking-tighter shadow-yellow-glow">{m.value}</div>
-                            <div className="text-xl text-white font-medium">{m.label}</div>
+                        <div key={i} className="text-center">
+                            <div className="text-5xl md:text-6xl font-bold text-yellow mb-4 tracking-tighter">{m.value}</div>
+                            <div className="text-sm text-[#A0A0A0] font-bold uppercase tracking-widest">{m.label}</div>
                         </div>
                     ))}
                 </div>
 
-                {/* Testimonials Carousel (Right Side) */}
-                <div className="lg:col-span-8 w-full overflow-hidden">
+                {/* Testimonials */}
+                <div className="max-w-6xl mx-auto">
                     <Swiper
                         modules={[Autoplay, Pagination]}
-                        spaceBetween={40}
+                        spaceBetween={30}
                         slidesPerView={1}
-                        autoplay={{ delay: 6000 }}
+                        autoplay={{ delay: 7000 }}
                         pagination={{ clickable: true }}
                         breakpoints={{
-                            768: { slidesPerView: 1.5 },
+                            768: { slidesPerView: 2 },
+                            1024: { slidesPerView: 3 },
                         }}
                         className="pb-20 !overflow-visible"
                     >
                         {testimonials.map((t, i) => (
-                            <SwiperSlide key={i}>
-                                <div className="bg-[#1A1A1A] border border-gray-dark p-10 rounded-lg h-full flex flex-col hover:border-yellow transition-all duration-300 shadow-xl relative group">
-                                    <Quote className="absolute top-8 right-8 text-[#333] group-hover:text-yellow/20 transition-colors" size={48} />
-
+                            <SwiperSlide key={i} className="h-full">
+                                <div className="bg-[#1A1A1A] border border-gray-dark p-8 md:p-10 rounded-lg h-full flex flex-col hover:border-yellow transition-all duration-300 shadow-xl relative group">
                                     <div className="flex gap-1 mb-8">
                                         {[...Array(5)].map((_, i) => <Star key={i} size={18} fill="#FFB800" className="text-yellow" />)}
                                     </div>
 
-                                    <blockquote className="text-xl text-white font-medium italic mb-10 leading-relaxed z-10">
+                                    <blockquote className="text-lg text-white font-medium italic mb-8 leading-relaxed z-10 flex-grow">
                                         "{t.quote}"
                                     </blockquote>
 
-                                    <div className="mt-auto flex items-center gap-4 pt-8 border-t border-gray-dark/50">
-                                        <div className="w-14 h-14 rounded-full bg-gray-dark flex items-center justify-center text-xl font-bold text-white border border-gray-500">
-                                            {t.name[0]}
+                                    <div className="mt-auto border-t border-gray-dark/50 pt-6">
+                                        <div className="flex items-center gap-4 mb-2">
+                                            <div className="w-12 h-12 rounded-full bg-gray-dark flex items-center justify-center text-lg font-bold text-white border border-gray-500">
+                                                {t.name[0]}
+                                            </div>
+                                            <div>
+                                                <div className="text-white font-bold">{t.name}</div>
+                                                <div className="text-[#A0A0A0] text-xs uppercase tracking-wide font-semibold">{t.role}</div>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <div className="text-white font-bold text-lg">{t.name}</div>
-                                            <div className="text-[#A0A0A0] text-sm uppercase tracking-wide">{t.role}, {t.company}</div>
+                                        <div className="text-[#555] text-xs mt-2 pl-16">
+                                            {t.company} • {t.revenue}
                                         </div>
-                                        <Building2 className="ml-auto text-gray-medium" size={24} />
                                     </div>
                                 </div>
                             </SwiperSlide>
