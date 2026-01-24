@@ -53,6 +53,7 @@ const Home = () => {
               metric="12 Meetings/Mo"
               subMetric="85% Show Rate • $50M Company"
               tags={['PACKAGING', 'DISTRIBUTION', 'INDUSTRIAL']}
+              link="/case-studies/packaging-distributor-q2-pipeline-6-weeks"
               visual={
                 <div className="text-yellow opacity-90 flex flex-col items-center gap-2">
                   <Package size={80} strokeWidth={1} className="drop-shadow-[0_0_15px_rgba(255,184,0,0.5)]" />
