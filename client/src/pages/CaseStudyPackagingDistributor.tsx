@@ -1,6 +1,7 @@
 import React from 'react';
 import { FileText, CheckCircle, ArrowRight, AlertTriangle, Zap, Check } from 'lucide-react';
 import { Link } from 'wouter';
+import BookCallButton from '../components/BookCallButton';
 
 const CaseStudyPackagingDistributor = () => {
     return (
@@ -358,9 +359,9 @@ Southeast Packaging Solutions`}
                         If you're facing a pipeline gap and need qualified meetings within weeks (not months), our Rapid Start service delivers results in your first 7-14 days.
                     </p>
                     <div className="flex flex-col md:flex-row justify-center gap-6">
-                        <button className="bg-yellow text-black h-14 px-8 rounded font-bold text-lg flex items-center justify-center gap-3 hover:bg-white hover:scale-105 transition-all">
+                        <BookCallButton className="bg-yellow text-black h-14 px-8 rounded font-bold text-lg flex items-center justify-center gap-3 hover:bg-white hover:scale-105 transition-all">
                             Book a Strategy Call <ArrowRight size={20} />
-                        </button>
+                        </BookCallButton>
                         <button className="bg-transparent border border-white text-white h-14 px-8 rounded font-bold text-lg flex items-center justify-center gap-3 hover:bg-white/10 transition-all">
                             Compare Services
                         </button>

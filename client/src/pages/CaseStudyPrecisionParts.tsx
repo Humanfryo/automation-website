@@ -1,6 +1,7 @@
 import { FileText, CheckCircle, ArrowRight, User } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
+import BookCallButton from '../components/BookCallButton';
 
 const CaseStudyPrecisionParts = () => {
     return (
@@ -260,9 +261,9 @@ Midwest Precision Manufacturing`}
                     <p className="text-xl text-[#A0A0A0] max-w-2xl mx-auto mb-10">
                         Book a 15-minute strategy call to see how we can generate 8-12 qualified meetings per month for your industrial company.
                     </p>
-                    <button className="bg-yellow text-black h-14 px-8 rounded font-bold text-lg flex items-center gap-3 mx-auto hover:bg-white hover:scale-105 transition-all">
+                    <BookCallButton className="bg-yellow text-black h-14 px-8 rounded font-bold text-lg flex items-center gap-3 mx-auto hover:bg-white hover:scale-105 transition-all">
                         Book Your Strategy Call <ArrowRight size={20} />
-                    </button>
+                    </BookCallButton>
                     <div className="flex justify-center gap-6 mt-8 text-sm text-[#777]">
                         <span className="flex items-center gap-2"><CheckCircle size={14} className="text-yellow" /> No contracts</span>
                         <span className="flex items-center gap-2"><CheckCircle size={14} className="text-yellow" /> 60-day guarantee</span>

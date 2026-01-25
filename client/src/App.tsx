@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'wouter';
 import Footer from './components/Footer';
+import BookCallButton from './components/BookCallButton';
 import Home from './pages/Home';
 import CaseStudyPrecisionParts from './pages/CaseStudyPrecisionParts';
 import CaseStudyPackagingDistributor from './pages/CaseStudyPackagingDistributor';
@@ -25,9 +26,8 @@ const App = () => {
               <a href="#" className="hover:text-yellow transition-colors">Industries We Serve</a>
               <a href="/#results" className="hover:text-yellow transition-colors">Results</a>
             </div>
-            <button className="hidden md:flex bg-yellow text-black border border-yellow px-6 py-2.5 rounded font-bold hover:bg-white hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all transform hover:-translate-y-0.5">
-              Book a Call
-            </button>
+            <BookCallButton className="hidden md:flex bg-yellow text-black border border-yellow px-6 py-2.5 rounded font-bold hover:bg-white hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all transform hover:-translate-y-0.5" />
+
           </div>
         </div>
       </nav>

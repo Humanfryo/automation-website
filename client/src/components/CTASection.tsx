@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Linkedin, Twitter, Youtube, CheckCircle } from 'lucide-react';
+import BookCallButton from './BookCallButton';
 
 const CTASection = () => {
     return (
@@ -19,9 +20,9 @@ const CTASection = () => {
                 </p>
 
                 <div className="flex flex-col items-center gap-6 mb-12">
-                    <button className="h-16 px-10 bg-yellow text-black text-lg font-bold rounded whitespace-nowrap hover:bg-[#FFC933] hover:shadow-[0_4px_20px_rgba(255,184,0,0.25)] hover:scale-[1.02] transition-all flex items-center justify-center gap-3 w-full md:w-auto">
+                    <BookCallButton className="h-16 px-10 bg-yellow text-black text-lg font-bold rounded whitespace-nowrap hover:bg-[#FFC933] hover:shadow-[0_4px_20px_rgba(255,184,0,0.25)] hover:scale-[1.02] transition-all flex items-center justify-center gap-3 w-full md:w-auto">
                         Book Your Strategy Call <ArrowRight size={22} strokeWidth={2.5} />
-                    </button>
+                    </BookCallButton>
                     <p className="text-[#A0A0A0] text-sm font-medium">
                         💡 Most clients see their first meetings by Week 5
                     </p>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { FileText, CheckCircle, ArrowRight, AlertTriangle, Zap, Check, BarChart, Users, TrendingUp } from 'lucide-react';
 import { Link } from 'wouter';
+import BookCallButton from '../components/BookCallButton';
 
 const CaseStudyChemicalDistributor = () => {
     return (
@@ -390,9 +391,9 @@ Thomas`}
                         If you're a $50M+ industrial company with Salesforce and need 20-30 qualified meetings per month with full attribution, our Enterprise tier delivers at scale.
                     </p>
                     <div className="flex flex-col md:flex-row justify-center gap-6">
-                        <button className="bg-yellow text-black h-14 px-8 rounded font-bold text-lg flex items-center justify-center gap-3 hover:bg-white hover:scale-105 transition-all">
+                        <BookCallButton className="bg-yellow text-black h-14 px-8 rounded font-bold text-lg flex items-center justify-center gap-3 hover:bg-white hover:scale-105 transition-all">
                             Book a Strategy Call <ArrowRight size={20} />
-                        </button>
+                        </BookCallButton>
                     </div>
                     <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-[#777]">
                         <span className="flex items-center gap-2"><CheckCircle size={14} className="text-yellow" /> Full Salesforce Integration</span>

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, FileText } from 'lucide-react';
 import MetricCard from './MetricCard';
+import BookCallButton from './BookCallButton';
 
 const Hero = () => {
   return (
@@ -54,9 +55,9 @@ const Hero = () => {
           className="flex flex-col items-center gap-4 mb-24"
         >
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <button className="bg-yellow text-black h-16 text-lg px-10 rounded font-bold flex items-center gap-3 hover:scale-[1.02] hover:shadow-[0_4px_20px_rgba(255,184,0,0.3)] transition-all">
+            <BookCallButton className="bg-yellow text-black h-16 text-lg px-10 rounded font-bold flex items-center gap-3 hover:scale-[1.02] hover:shadow-[0_4px_20px_rgba(255,184,0,0.3)] transition-all">
               Book a Strategy Call <ArrowRight size={22} strokeWidth={2.5} />
-            </button>
+            </BookCallButton>
 
             <button className="bg-transparent border border-gray-dark text-white h-16 text-lg px-10 rounded font-medium flex items-center gap-3 hover:bg-white/5 transition-all">
               <FileText size={22} /> How It Works
