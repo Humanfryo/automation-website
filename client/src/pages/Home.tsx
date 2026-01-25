@@ -34,7 +34,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <FeatureCard
               category="SPOTLIGHT"
-              title="47 Meetings Booked in 90 Days"
+              title="47 Meetings Booked in 90 Days "
               description="Industrial equipment manufacturer went from spending 60% of sales time prospecting to getting 15 qualified meetings per month."
               metric="47 Meetings"
               subMetric="90 Days • $35M Company"

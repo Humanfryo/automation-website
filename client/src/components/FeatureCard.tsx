@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 
 interface FeatureCardProps {
     category: string;
@@ -15,10 +15,13 @@ interface FeatureCardProps {
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ category, title, description, metric, subMetric, tags, visual, link }) => {
+    const [, setLocation] = useLocation();
+
     return (
         <motion.div
-            className="bg-rich-black border border-gray-dark rounded-lg p-8 md:p-10 relative overflow-hidden group hover:border-yellow transition-all duration-300 flex flex-col h-full shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            className={`bg-rich-black border border-gray-dark rounded-lg p-8 md:p-10 relative overflow-hidden group hover:border-yellow transition-all duration-300 flex flex-col h-full shadow-[0_8px_32px_rgba(0,0,0,0.4)] ${link ? 'cursor-pointer' : ''}`}
             whileHover={{ y: -8, boxShadow: '0 20px 60px rgba(255, 184, 0, 0.15)' }}
+            onClick={() => link && setLocation(link)}
         >
             {/* Badge */}
             <div className="flex justify-between items-start mb-8">
