@@ -374,7 +374,7 @@ Southeast Packaging Solutions`}
 
                 <div className="mt-20 pt-10 border-t border-gray-dark flex justify-between text-sm font-bold uppercase tracking-wider text-[#A0A0A0]">
                     <Link href="/case-studies/precision-parts-47-meetings-90-days" className="hover:text-yellow flex items-center gap-2">← Case Study #1: Precision Parts</Link>
-                    <a href="#" className="hover:text-yellow flex items-center gap-2">Case Study #3: Chemical Manufacturer →</a>
+                    <Link href="/case-studies/chemical-distributor-6-month-growth-engine" className="hover:text-yellow flex items-center gap-2">Case Study #3: Chemical Distributor →</Link>
                 </div>
             </div>
         </div>

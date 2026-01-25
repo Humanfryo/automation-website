@@ -269,6 +269,10 @@ Midwest Precision Manufacturing`}
                         <span className="flex items-center gap-2"><CheckCircle size={14} className="text-yellow" /> Industrial focused</span>
                     </div>
                 </section>
+                <div className="mt-20 pt-10 border-t border-gray-dark flex justify-between text-sm font-bold uppercase tracking-wider text-[#A0A0A0]">
+                    <Link href="/" className="hover:text-yellow flex items-center gap-2">← Back to Home</Link>
+                    <Link href="/case-studies/packaging-distributor-q2-pipeline-6-weeks" className="hover:text-yellow flex items-center gap-2">Case Study #2: Packaging →</Link>
+                </div>
             </div>
         </div>
     );

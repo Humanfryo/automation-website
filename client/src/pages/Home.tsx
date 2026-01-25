@@ -67,6 +67,7 @@ const Home = () => {
               metric="$2M Pipeline"
               subMetric="60+ Meetings • $75M Company"
               tags={['CHEMICALS', 'MANUFACTURING', 'SPECIALTY']}
+              link="/case-studies/chemical-distributor-6-month-growth-engine"
               visual={
                 <div className="text-yellow opacity-90 flex flex-col items-center gap-2">
                   <Wrench size={80} strokeWidth={1} className="drop-shadow-[0_0_15px_rgba(255,184,0,0.5)]" />

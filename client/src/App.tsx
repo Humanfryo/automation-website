@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import CaseStudyPrecisionParts from './pages/CaseStudyPrecisionParts';
 import CaseStudyPackagingDistributor from './pages/CaseStudyPackagingDistributor';
+import CaseStudyChemicalDistributor from './pages/CaseStudyChemicalDistributor';
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/" component={Home} />
         <Route path="/case-studies/precision-parts-47-meetings-90-days" component={CaseStudyPrecisionParts} />
         <Route path="/case-studies/packaging-distributor-q2-pipeline-6-weeks" component={CaseStudyPackagingDistributor} />
+        <Route path="/case-studies/chemical-distributor-6-month-growth-engine" component={CaseStudyChemicalDistributor} />
 
         {/* Fallback to Home for unknown routes */}
         <Route component={Home} />
