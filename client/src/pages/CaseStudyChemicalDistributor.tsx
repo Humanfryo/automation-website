@@ -4,6 +4,10 @@ import { Link } from 'wouter';
 import BookCallButton from '../components/BookCallButton';
 
 const CaseStudyChemicalDistributor = () => {
+    React.useEffect(() => {
+        document.title = "Case Study 3: $2.1M Closed in 6 Months - Chemical Distributor Case Study | Spartan Flow";
+    }, []);
+
     return (
         <div className="bg-black text-white selection:bg-yellow selection:text-black font-sans">
             {/* Hero Section */}

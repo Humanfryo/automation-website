@@ -8,6 +8,10 @@ import Testimonial from '../components/Testimonial';
 import CTASection from '../components/CTASection';
 
 const Home = () => {
+  React.useEffect(() => {
+    document.title = "Spartan Flow - Appointment Setting for Industrial Companies | B2B Lead Generation";
+  }, []);
+
   return (
     <main>
       <Hero />

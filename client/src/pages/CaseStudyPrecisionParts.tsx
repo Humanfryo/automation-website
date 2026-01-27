@@ -1,9 +1,14 @@
+import React from 'react';
 import { FileText, CheckCircle, ArrowRight, User } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import BookCallButton from '../components/BookCallButton';
 
 const CaseStudyPrecisionParts = () => {
+    React.useEffect(() => {
+        document.title = "Case Study 1: 47 Meetings in 90 Days - Precision Parts Case Study | Spartan Flow";
+    }, []);
+
     return (
         <div className="bg-black text-white selection:bg-yellow selection:text-black font-sans">
             {/* Hero Section */}
