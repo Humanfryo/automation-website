@@ -1,12 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 0 0% 0%;
+    /* #000000 */
+    --foreground: 0 0% 100%;
+    /* #FFFFFF */
+
+    --card: 0 0% 10.2%;
+    /* #1A1A1A */
+    --card-foreground: 0 0% 100%;
+    /* #FFFFFF */
+
+    --popover: 0 0% 10.2%;
+    /* #1A1A1A */
+    --popover-foreground: 0 0% 100%;
+    /* #FFFFFF */
+
+    --primary: 43 100% 50%;
+    /* #FFB800 */
+    --primary-foreground: 0 0% 0%;
+    /* #000000 */
+
+    --secondary: 0 0% 10.2%;
+    /* #1A1A1A */
+    --secondary-foreground: 0 0% 62.7%;
+    /* #A0A0A0 */
+
+    --muted: 0 0% 10.2%;
+    /* #1A1A1A */
+    --muted-foreground: 0 0% 62.7%;
+    /* #A0A0A0 */
+
+    --accent: 44 100% 60%;
+    /* #FFC933 */
+    --accent-foreground: 0 0% 0%;
+    /* #000000 */
+
+    --destructive: 4 100% 59%;
+    /* #FF3B30 */
+    --destructive-foreground: 0 0% 100%;
+    /* #FFFFFF */
+
+    --border: 43 100% 50%;
+    /* #FFB800 (using primary color for borders as per design or subtle variant) */
+    --input: 0 0% 10.2%;
+    --ring: 43 100% 50%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
   body {
-    @apply bg-black text-white font-sans text-lg leading-relaxed;
+    @apply bg-background text-foreground font-sans antialiased;
   }
 
   h1,
@@ -15,6 +72,6 @@
   h4,
   h5,
   h6 {
-    @apply font-heading;
+    @apply font-bold tracking-tight;
   }
 }
