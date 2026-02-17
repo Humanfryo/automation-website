@@ -1,44 +1,65 @@
 import BookCallButton from "./BookCallButton";
-import { Check } from "lucide-react";
 
-export default function FinalCTA() {
+// Assuming we want to trigger the Lead Magnet modal from the secondary link, 
+// we might need to accept a prop or use a global state if not passed down.
+// For now, I'll assume we can pass an optional onOpenLeadMagnet prop or similar, 
+// but since this component is reused, I should update the props interface if needed.
+// However, looking at Home.tsx, FinalCTA typically sits at the bottom.
+// I'll add the onOpenLeadMagnet prop to the component to make it functional.
+
+interface FinalCTAProps {
+    onOpenLeadMagnet?: () => void;
+}
+
+export default function FinalCTA({ onOpenLeadMagnet }: FinalCTAProps) {
     return (
-        <section className="bg-secondary py-20 px-4 relative overflow-hidden">
-            {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none" />
+        <section className="bg-[#111111] py-20 md:py-32 relative overflow-hidden border-t border-[#F59E0B]">
+            {/* Subtle background glow */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#F59E0B]/5 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="container mx-auto max-w-4xl text-center relative z-10">
-                <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
-                    Ready to Fill Your Pipeline with <span className="text-primary">Qualified Buyers?</span>
+            <div className="container mx-auto px-4 md:px-6 max-w-[700px] relative z-10 text-center">
+
+                {/* Heading */}
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                    Ready to Stop Guessing and Start Booking?
                 </h2>
 
-                <p className="text-xl md:text-2xl text-secondary-foreground leading-relaxed mb-12 max-w-3xl mx-auto">
-                    Book a 14-minute strategy call. We'll discuss your target market, ideal deal size,
-                    and figure out exactly how we'd generate 8-12 meetings per month for your team.
+                {/* Sub-heading */}
+                <p className="text-[#D1D5DB] text-lg md:text-xl leading-relaxed mb-10">
+                    Join B2B companies that fill their calendars on autopilot — without hiring another salesperson.
                 </p>
 
-                <div className="flex flex-col items-center gap-6">
-                    <BookCallButton className="bg-primary text-black hover:bg-white font-bold text-2xl px-16 py-6 rounded-lg shadow-[0_0_40px_rgba(255,184,0,0.4)] hover:shadow-[0_0_60px_rgba(255,184,0,0.6)] transition-all transform hover:-translate-y-1">
-                        Book Your Strategy Call
+                {/* Primary CTA */}
+                <div className="mb-6">
+                    <BookCallButton className="bg-[#F59E0B] text-black font-bold text-lg px-12 py-5 rounded-lg hover:bg-[#D97706] hover:scale-[1.02] transition-all shadow-[0_4px_20px_rgba(245,158,11,0.2)]">
+                        Book Your Free Pipeline Strategy Call
                     </BookCallButton>
-
-                    <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8 text-white/90 font-medium">
-                        <span className="flex items-center gap-2"><Check size={18} className="text-primary" /> 14-minute commitment</span>
-                        <span className="flex items-center gap-2"><Check size={18} className="text-primary" /> We'll tell you honestly if we're not a fit</span>
-                    </div>
-
-                    <a href="#" className="mt-8 text-primary hover:text-white underline decoration-primary/50 underline-offset-4 transition-colors">
-                        Or download our free framework: How to Book Industrial Meetings at $312 Each
-                    </a>
-
-                    <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs text-secondary-foreground/50 mt-8 uppercase tracking-wider">
-                        <span>No credit card required</span>
-                        <span className="hidden md:inline">|</span>
-                        <span>No long-term contracts</span>
-                        <span className="hidden md:inline">|</span>
-                        <span>100% transparent pricing</span>
-                    </div>
                 </div>
+
+                {/* Reassurance */}
+                <p className="text-[#9CA3AF] text-sm mb-8">
+                    No commitment. No pressure. Just a 30-minute conversation about your pipeline.
+                </p>
+
+                {/* Trust Metrics */}
+                <div className="flex flex-wrap justify-center gap-2 mb-8 text-[13px] text-[#6B7280]">
+                    <span>Typical results: 8-12 qualified meetings/month</span>
+                    <span className="opacity-50">•</span>
+                    <span>60-day guarantee</span>
+                    <span className="opacity-50">•</span>
+                    <span>Setup in days, not months</span>
+                </div>
+
+                {/* Secondary CTA */}
+                {onOpenLeadMagnet && (
+                    <button
+                        onClick={onOpenLeadMagnet}
+                        className="text-[#D1D5DB] text-sm underline hover:text-[#F59E0B] transition-colors"
+                    >
+                        Or Download: The $312/Meeting Framework (PDF)
+                    </button>
+                )}
+
             </div>
         </section>
     );

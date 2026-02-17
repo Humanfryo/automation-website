@@ -1,126 +1,159 @@
-import { TrendingUp, Package, Wrench, ArrowRight } from "lucide-react";
+import BookCallButton from "./BookCallButton";
 
 export default function ClientResults() {
-    const results = [
+    const metrics = [
+        { value: "140+", label: "Total Meetings Booked", sublabel: "Across all active campaigns" },
+        { value: "$312", label: "Average Cost Per Meeting", sublabel: "vs. $500-$800 with internal SDRs" },
+        { value: "22%", label: "Average Reply Rate", sublabel: "vs. 3% industry standard" },
+        { value: "$19.8M+", label: "Pipeline Generated", sublabel: "Total qualified pipeline value" }
+    ];
+
+    const caseStudies = [
         {
             badge: "MANUFACTURING",
-            icon: TrendingUp,
             title: "47 Meetings Booked in 90 Days",
-            companyDescriptor: "Midwest Industrial Valve Distributor • 45 Employees",
-            context: "Zero outbound process before Spartan Flow. Now averaging 5 qualified meetings per week with plant managers and procurement leads.",
-            mainMetric: { value: "47 Meetings", label: "90 Days" },
-            subMetrics: [
-                { value: "12", label: "Qualified Opps" },
-                { value: "$2.1M", label: "Pipeline" },
-                { value: "18%", label: "Convert Rate" }
+            descriptor: "Midwest Industrial Valve Distributor • 45 Employees",
+            before: "Before: Sales team spending 60% of time prospecting. Only 2 quality meetings per month.",
+            results: [
+                { value: "47", label: "Meetings Booked" },
+                { value: "15.7", label: "Meetings/Month avg." },
+                { value: "$1.8M", label: "Pipeline Created" },
+                { value: "$191", label: "Cost Per Meeting" }
             ],
-            tags: ["AUTOMOTIVE", "AEROSPACE", "$50K-$200K DEALS"]
+            quote: "We went from chasing leads to cherry-picking opportunities. Game-changer for our Q4 pipeline.",
+            author: "VP of Sales"
+        },
+        {
+            badge: "DISTRIBUTION",
+            title: "32 Meetings in 8 Weeks",
+            descriptor: "Southeast CNC Machining & Fabrication Shop • 120 Employees",
+            before: "Before: Two underperforming SDRs costing $160K/year combined. 4 meetings per month.",
+            results: [
+                { value: "32", label: "Meetings Booked" },
+                { value: "16", label: "Meetings/Month avg." },
+                { value: "$4.8M", label: "Pipeline Created" },
+                { value: "60%", label: "Cost Reduction" }
+            ],
+            quote: "Replaced two SDRs and got better results in half the time. The math was a no-brainer.",
+            author: "Sales Director"
         },
         {
             badge: "SUPPLY CHAIN",
-            icon: Package,
-            title: "Q2 Pipeline Filled in 8 Weeks",
-            companyDescriptor: "Southeast CNC Machining & Fabrication Shop • 120 Employees",
-            context: "Replaced two underperforming SDRs and cut cost-per-meeting by 60% within the first 8 weeks.",
-            mainMetric: { value: "32 Meetings", label: "56 Days" },
-            subMetrics: [
-                { value: "8", label: "Qualified Opps" },
-                { value: "$1.8M", label: "Pipeline" },
-                { value: "25%", label: "Convert Rate" }
-            ],
-            tags: ["LOGISTICS", "3PL", "$100K+ DEALS"]
-        },
-        {
-            badge: "AUTOMATION",
-            icon: Wrench,
             title: "$2M Pipeline Created in 90 Days",
-            companyDescriptor: "Texas-Based Industrial Supply Chain Company • 200+ Employees",
-            context: "Built a $2M qualified pipeline targeting logistics directors at Fortune 1000 manufacturers.",
-            mainMetric: { value: "$2M Pipeline", label: "14 Opportunities" },
-            subMetrics: [
-                { value: "38", label: "Meetings Booked" },
-                { value: "$143K", label: "Avg Deal Size" },
-                { value: "37%", label: "Convert Rate" }
+            descriptor: "Texas-Based Industrial Supply Chain Company • 200+ Employees",
+            before: "Before: Relying on trade shows and referrals. No outbound system in place.",
+            results: [
+                { value: "140", label: "Meetings Booked (6 mo)" },
+                { value: "$19.8M", label: "Total Pipeline" },
+                { value: "22", label: "Deals Closed" },
+                { value: "51.3x", label: "ROI" }
             ],
-            tags: ["MANUFACTURING", "AUTOMATION", "$100K-$300K"]
+            quote: "If someone asked me 'should I do 3 months or 6 months?' — I'd say six, without hesitation.",
+            author: "VP of Business Development"
         }
     ];
 
     return (
-        <section id="results" className="bg-black py-20 md:py-32">
-            <div className="container mx-auto px-4 md:px-6">
-                <div className="text-center mb-16">
-                    <div className="inline-block bg-primary px-3 py-1 rounded text-xs font-bold uppercase tracking-wider text-black mb-4">
-                        Proven Results
+        <section className="bg-[#0F0F0F] border-y border-[#2A2A2A] py-12 md:py-20">
+            <div className="container mx-auto px-4 md:px-6 max-w-[1100px]">
+
+                {/* Header */}
+                <div className="text-center mb-12">
+                    <div className="inline-block mb-3">
+                        <span className="text-[11px] font-bold text-[#F59E0B] uppercase tracking-[2px]">
+                            PROVEN RESULTS
+                        </span>
                     </div>
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-6 relative">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white">Client Results</h2>
-                        <a href="#case-studies" className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 text-primary text-sm font-semibold hover:underline flex items-center gap-1">
-                            VIEW ALL RESULTS <ArrowRight size={16} />
-                        </a>
-                    </div>
-                    <p className="text-secondary-foreground text-lg max-w-2xl mx-auto">
-                        See how we've filled sales calendars for industrial companies across manufacturing, distribution, and supply chain sectors.
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+                        Real Campaigns. Real Numbers. No Fluff.
+                    </h2>
+                    <p className="text-[#9CA3AF] text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+                        Every metric below comes from actual client campaigns. We show our work.
                     </p>
-                    <a href="#case-studies" className="md:hidden mt-6 inline-flex items-center gap-1 text-primary text-sm font-semibold hover:underline">
-                        VIEW ALL RESULTS <ArrowRight size={16} />
-                    </a>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {results.map((result, index) => (
+                {/* Aggregate Metrics Bar */}
+                <div className="bg-[#1A1A1A] rounded-xl p-8 mb-12 border border-[#2A2A2A]">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+                        {metrics.map((metric, index) => (
+                            <div key={index} className="text-center">
+                                <div className="text-3xl md:text-4xl font-bold text-[#F59E0B] mb-2">
+                                    {metric.value}
+                                </div>
+                                <div className="text-white text-sm font-semibold mb-1">
+                                    {metric.label}
+                                </div>
+                                <div className="text-[11px] text-[#9CA3AF]">
+                                    {metric.sublabel}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Case Study Cards */}
+                <div className="space-y-6 md:space-y-8">
+                    {caseStudies.map((study, index) => (
                         <div
                             key={index}
-                            className="bg-card border-t-4 border-primary rounded-xl p-6 md:p-8 hover:-translate-y-2 transition-transform duration-300 shadow-[0_4px_24px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_32px_rgba(255,184,0,0.15)] flex flex-col h-full"
+                            className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl p-6 md:p-8 hover:border-[#F59E0B]/30 transition-colors"
                         >
-                            <div className="inline-block bg-primary/20 text-primary px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider mb-6 self-start border border-primary/20">
-                                {result.badge}
-                            </div>
-
-                            <div className="flex justify-center mb-6">
-                                <result.icon className="w-16 h-16 text-primary stroke-[1] opacity-90" />
-                            </div>
-
-                            <h3 className="text-xl font-bold text-white text-center mb-2">{result.title}</h3>
-                            <div className="text-center mb-6">
-                                <div className="text-[#D1D5DB] text-sm font-medium mb-3">
-                                    {result.companyDescriptor}
-                                </div>
-                                <p className="text-[#9CA3AF] text-[13px] italic leading-relaxed max-w-[90%] mx-auto">
-                                    "{result.context}"
-                                </p>
-                            </div>
-
-                            {/* Main Metric */}
-                            <div className="text-center mb-8">
-                                <div className="text-4xl font-bold text-primary mb-1">{result.mainMetric.value}</div>
-                                <div className="text-sm text-white/50 uppercase tracking-widest">{result.mainMetric.label}</div>
-                            </div>
-
-                            {/* Sub Metrics */}
-                            <div className="flex justify-between items-center border-t border-b border-white/10 py-4 mb-6">
-                                {result.subMetrics.map((sub, i) => (
-                                    <div key={i} className="text-center px-2 first:pl-0 last:pr-0 border-r border-white/10 last:border-0 flex-1">
-                                        <div className="text-lg font-bold text-white">{sub.value}</div>
-                                        <div className="text-[10px] text-secondary-foreground uppercase mt-1">{sub.label}</div>
+                            <div className="flex flex-col md:flex-row gap-8">
+                                {/* Left Content */}
+                                <div className="flex-1">
+                                    <div className="inline-block bg-[#F59E0B] text-black text-[11px] font-bold px-2 py-1 rounded uppercase mb-4">
+                                        {study.badge}
                                     </div>
-                                ))}
-                            </div>
+                                    <h3 className="text-2xl font-bold text-white mb-2">
+                                        {study.title}
+                                    </h3>
+                                    <p className="text-[#9CA3AF] text-sm mb-4">
+                                        {study.descriptor}
+                                    </p>
+                                    <div className="border-l-4 border-red-500/40 pl-3 mb-6">
+                                        <p className="text-[13px] text-[#9CA3AF] italic">
+                                            {study.before}
+                                        </p>
+                                    </div>
 
-                            <div className="flex flex-wrap gap-2 justify-center mb-6 mt-auto">
-                                {result.tags.map((tag, i) => (
-                                    <span key={i} className="text-[10px] bg-white/5 text-white/70 px-2 py-1 rounded border border-white/5">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
+                                    {/* Quote Block */}
+                                    <div className="bg-[#111111] rounded-lg p-4 border border-[#2A2A2A]">
+                                        <p className="text-[#FDE68A] text-sm italic mb-2">
+                                            "{study.quote}"
+                                        </p>
+                                        <p className="text-[#9CA3AF] text-xs">
+                                            — {study.author}
+                                        </p>
+                                    </div>
+                                </div>
 
-                            <a href="#" className="flex items-center justify-center gap-2 text-primary text-sm font-bold hover:underline py-2">
-                                VIEW CASE STUDY <ArrowRight size={14} />
-                            </a>
+                                {/* Right Metrics Grid */}
+                                <div className="flex-1">
+                                    <div className="grid grid-cols-2 gap-4 h-full">
+                                        {study.results.map((result, i) => (
+                                            <div key={i} className="bg-[#111111] rounded-lg p-4 flex flex-col justify-center text-center border border-[#2A2A2A]">
+                                                <div className="text-2xl font-bold text-[#F59E0B] mb-1">
+                                                    {result.value}
+                                                </div>
+                                                <div className="text-xs text-white">
+                                                    {result.label}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
+
+                {/* CTA */}
+                <div className="mt-12 text-center">
+                    <BookCallButton className="bg-[#F59E0B] text-black font-bold text-base px-8 py-3.5 rounded-lg hover:bg-[#D97706] transition-colors inline-block shadow-[0_4px_20px_rgba(245,158,11,0.2)]">
+                        Get Results Like These — Book Your Strategy Call
+                    </BookCallButton>
+                </div>
+
             </div>
         </section>
     );
