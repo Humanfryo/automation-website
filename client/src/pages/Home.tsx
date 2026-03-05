@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Hero from '../components/Hero';
 import TrustBar from '../components/TrustBar';
+import HowItWorksVideo from '../components/HowItWorksVideo';
 import PainPoints from '../components/PainPoints';
 import TechnologyDifferentiator from '../components/TechnologyDifferentiator';
 import HowItWorks from '../components/HowItWorks';
@@ -46,6 +47,10 @@ const Home = () => {
     <div className="min-h-screen bg-[#111111] text-white">
       {/* 1. Hero */}
       <Hero onOpenLeadMagnet={() => handleOpenLeadMagnet("Hero CTA")} />
+
+      {/* How It Works Video (New) */}
+      <HowItWorksVideo />
+
       <TrustBar />
 
       {/* 2. Pain Points */}
@@ -76,7 +81,7 @@ const Home = () => {
       <Integrations />
 
       {/* 11. Lead Magnet (PDF Download) Section */}
-      <LeadMagnetSection onOpenLeadMagnet={() => handleOpenLeadMagnet("Mid-Page CTA")} />
+      <LeadMagnetSection onOpenModal={() => handleOpenLeadMagnet("Mid-Page CTA")} />
 
       {/* 12. FAQ (New) */}
       <FAQ />
