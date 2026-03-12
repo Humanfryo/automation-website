@@ -28,22 +28,22 @@ export default function ContactInfo() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="grid grid-cols-3 gap-8 py-12 border-t border-border mt-12"
+      className="grid grid-cols-3 gap-8 py-12 border-t border-gray-200 mt-12"
     >
       {contactItems.map((item) => {
         const Icon = item.icon;
         const content = (
-          <div 
+          <div
             className="flex flex-col items-center text-center group"
             data-testid={`contact-${item.label.toLowerCase()}`}
           >
-            <div className="w-12 h-12 border border-border group-hover:border-primary flex items-center justify-center mb-3 transition-colors">
-              <Icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+            <div className="w-12 h-12 border border-gray-200 rounded-lg group-hover:border-primary-500 flex items-center justify-center mb-3 transition-colors">
+              <Icon className="w-5 h-5 text-gray-400 group-hover:text-primary-500 transition-colors" />
             </div>
-            <span className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] font-mono mb-1">
+            <span className="text-[10px] text-gray-500 uppercase tracking-widest font-medium mb-1">
               {item.label}
             </span>
-            <span className="text-sm text-foreground group-hover:text-primary transition-colors">
+            <span className="text-sm text-gray-800 group-hover:text-primary-500 transition-colors">
               {item.value}
             </span>
           </div>
@@ -54,8 +54,8 @@ export default function ContactInfo() {
             <a
               key={item.label}
               href={item.href}
-              target={item.href.startsWith('http') ? '_blank' : undefined}
-              rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              target="_blank"
+              rel="noopener noreferrer"
               className="block"
             >
               {content}
@@ -63,11 +63,7 @@ export default function ContactInfo() {
           );
         }
 
-        return (
-          <div key={item.label}>
-            {content}
-          </div>
-        );
+        return <div key={item.label}>{content}</div>;
       })}
     </motion.div>
   );

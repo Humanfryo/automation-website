@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import BookCallButton from "./BookCallButton";
 
@@ -21,6 +21,7 @@ export default function Navbar() {
         { name: "How It Works", href: "#how-it-works" },
         { name: "Results", href: "#results" },
         { name: "About", href: "#about" },
+        { name: "FAQ", href: "#faq" },
     ];
 
     const handleLinkClick = () => {
@@ -32,18 +33,15 @@ export default function Navbar() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 isScrolled
-                    ? "bg-black/95 backdrop-blur-md border-b border-white/10 py-4"
-                    : "bg-transparent py-6"
+                    ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-3"
+                    : "bg-white py-5"
             )}
         >
-            <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+            <div className="container mx-auto px-4 md:px-6 flex items-center justify-between max-w-6xl">
                 {/* Logo */}
                 <Link href="/">
-                    <a className="flex items-center gap-2 group">
-                        <Shield className="w-8 h-8 text-primary fill-primary/10 group-hover:fill-primary/30 transition-colors" />
-                        <span className="text-xl md:text-2xl font-bold tracking-tight text-white group-hover:text-primary transition-colors">
-                            Spartan Flow
-                        </span>
+                    <a className="text-[1.35rem] font-heading font-bold text-primary-500 tracking-tight hover:opacity-80 transition-opacity">
+                        Spartanflow
                     </a>
                 </Link>
 
@@ -53,27 +51,35 @@ export default function Navbar() {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium text-white/80 hover:text-primary uppercase tracking-wide transition-colors"
+                            className="text-sm font-medium text-gray-600 hover:text-primary-500 transition-colors"
                         >
                             {link.name}
                         </a>
                     ))}
-                    <BookCallButton className="bg-primary text-black hover:bg-accent font-semibold px-6 py-2.5 rounded-lg transition-all transform hover:-translate-y-0.5 shadow-lg shadow-primary/20" />
+                    <Link href="/blog">
+                        <a className="text-sm font-medium text-gray-600 hover:text-primary-500 transition-colors">
+                            Blog
+                        </a>
+                    </Link>
+                    <BookCallButton className="bg-primary-500 text-white hover:bg-primary-600 font-semibold px-5 py-2.5 rounded-lg transition-all text-sm shadow-sm">
+                        Book a Strategy Call
+                    </BookCallButton>
                 </div>
 
                 {/* Mobile Menu Toggle */}
                 <button
-                    className="md:hidden text-white hover:text-primary transition-colors"
+                    className="md:hidden text-gray-700 hover:text-primary-500 transition-colors"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    aria-label="Toggle menu"
                 >
-                    {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                    {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
                 </button>
             </div>
 
             {/* Mobile Menu Overlay */}
             <div
                 className={cn(
-                    "fixed inset-0 bg-black/98 z-40 md:hidden flex flex-col items-center justify-center gap-8 transition-transform duration-300 ease-in-out",
+                    "fixed inset-0 bg-white z-40 md:hidden flex flex-col items-center justify-center gap-8 transition-transform duration-300 ease-in-out",
                     isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
                 )}
             >
@@ -82,13 +88,23 @@ export default function Navbar() {
                         key={link.name}
                         href={link.href}
                         onClick={handleLinkClick}
-                        className="text-2xl font-bold text-white hover:text-primary transition-colors"
+                        className="text-xl font-heading font-semibold text-gray-800 hover:text-primary-500 transition-colors"
                     >
                         {link.name}
                     </a>
                 ))}
+                <Link href="/blog">
+                    <a
+                        onClick={handleLinkClick}
+                        className="text-xl font-heading font-semibold text-gray-800 hover:text-primary-500 transition-colors"
+                    >
+                        Blog
+                    </a>
+                </Link>
                 <div onClick={handleLinkClick}>
-                    <BookCallButton className="bg-primary text-black hover:bg-accent font-bold text-lg px-8 py-4 rounded-xl shadow-[0_0_20px_rgba(255,184,0,0.3)]" />
+                    <BookCallButton className="bg-primary-500 text-white hover:bg-primary-600 font-semibold text-lg px-8 py-3.5 rounded-lg shadow-md">
+                        Book a Strategy Call
+                    </BookCallButton>
                 </div>
             </div>
         </nav>

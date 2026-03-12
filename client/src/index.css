@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,50 +6,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    /* #000000 */
-    --foreground: 0 0% 100%;
-    /* #FFFFFF */
+    --background: 0 0% 100%;
+    --foreground: 230 25% 14%;
 
-    --card: 0 0% 10.2%;
-    /* #1A1A1A */
-    --card-foreground: 0 0% 100%;
-    /* #FFFFFF */
+    --card: 210 20% 98%;
+    --card-foreground: 230 25% 14%;
 
-    --popover: 0 0% 10.2%;
-    /* #1A1A1A */
-    --popover-foreground: 0 0% 100%;
-    /* #FFFFFF */
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 25% 14%;
 
-    --primary: 43 100% 50%;
-    /* #FFB800 */
-    --primary-foreground: 0 0% 0%;
-    /* #000000 */
+    --primary: 200 56% 24%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 10.2%;
-    /* #1A1A1A */
-    --secondary-foreground: 0 0% 62.7%;
-    /* #A0A0A0 */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 215 16% 35%;
 
-    --muted: 0 0% 10.2%;
-    /* #1A1A1A */
-    --muted-foreground: 0 0% 62.7%;
-    /* #A0A0A0 */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 44 100% 60%;
-    /* #FFC933 */
-    --accent-foreground: 0 0% 0%;
-    /* #000000 */
+    --accent: 168 80% 32%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 4 100% 59%;
-    /* #FF3B30 */
+    --destructive: 4 80% 56%;
     --destructive-foreground: 0 0% 100%;
-    /* #FFFFFF */
 
-    --border: 43 100% 50%;
-    /* #FFB800 (using primary color for borders as per design or subtle variant) */
-    --input: 0 0% 10.2%;
-    --ring: 43 100% 50%;
+    --border: 220 13% 87%;
+    --input: 220 13% 87%;
+    --ring: 200 56% 24%;
 
     --radius: 0.5rem;
   }
@@ -66,12 +47,18 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-bold tracking-tight;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
   }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(30, 58, 95, 0.15);
+  color: #1A1A2E;
 }
