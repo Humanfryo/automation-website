@@ -3,10 +3,10 @@ import { FileText, Download, ArrowRight } from 'lucide-react';
 
 const resources = [
   {
-    title: "LinkedIn Content Engine — Built in 4 Hours with Claude Code",
-    description: "A step-by-step walkthrough of how we built a self-hosted LinkedIn content engine that generates voice-matched posts, creates branded images, and runs for $3/month. No agency. No templates. Just automation.",
+    title: "LinkedIn Content Engine — The Complete Tutorial",
+    description: "Everything you need to build a self-hosted LinkedIn content engine from scratch. Accounts, API keys, prerequisites, voice profile setup, and a step-by-step 5-phase build guide. Built in 4 hours with Claude Code. $3/month to run.",
     type: "pdf" as const,
-    file: "/resources/linkedin-content-engine-walkthrough.pdf",
+    file: "/resources/linkedin-content-engine-tutorial.pdf",
   },
 ];
 
