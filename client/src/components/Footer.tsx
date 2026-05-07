@@ -130,7 +130,7 @@ export default function Footer() {
               textTransform: "uppercase",
             }}
           >
-            © 2026 Spartan Flow LLC · Built in Austin & Pittsburgh
+            © 2026 Spartan Flow LLC · Built in Austin & Kansas City
           </span>
           <span
             className="mono"

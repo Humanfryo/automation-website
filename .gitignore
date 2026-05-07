@@ -5,3 +5,6 @@ dist
 .replit
 .vercel
 *.tar.gz
+
+# Local image masters — optimized .webp versions ship in client/public/
+Photos/

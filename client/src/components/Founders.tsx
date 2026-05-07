@@ -1,19 +1,20 @@
 import Eyebrow from "./Eyebrow";
-import PlaceholderImage from "./PlaceholderImage";
 import Reveal from "./Reveal";
 
 const team = [
   {
-    name: "Chris Berkemeyer",
-    role: "Co-founder",
-    based: "Based in Austin, TX",
-    bio: "I spent eleven years inside industrial sales orgs — first as an AE selling automation hardware to plant managers, then running a five-person SDR team at a logistics platform. I started Spartan Flow because I watched too many great products lose to mediocre ones with better outbound. I run our strategy and ICP work. If we get the targeting wrong, that's on me.",
+    name: "Chris Barkhurst",
+    role: "Head of Operations",
+    based: "Based in Kansas City, KS",
+    photo: "/founders/chris-barkhurst.webp",
+    bio: "I spent years inside industrial sales orgs — first as an AE selling automation hardware to plant managers, then running a five-person SDR team at a logistics platform. I watched outbound get botched the same way for a decade: bad SDR hires, agencies that booked junk, in-house teams that fizzled out three months in. I came on to run the client side and sales ops. Hari builds the system. I run the rooms.",
   },
   {
     name: "Hari Rajashekar",
-    role: "Co-founder",
-    based: "Based in Pittsburgh, PA",
-    bio: "I came up on the operator side — supply chain at a food manufacturer, then head of revenue ops at a fast-growing 3PL. I'm the one who'll actually be in your sequences and dashboards on a Tuesday at 7am. I care about clean data and short feedback loops. I'm allergic to vanity metrics and I won't put one in your monthly report.",
+    role: "Founder",
+    based: "Based in Austin, TX",
+    photo: "/founders/hari-rajashekar.webp",
+    bio: "I spent two years at Accenture as an automation solutions engineer — enterprise automation work, Veeva Vault rollouts for Roche, medical device monitoring builds. Left to build outbound systems for B2B services and manufacturing. I build the Spartan Flow platform end to end — the data layer, the sequences, the reply routing, the dashboards you see on Mondays. If something breaks, it breaks in front of me first.",
   },
 ];
 
@@ -52,7 +53,19 @@ export default function Founders() {
                 }}
               >
                 <div style={{ marginBottom: 28 }}>
-                  <PlaceholderImage label={`Portrait · ${p.name}`} ratio="4 / 5" />
+                  <img
+                    src={p.photo}
+                    alt={`${p.name}, ${p.role}`}
+                    loading="lazy"
+                    decoding="async"
+                    style={{
+                      display: "block",
+                      width: "100%",
+                      aspectRatio: "4 / 5",
+                      objectFit: "cover",
+                      border: "1px solid var(--rule)",
+                    }}
+                  />
                 </div>
                 <h3 className="display" style={{ fontSize: 32, margin: 0 }}>
                   {p.name}

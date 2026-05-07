@@ -2,16 +2,19 @@ import Eyebrow from "./Eyebrow";
 import Reveal from "./Reveal";
 
 const quotes = [
+  // TODO Hari: confirm real quote with attribution permission
   {
     q: "We've tried four agencies. Spartan Flow is the first one that actually read our deck before writing a sequence. The meetings show up on the calendar with the right titles attached.",
     who: "Marcus Halloway",
     role: "VP Sales · Heartland Logistics",
   },
+  // TODO Hari: confirm real quote with attribution permission
   {
     q: "The thing that sold me was the first call. Hari said, 'Here's the three reasons this might not work,' and walked through them. Nobody else did that.",
     who: "Priya Anand",
     role: "Founder · Northgate MSP",
   },
+  // TODO Hari: confirm real quote with attribution permission
   {
     q: "Our AEs used to skip discovery calls because half were bad fits. They don't anymore. That's the whole pitch.",
     who: "Dale Reinhart",
