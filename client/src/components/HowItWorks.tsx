@@ -1,95 +1,179 @@
-import { Phone, Settings, CalendarCheck, TrendingUp } from "lucide-react";
-import BookCallButton from "./BookCallButton";
+import ArrowIcon from "./ArrowIcon";
+import Eyebrow from "./Eyebrow";
+import Reveal from "./Reveal";
+
+const steps = [
+  {
+    n: "01",
+    title: "Learn your business",
+    time: "2 weeks",
+    body: "We sit with your sales team, your AEs, your founder. We read your last twelve closed-won deals. We don't write a single email until we can describe your buyer the way you do.",
+    detail: "/ ICP workshops · win-loss interviews · objection mapping",
+  },
+  {
+    n: "02",
+    title: "Build your outreach system",
+    time: "1 week",
+    body: "Domains warmed, lists scrubbed, sequences written by humans, signal-based triggers wired up. We show you every email before it goes out.",
+    detail: "/ 4–6 inboxes · domain warming · Clay enrichment · Smartlead",
+  },
+  {
+    n: "03",
+    title: "Land in your calendar",
+    time: "Ongoing",
+    body: "Replies route to a real person on our team. We qualify, push back on tire-kickers, and only book what fits your ICP. First qualified meeting usually lands in 30–45 days.",
+    detail: "/ live human reply-handling · ICP gating · no-show recovery",
+  },
+  {
+    n: "04",
+    title: "Optimize and scale",
+    time: "Ongoing",
+    body: "Weekly call, monthly written report, quarterly strategy. Sequences that aren't working get killed. The ones that are get more volume.",
+    detail: "/ weekly review · A/B at sequence level · honest reporting",
+  },
+];
 
 export default function HowItWorks() {
-    const steps = [
-        {
-            number: "01",
-            icon: Phone,
-            title: "We Learn Your Business",
-            description: "A 30-minute strategy call where we map your ideal customer profile, understand your value proposition, and define what a qualified meeting looks like for you.",
-            timeline: "Day 1",
-        },
-        {
-            number: "02",
-            icon: Settings,
-            title: "We Build Your Pipeline Engine",
-            description: "Custom AI-powered outreach campaigns built for your specific market. Lead sourcing, messaging, and targeting — all configured and tested before we go live.",
-            timeline: "Week 1–2",
-        },
-        {
-            number: "03",
-            icon: CalendarCheck,
-            title: "Meetings Land on Your Calendar",
-            description: "Decision-makers who match your ICP start appearing on your calendar. Every meeting comes with full context — who they are, why they're interested, and what they need.",
-            timeline: "Week 3–8",
-        },
-        {
-            number: "04",
-            icon: TrendingUp,
-            title: "We Optimize and Scale",
-            description: "Continuous refinement based on what's converting. We expand what works, cut what doesn't. Your pipeline compounds month over month.",
-            timeline: "Ongoing",
-        },
-    ];
+  return (
+    <section id="how" style={{ background: "var(--bone)" }}>
+      <div className="shell">
+        <Reveal>
+          <Eyebrow>§ 02 / How it works</Eyebrow>
+        </Reveal>
+        <Reveal delay={80}>
+          <h2
+            className="display"
+            style={{
+              fontSize: "clamp(32px, 4vw, 56px)",
+              margin: "20px 0 0",
+              maxWidth: 880,
+            }}
+          >
+            From kickoff to your first qualified meeting in{" "}
+            <span
+              className="serif-italic"
+              style={{ color: "var(--accent)", fontWeight: 400 }}
+            >
+              30–45 days
+            </span>
+            .
+          </h2>
+        </Reveal>
 
-    return (
-        <section id="how-it-works" className="bg-white py-16 md:py-24">
-            <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-                {/* Header */}
-                <div className="text-center mb-14">
-                    <span className="text-xs font-semibold text-accent-500 uppercase tracking-widest mb-3 block">
-                        Simple Process
-                    </span>
-                    <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
-                        From Strategy Call to Qualified Meetings in 4 Steps
-                    </h2>
-                    <p className="text-gray-600 text-lg max-w-xl mx-auto">
-                        No complexity on your end. We handle everything.
-                    </p>
+        <div style={{ height: 80 }} />
+
+        <div className="how-list">
+          {steps.map((s, i) => (
+            <Reveal key={s.n} delay={i * 60}>
+              <div
+                className="how-row"
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "120px 1fr 280px",
+                  gap: 48,
+                  padding: "40px 0",
+                  borderTop: "1px solid var(--rule-strong)",
+                  borderBottom:
+                    i === steps.length - 1
+                      ? "1px solid var(--rule-strong)"
+                      : "none",
+                  alignItems: "start",
+                }}
+              >
+                <div
+                  className="mono"
+                  style={{ fontSize: 14, color: "var(--graphite)" }}
+                >
+                  {s.n}
+                  <div
+                    style={{
+                      fontSize: 11,
+                      color: "var(--graphite-dim)",
+                      marginTop: 8,
+                      letterSpacing: "0.16em",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {s.time}
+                  </div>
                 </div>
-
-                {/* Steps */}
-                <div className="relative max-w-5xl mx-auto">
-                    {/* Desktop connecting line */}
-                    <div className="hidden lg:block absolute top-[52px] left-[12%] right-[12%] h-px bg-gray-200 z-0" />
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative z-10">
-                        {steps.map((step, index) => (
-                            <div key={index} className="relative text-center">
-                                {/* Step Number Circle */}
-                                <div className="inline-flex items-center justify-center w-[52px] h-[52px] rounded-full bg-primary-500 text-white text-lg font-heading font-bold mb-5 shadow-md mx-auto relative z-10">
-                                    {step.number}
-                                </div>
-
-                                {/* Icon */}
-                                <div className="inline-flex items-center justify-center w-10 h-10 bg-primary-50 rounded-lg mb-4 mx-auto block">
-                                    <step.icon className="w-5 h-5 text-primary-500" />
-                                </div>
-
-                                <h3 className="text-base font-heading font-bold text-gray-900 mb-2">
-                                    {step.title}
-                                </h3>
-
-                                <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                                    {step.description}
-                                </p>
-
-                                <span className="inline-block text-xs font-semibold text-accent-500 bg-accent-50 px-3 py-1 rounded-full">
-                                    {step.timeline}
-                                </span>
-                            </div>
-                        ))}
-                    </div>
+                <div>
+                  <h3
+                    className="display"
+                    style={{
+                      fontSize: 30,
+                      margin: 0,
+                      fontWeight: 700,
+                      letterSpacing: "-0.015em",
+                    }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p
+                    style={{
+                      margin: "16px 0 0",
+                      fontSize: 17,
+                      lineHeight: 1.6,
+                      color: "var(--graphite)",
+                      maxWidth: 620,
+                    }}
+                  >
+                    {s.body}
+                  </p>
                 </div>
-
-                {/* CTA */}
-                <div className="mt-14 text-center">
-                    <BookCallButton className="bg-primary-500 text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-primary-600 transition-all shadow-sm">
-                        Book Your Strategy Call — Step 1 Starts Here
-                    </BookCallButton>
+                <div
+                  className="mono"
+                  style={{
+                    fontSize: 12,
+                    color: "var(--graphite-dim)",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {s.detail}
                 </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <div style={{ height: 80 }} />
+
+        <Reveal>
+          <div
+            className="cta-strip"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr auto 1fr",
+              gap: 48,
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <Eyebrow>Ready?</Eyebrow>
+              <p
+                className="serif-italic"
+                style={{
+                  fontSize: 22,
+                  color: "var(--ink)",
+                  margin: "12px 0 0",
+                  lineHeight: 1.3,
+                }}
+              >
+                Book a 30-minute call. We'll tell you whether we can help.
+              </p>
             </div>
-        </section>
-    );
+            <div
+              className="cta-strip-divider"
+              style={{ width: 1, height: 60, background: "var(--rule-strong)" }}
+            />
+            <div style={{ justifySelf: "end" }}>
+              <a href="#cta" className="btn btn--primary">
+                Book a Strategy Call <ArrowIcon />
+              </a>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
 }
