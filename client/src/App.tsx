@@ -1,33 +1,35 @@
-import React from 'react';
-import { Route, Switch } from 'wouter';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import BookCallButton from './components/BookCallButton';
-import Home from './pages/Home';
-import CaseStudyChannelFusion from './pages/CaseStudyChannelFusion';
-import CaseStudyPrecisionNetworks from './pages/CaseStudyPrecisionNetworks';
-import CaseStudyAustinAnswerPro from './pages/CaseStudyAustinAnswerPro';
-import Contact from './pages/Contact';
-import Blog from './pages/Blog';
+import Engine from "./components/Engine";
+import FAQ from "./components/FAQ";
+import FinalCTA from "./components/FinalCTA";
+import Footer from "./components/Footer";
+import Founders from "./components/Founders";
+import Guarantee from "./components/Guarantee";
+import Hero from "./components/Hero";
+import HowItWorks from "./components/HowItWorks";
+import Integrations from "./components/Integrations";
+import Nav from "./components/Nav";
+import Problem from "./components/Problem";
+import Results from "./components/Results";
+import Testimonials from "./components/Testimonials";
 
-const App = () => {
+export default function App() {
   return (
-    <div className="bg-white min-h-screen font-sans">
-      <Navbar />
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/case-studies/channel-fusion-14-demos-90-days" component={CaseStudyChannelFusion} />
-        <Route path="/case-studies/precision-networks-first-predictable-pipeline" component={CaseStudyPrecisionNetworks} />
-        <Route path="/case-studies/austin-answer-pro-voice-ai-agent" component={CaseStudyAustinAnswerPro} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/blog" component={Blog} />
-
-        {/* Fallback to Home for unknown routes */}
-        <Route component={Home} />
-      </Switch>
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <Problem />
+        <HowItWorks />
+        <Engine />
+        <Results />
+        <Guarantee />
+        <Testimonials />
+        <Founders />
+        <Integrations />
+        <FAQ />
+        <FinalCTA />
+      </main>
       <Footer />
-    </div>
+    </>
   );
-};
-
-export default App;
+}

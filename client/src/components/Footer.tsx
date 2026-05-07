@@ -1,79 +1,150 @@
-import { Linkedin, Twitter, Mail } from "lucide-react";
-import { Link } from "wouter";
+import Eyebrow from "./Eyebrow";
+
+const sitemap: Array<[string, string]> = [
+  ["How It Works", "#how"],
+  ["Results", "#results"],
+  ["About", "#about"],
+  ["Blog", "#blog"],
+  ["Book a Call", "#cta"],
+];
 
 export default function Footer() {
-    return (
-        <footer className="bg-gray-900 pt-16 pb-8">
-            <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 mb-12">
-                    {/* Column 1: Company Info */}
-                    <div>
-                        <Link href="/">
-                            <a className="text-xl font-heading font-bold text-white tracking-tight hover:opacity-80 transition-opacity mb-4 inline-block">
-                                Spartanflow
-                            </a>
-                        </Link>
-                        <p className="text-sm text-gray-400 mb-5 max-w-xs leading-relaxed">
-                            B2B appointment setting for growth-focused companies. We fill your pipeline with qualified decision-makers.
-                        </p>
-                        <a
-                            href="mailto:hello@spartanflow.com"
-                            className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
-                        >
-                            <Mail size={14} />
-                            hello@spartanflow.com
-                        </a>
-                    </div>
-
-                    {/* Column 2: Product */}
-                    <div>
-                        <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-5">
-                            Product
-                        </h4>
-                        <ul className="space-y-3 text-sm">
-                            <li><a href="#how-it-works" className="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
-                            <li><a href="#results" className="text-gray-400 hover:text-white transition-colors">Results</a></li>
-                            <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                        </ul>
-                    </div>
-
-                    {/* Column 3: Resources */}
-                    <div>
-                        <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-5">
-                            Resources
-                        </h4>
-                        <ul className="space-y-3 text-sm">
-                            <li><a href="#faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
-                            <li><Link href="/contact"><a className="text-gray-400 hover:text-white transition-colors">Book a Strategy Call</a></Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Column 4: Company */}
-                    <div>
-                        <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-5">
-                            Company
-                        </h4>
-                        <ul className="space-y-3 text-sm">
-                            <li><Link href="/contact"><a className="text-gray-400 hover:text-white transition-colors">Contact Us</a></Link></li>
-                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                {/* Bottom Bar */}
-                <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-                    <p>&copy; {new Date().getFullYear()} Spartan Flow. All rights reserved.</p>
-                    <div className="flex gap-4">
-                        <a href="#" className="text-gray-500 hover:text-white transition-colors" aria-label="LinkedIn">
-                            <Linkedin size={16} />
-                        </a>
-                        <a href="#" className="text-gray-500 hover:text-white transition-colors" aria-label="Twitter">
-                            <Twitter size={16} />
-                        </a>
-                    </div>
-                </div>
+  return (
+    <footer style={{ background: "var(--ink)", color: "var(--bone)" }}>
+      <div className="shell" style={{ padding: "80px 32px 32px" }}>
+        <div
+          className="footer-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.4fr 1fr 1fr",
+            gap: 64,
+          }}
+        >
+          <div>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <span
+                aria-hidden="true"
+                style={{
+                  display: "inline-block",
+                  width: 10,
+                  height: 10,
+                  background: "var(--accent)",
+                  transform: "rotate(45deg)",
+                }}
+              />
+              <span
+                className="display"
+                style={{ fontSize: 22, color: "var(--bone)" }}
+              >
+                Spartan Flow
+              </span>
             </div>
-        </footer>
-    );
+            <p
+              className="serif-italic"
+              style={{
+                marginTop: 24,
+                fontSize: 20,
+                color: "rgba(245,242,236,0.85)",
+                maxWidth: 380,
+                lineHeight: 1.4,
+              }}
+            >
+              Outbound, run by people who've been in your industry.
+            </p>
+          </div>
+          <div>
+            <Eyebrow dim>Sitemap</Eyebrow>
+            <ul
+              style={{
+                listStyle: "none",
+                padding: 0,
+                margin: "20px 0 0",
+                display: "flex",
+                flexDirection: "column",
+                gap: 12,
+              }}
+            >
+              {sitemap.map(([label, href]) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    style={{ color: "rgba(245,242,236,0.8)", fontSize: 15 }}
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <Eyebrow dim>Contact</Eyebrow>
+            <ul
+              style={{
+                listStyle: "none",
+                padding: 0,
+                margin: "20px 0 0",
+                display: "flex",
+                flexDirection: "column",
+                gap: 12,
+              }}
+            >
+              <li>
+                <a
+                  href="mailto:hello@spartanflow.com"
+                  style={{ color: "rgba(245,242,236,0.8)", fontSize: 15 }}
+                >
+                  hello@spartanflow.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/spartan-flow"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "rgba(245,242,236,0.8)", fontSize: 15 }}
+                >
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div style={{ height: 64 }} />
+        <div
+          style={{
+            borderTop: "1px solid rgba(245,242,236,0.15)",
+            paddingTop: 24,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: 16,
+          }}
+        >
+          <span
+            className="mono"
+            style={{
+              fontSize: 11,
+              color: "rgba(245,242,236,0.55)",
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+            }}
+          >
+            © 2026 Spartan Flow LLC · Built in Austin & Pittsburgh
+          </span>
+          <span
+            className="mono"
+            style={{
+              fontSize: 11,
+              color: "rgba(245,242,236,0.55)",
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+            }}
+          >
+            v1.4 · Updated Apr 2026
+          </span>
+        </div>
+      </div>
+    </footer>
+  );
 }

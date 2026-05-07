@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spartan Flow — Outbound for industrial operators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+@media (max-width: 980px) {
+  .nav-desktop { display: none !important; }
+  .nav-burger { display: inline-flex !important; }
+  .hero-grid { grid-template-columns: 1fr !important; gap: 56px !important; }
+  .problem-grid { grid-template-columns: 1fr !important; }
+  .problem-grid > * { border-right: none !important; padding-left: 0 !important; padding: 32px 0 !important; border-bottom: 1px solid var(--rule); }
+  .problem-grid > *:last-child { border-bottom: none; }
+  .problem-head { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .how-row { grid-template-columns: 60px 1fr !important; gap: 24px !important; }
+  .how-row > *:last-child { grid-column: 1 / -1; }
+  .stage-diagram { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .stage-arrow { transform: rotate(90deg); padding: 8px 0; }
+  .engine-grid { grid-template-columns: 1fr !important; }
+  .agg-grid { grid-template-columns: 1fr 1fr !important; gap: 32px 0 !important; }
+  .agg-grid > * { border-right: none !important; padding: 16px 32px !important; }
+  .case-row { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .quote-row { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .founder-grid { grid-template-columns: 1fr !important; gap: 64px !important; }
+  .integrations-row { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .integrations-list { gap: 16px !important; justify-content: flex-start !important; }
+  .footer-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+  .cta-strip { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .cta-strip-divider { display: none; }
+}
+</style>
+</head>
+<body>
+<a href="#top" class="skip">Skip to content</a>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="components.jsx"></script>
+<script type="text/babel" src="sections-1-hero.jsx"></script>
+<script type="text/babel" src="sections-2-problem.jsx"></script>
+<script type="text/babel" src="sections-3-engine.jsx"></script>
+<script type="text/babel" src="sections-4-people.jsx"></script>
+<script type="text/babel" src="sections-5-tail.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "#B85C2A",
+  "showSerifAccent": true
+}/*EDITMODE-END*/;
+
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => {
+    document.documentElement.style.setProperty("--accent", t.accent);
+    // Derive a darker hover from the accent
+    const hex = t.accent.replace("#", "");
+    const r = parseInt(hex.slice(0, 2), 16);
+    const g = parseInt(hex.slice(2, 4), 16);
+    const b = parseInt(hex.slice(4, 6), 16);
+    const dark = `rgb(${Math.round(r * 0.75)}, ${Math.round(g * 0.75)}, ${Math.round(b * 0.75)})`;
+    document.documentElement.style.setProperty("--accent-ink", dark);
+  }, [t.accent]);
+
+  return (
+    <React.Fragment>
+      <Nav />
+      <main>
+        <Hero />
+        <Problem />
+        <HowItWorks />
+        <Engine />
+        <Results />
+        <Guarantee />
+        <Testimonials />
+        <Founders />
+        <Integrations />
+        <FAQ />
+        <FinalCTA />
+      </main>
+      <Footer />
+
+      <TweaksPanel title="Tweaks">
+        <TweakSection title="Accent">
+          <TweakColor
+            label="Color"
+            value={t.accent}
+            onChange={(v) => setTweak("accent", v)}
+            options={["#B85C2A", "#1F4F4A", "#0B1220"]}
+          />
+          <div className="mono" style={{ fontSize: 10, color: "#6B6F77", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: 8 }}>
+            Copper-rust · Petrol teal · Pure ink
+          </div>
+        </TweakSection>
+      </TweaksPanel>
+    </React.Fragment>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+</script>
+</body>
+</html>

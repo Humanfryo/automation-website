@@ -1,73 +1,80 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for Claude Code when working in this repository.
+
+## What this is
+
+The Spartan Flow marketing site — single-page editorial-industrial landing for a B2B appointment-setting service. Pure static React + Vite SPA, deployed to Vercel.
 
 ## Commands
 
-All commands run from the project root (`Website design/Project 4 Spartan Flow/`):
+Run from the project root:
 
-- `npm run dev` — Start dev server (Express + Vite HMR, default port 5001)
-- `npm run build` — Production build (Vite client → `dist/public/`, esbuild server → `dist/index.cjs`)
-- `npm run start` — Serve production build
+- `npm run dev` — Start Vite dev server on `http://localhost:5173/`
+- `npm run build` — Production build to `dist/`
+- `npm run preview` — Serve the production build locally
 - `npm run check` — TypeScript type check (no emit)
-- `npm run db:push` — Push Drizzle schema to database (requires `DATABASE_URL` env var)
-- `npm run deploy` — Deploy client to GitHub Pages via `gh-pages` (copies `index.html` → `404.html` for SPA routing)
 
 ## Architecture
 
-React 18 + Express full-stack app, originally scaffolded on Replit. Single server serves both API and client.
+Static single-page React + TypeScript SPA. No backend. No router. No state management. Everything is one composed page rendered from [client/src/App.tsx](client/src/App.tsx).
 
-### Client (`client/`)
-- **Entry**: `client/src/main.tsx` → `App.tsx`
-- **Routing**: `wouter` — routes in `App.tsx`: Home (`/`), Contact (`/contact`), 3 case study pages (`/case-studies/channel-fusion-14-demos-90-days`, `/case-studies/precision-networks-first-predictable-pipeline`, `/case-studies/austin-answer-pro-voice-ai-agent`). Unknown routes fall back to Home.
-- **UI**: Tailwind CSS + shadcn/ui (new-york style, primitives in `client/src/components/ui/`)
-- **Animations**: Framer Motion throughout section components
-- **Data fetching**: TanStack React Query (`client/src/lib/queryClient.ts`)
-- **Cal.com embed**: `@calcom/embed-react` on Contact page for booking
-- **Additional libs**: Swiper (carousels), react-countup (animated numbers), react-intersection-observer (scroll triggers)
-- **Static data**: `client/src/data/workflows.json`
+```
+client/
+├── index.html              ← entry, includes GA, fonts, SEO meta
+└── src/
+    ├── main.tsx            ← React root
+    ├── App.tsx             ← composes all 13 sections
+    ├── index.css           ← design tokens (CSS vars), base styles, responsive overrides
+    ├── components/         ← 13 section components + 5 helpers
+    └── hooks/
+        └── useReveal.ts    ← IntersectionObserver hook with 250ms fallback
+```
 
-### Server (`server/`)
-- **Entry**: `server/index.ts` → Express + HTTP server
-- **Routes**: `server/routes.ts` — API routes (prefix `/api`), currently scaffold only
-- **Storage**: `server/storage.ts` — `IStorage` interface with in-memory `MemStorage`
-- **Static serving**: `server/static.ts` (production), `server/vite.ts` (dev HMR proxy)
+### Component composition
 
-### Shared (`shared/`)
-- `shared/schema.ts` — Drizzle ORM schema (PostgreSQL) and Zod validation, shared between client and server
+Order in App.tsx (matches handoff brief):
+Nav → Hero → Problem → HowItWorks → Engine → Results → Guarantee → Testimonials → Founders → Integrations → FAQ → FinalCTA → Footer.
 
-### Build (`script/build.ts`)
-Two-phase: Vite builds client, esbuild bundles server to CJS. Server deps on an allowlist are bundled; others are externalized.
+Helpers (one per file): [Reveal](client/src/components/Reveal.tsx), [TickNumber](client/src/components/TickNumber.tsx), [Eyebrow](client/src/components/Eyebrow.tsx), [ArrowIcon](client/src/components/ArrowIcon.tsx), [PlaceholderImage](client/src/components/PlaceholderImage.tsx).
 
-## Path Aliases
+## Design tokens
 
-| Alias | Resolves to |
-|-------|------------|
-| `@/` | `client/src/` |
-| `@shared/` | `shared/` |
-| `@assets/` | `attached_assets/` |
+CSS custom properties declared once in [client/src/index.css](client/src/index.css) under `:root`. Components use these via `var(--token)` in inline styles — there's no Tailwind in this project. Tokens:
 
-Configured in both `vite.config.ts` and `tsconfig.json`.
+| Token | Value |
+| --- | --- |
+| `--bone` | `#F5F2EC` (page canvas) |
+| `--ink` | `#0B1220` (headings, footer) |
+| `--graphite` / `--graphite-dim` | body text / muted |
+| `--rule` / `--rule-strong` | hairline dividers |
+| `--accent` / `--accent-ink` | `#B85C2A` copper-rust + hover |
+| `--paper` | `#FFFFFF` (only case-study stat cells) |
 
-## Design System
+Section bone-tinted backgrounds (`#EFEBE2`) are inlined per section, not tokenized.
 
-Light/professional theme. Key colors in `tailwind.config.ts`:
-- **Primary**: `#1E3A5F` (navy blue) — headings, CTAs, brand identity
-- **Accent**: `#0D9488` (teal) — highlights, secondary actions, success states
-- **Background**: white (`#FFFFFF`)
-- **Cards/sections**: light gray (`hsl(210 20% 98%)`)
-- **Warm accents**: `#F59E0B` (amber) — used sparingly for emphasis
-- **Font stack**: Inter (body), DM Sans (headings)
+Fonts (Google Fonts, loaded in [client/index.html](client/index.html)):
+- Inter (400-800) — display + body
+- Fraunces (italic 400, 500) — emphasis only
+- JetBrains Mono (400, 500) — eyebrows, big numbers, mono details
 
-CSS custom properties for shadcn/ui theming defined in `client/src/index.css`. Note: `design_guidelines.md` is from an earlier portfolio project (dark theme) and does **not** reflect the current Spartan Flow design — refer to `tailwind.config.ts` and `client/src/index.css` as the source of truth.
+## Style conventions
 
-## Key Conventions
+- **Inline styles + CSS variables** for component-specific layout. No CSS modules, no Tailwind, no styled-components.
+- **Custom utility classes** (`.shell`, `.shell--narrow`, `.btn`, `.display`, `.serif-italic`, `.eyebrow`, `.bignum`, `.hairline`, `.reveal`) live in [client/src/index.css](client/src/index.css).
+- **`border-radius: 0` everywhere.** No rounded corners on layout containers.
+- **No drop shadows, no gradients.** Section structure is hairline rules.
+- **Responsive overrides** are at the bottom of [client/src/index.css](client/src/index.css), gated on `@media (max-width: 980px)`. Inline styles can't do media queries — that's why these live in CSS.
 
-- Pages in `client/src/pages/`, section components in `client/src/components/`
-- Home page is composed of 13 section components in order: Hero → TrustBar → PainPoints → HowItWorksVideo → HowItWorks → TechnologyDifferentiator → ClientResults → Guarantee → Testimonials → FounderSection → Integrations → FAQ → FinalCTA
-- shadcn/ui config in `components.json` — use `@/components/ui/` for primitives
-- API routes must be prefixed with `/api`
-- Database schema changes go in `shared/schema.ts` using Drizzle ORM, then run `npm run db:push`
-- `attached_assets/` contains founder photos, generated images, and design reference text files
-- GitHub Pages deployment: `base: "/"` in `vite.config.ts`, custom domain `spartanflow.com` (via `Humanfryo.github.io/automation-website`). Deploy copies `index.html` → `404.html` for SPA client-side routing.
-- SEO: `client/index.html` includes structured data (JSON-LD), Open Graph/Twitter meta tags, Google Analytics (`G-3ZTSW8QJQ5`), and `sitemap.xml`/`robots.txt` in `client/public/`
+## Voice & copy rules
+
+The handoff has a strict voice doc — see [design_handoff_spartanflow_website/README.md](design_handoff_spartanflow_website/README.md) "Voice & copy rules" section. Banned words, banned phrases, banned constructions. If editing copy: read that section first.
+
+## Deploy
+
+Vercel, configured via [vercel.json](vercel.json). Push to `main` triggers a build; PRs get preview deployments. Build output is `dist/` at the repo root. Custom domain `spartanflow.com` is configured in the Vercel dashboard, not in this repo.
+
+## Reference
+
+- [design_handoff_spartanflow_website/](design_handoff_spartanflow_website/) — full design brief, source-of-truth JSX, exact copy, voice rules. **Don't ship its files** — they're prototype scaffolding (in-browser Babel + window globals). The React port lives in `client/src/components/`.
+- SEO: GA tag `G-3ZTSW8QJQ5` in [client/index.html](client/index.html). JSON-LD `ProfessionalService` block also there. [client/public/sitemap.xml](client/public/sitemap.xml) + [client/public/robots.txt](client/public/robots.txt).
