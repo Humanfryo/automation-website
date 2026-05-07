@@ -14,6 +14,7 @@ export default function Integrations() {
   return (
     <section id="integrations" style={{ paddingTop: 64, paddingBottom: 64 }}>
       <div className="shell">
+        {/* TODO Hari: only Slack and Instantly confirmed live. Strip logos that aren't actually wired up. */}
         <div
           className="integrations-row"
           style={{

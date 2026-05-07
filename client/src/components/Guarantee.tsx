@@ -5,6 +5,7 @@ import Reveal from "./Reveal";
 export default function Guarantee() {
   return (
     <section id="guarantee">
+      {/* TODO Hari: confirm exact guarantee terms before publishing */}
       <div className="shell shell--narrow" style={{ textAlign: "center" }}>
         <Reveal>
           <Eyebrow>60-Day Guarantee</Eyebrow>

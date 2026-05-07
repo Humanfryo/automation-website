@@ -1,9 +1,9 @@
 import ArrowIcon from "./ArrowIcon";
 import Eyebrow from "./Eyebrow";
-import PlaceholderImage from "./PlaceholderImage";
 import Reveal from "./Reveal";
 import TickNumber from "./TickNumber";
 
+// TODO Hari: verify aggregate stats or remove the bar
 const aggregate: Array<{
   num: number;
   suffix?: string;
@@ -20,6 +20,7 @@ const aggregate: Array<{
 const cases = [
   {
     tag: "Manufacturing / OEM",
+    photo: "/case-studies/manufacturing.webp",
     headline: "14 enterprise demos in 90 days, from a cold start.",
     body: [
       "A precision-machining shop in Ohio with a great product and zero outbound motion. Their whole pipeline came from referrals and trade shows — fine, until referrals slowed and the trade-show calendar got expensive.",
@@ -27,16 +28,20 @@ const cases = [
     ],
     stats: [
       { num: "14", label: "Demos booked" },
-      { num: "$2.4M", label: "Pipeline" },
-      { num: "$340K", label: "Closed in Q1" },
-      { num: "38.4%", label: "Reply rate" },
+      { num: "$587K", label: "Qualified pipeline" },
+      // TODO Hari: confirm derived stat or replace
+      { num: "—", label: "Closed in Q1" },
+      // TODO Hari: confirm derived stat or replace
+      { num: "—", label: "Reply rate" },
     ],
     quote:
       "First month I almost canceled. Second month we closed two and the third was already on the calendar.",
     attribution: "Director of Sales, precision machining (Ohio)",
   },
+  // TODO Hari: confirm real client engagement or remove panel
   {
     tag: "Managed IT Services",
+    photo: "/case-studies/managed-it.webp",
     headline: "First predictable pipeline in 11 years.",
     body: [
       "A regional MSP that had been running on word-of-mouth since 2014. Their best AE was the founder. He didn't want a forty-person SDR org — he wanted predictable conversations with operators in the 50–500 employee range.",
@@ -52,8 +57,10 @@ const cases = [
       "I stopped checking the calendar every morning to see if anything had come in. It just does now.",
     attribution: "Founder, regional MSP (Indiana)",
   },
+  // TODO Hari: confirm real client engagement or remove panel
   {
     tag: "Logistics / 3PL",
+    photo: "/case-studies/logistics.webp",
     headline: "Replaced a $14K/month SDR with a measurable system.",
     body: [
       "A mid-market 3PL that had been through two SDR hires and one agency in eighteen months. The internal hires ramped slow. The agency booked junk meetings with the wrong titles. They were ready to give up on outbound entirely.",
@@ -263,9 +270,18 @@ export default function Results() {
                 </div>
                 <div className="case-figure">
                   <div style={{ marginBottom: 24 }}>
-                    <PlaceholderImage
-                      label={`Industrial scene · ${cs.tag}`}
-                      ratio="4 / 3"
+                    <img
+                      src={cs.photo}
+                      alt={`Industrial scene from ${cs.tag} case study`}
+                      loading="lazy"
+                      decoding="async"
+                      style={{
+                        display: "block",
+                        width: "100%",
+                        aspectRatio: "4 / 3",
+                        objectFit: "cover",
+                        border: "1px solid var(--rule)",
+                      }}
                     />
                   </div>
                   <div

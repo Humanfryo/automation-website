@@ -75,6 +75,7 @@ export default function Hero() {
             </Reveal>
           </div>
 
+          {/* TODO Hari: confirm number against actual client averages */}
           <Reveal delay={320}>
             <div style={{ borderTop: "1px solid var(--rule-strong)", paddingTop: 24 }}>
               <Eyebrow dim>Per client, monthly</Eyebrow>
