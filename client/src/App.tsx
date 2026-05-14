@@ -1,3 +1,5 @@
+import { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
 import Engine from "./components/Engine";
 import FAQ from "./components/FAQ";
 import FinalCTA from "./components/FinalCTA";
@@ -13,6 +15,13 @@ import Results from "./components/Results";
 import Testimonials from "./components/Testimonials";
 
 export default function App() {
+  useEffect(() => {
+    (async () => {
+      const cal = await getCalApi({ namespace: "spartan-flow-discovery" });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    })();
+  }, []);
+
   return (
     <>
       <Nav />

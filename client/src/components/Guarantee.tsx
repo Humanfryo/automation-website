@@ -1,4 +1,5 @@
 import ArrowIcon from "./ArrowIcon";
+import BookCallButton from "./BookCallButton";
 import Eyebrow from "./Eyebrow";
 import Reveal from "./Reveal";
 
@@ -43,9 +44,9 @@ export default function Guarantee() {
         </Reveal>
         <Reveal delay={200}>
           <div style={{ marginTop: 40 }}>
-            <a href="#cta" className="btn btn--primary">
+            <BookCallButton>
               Start with the Guarantee <ArrowIcon />
-            </a>
+            </BookCallButton>
           </div>
         </Reveal>
       </div>

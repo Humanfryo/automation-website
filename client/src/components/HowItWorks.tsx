@@ -1,4 +1,5 @@
 import ArrowIcon from "./ArrowIcon";
+import BookCallButton from "./BookCallButton";
 import Eyebrow from "./Eyebrow";
 import Reveal from "./Reveal";
 
@@ -167,9 +168,9 @@ export default function HowItWorks() {
               style={{ width: 1, height: 60, background: "var(--rule-strong)" }}
             />
             <div style={{ justifySelf: "end" }}>
-              <a href="#cta" className="btn btn--primary">
+              <BookCallButton>
                 Book a Strategy Call <ArrowIcon />
-              </a>
+              </BookCallButton>
             </div>
           </div>
         </Reveal>

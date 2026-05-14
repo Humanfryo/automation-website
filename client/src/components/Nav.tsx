@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import BookCallButton from "./BookCallButton";
 
 const links: Array<[string, string]> = [
   ["How It Works", "#how"],
@@ -67,13 +68,12 @@ export default function Nav() {
               {label}
             </a>
           ))}
-          <a
-            href="#cta"
+          <BookCallButton
             className="btn btn--primary"
             style={{ padding: "10px 18px", fontSize: 14 }}
           >
             Book a Call
-          </a>
+          </BookCallButton>
         </nav>
 
         <button
@@ -137,33 +137,63 @@ export default function Nav() {
         </div>
         <hr className="hairline" style={{ margin: "24px 0" }} />
         <nav style={{ display: "flex", flexDirection: "column" }}>
-          {[...links, ["Book a Call", "#cta"] as [string, string]].map(
-            ([label, href], i) => (
-              <a
-                key={href}
-                href={href}
-                onClick={() => setOpen(false)}
-                style={{
-                  padding: "20px 0",
-                  borderBottom: "1px solid var(--rule)",
-                  fontSize: 22,
-                  fontWeight: 500,
-                  color: "var(--ink)",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
+          {links.map(([label, href], i) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => setOpen(false)}
+              style={{
+                padding: "20px 0",
+                borderBottom: "1px solid var(--rule)",
+                fontSize: 22,
+                fontWeight: 500,
+                color: "var(--ink)",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <span>{label}</span>
+              <span
+                className="mono"
+                style={{ fontSize: 11, color: "var(--graphite-dim)" }}
               >
-                <span>{label}</span>
-                <span
-                  className="mono"
-                  style={{ fontSize: 11, color: "var(--graphite-dim)" }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-              </a>
-            )
-          )}
+                {String(i + 1).padStart(2, "0")}
+              </span>
+            </a>
+          ))}
+          <BookCallButton
+            className=""
+            onClick={() => setOpen(false)}
+            style={{
+              padding: "20px 0",
+              borderBottom: "1px solid var(--rule)",
+              fontSize: 22,
+              fontWeight: 500,
+              color: "var(--ink)",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              background: "transparent",
+              border: 0,
+              borderBottomWidth: 1,
+              borderBottomStyle: "solid",
+              borderBottomColor: "var(--rule)",
+              borderRadius: 0,
+              cursor: "pointer",
+              textAlign: "left",
+              fontFamily: "inherit",
+              width: "100%",
+            }}
+          >
+            <span>Book a Call</span>
+            <span
+              className="mono"
+              style={{ fontSize: 11, color: "var(--graphite-dim)" }}
+            >
+              {String(links.length + 1).padStart(2, "0")}
+            </span>
+          </BookCallButton>
         </nav>
       </div>
     </header>

@@ -1,4 +1,5 @@
 import ArrowIcon from "./ArrowIcon";
+import BookCallButton from "./BookCallButton";
 import Eyebrow from "./Eyebrow";
 import Reveal from "./Reveal";
 
@@ -41,13 +42,9 @@ export default function FinalCTA() {
           </p>
         </Reveal>
         <Reveal delay={200}>
-          <a
-            href="mailto:hello@spartanflow.com?subject=Strategy%20Call%20Request"
-            className="btn btn--primary"
-            style={{ padding: "18px 28px", fontSize: 16 }}
-          >
+          <BookCallButton style={{ padding: "18px 28px", fontSize: 16 }}>
             Book a Strategy Call <ArrowIcon size={16} />
-          </a>
+          </BookCallButton>
         </Reveal>
         <Reveal delay={260}>
           <div
