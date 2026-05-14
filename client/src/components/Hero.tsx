@@ -1,4 +1,5 @@
 import ArrowIcon from "./ArrowIcon";
+import BookCallButton from "./BookCallButton";
 import Eyebrow from "./Eyebrow";
 import Reveal from "./Reveal";
 import TickNumber from "./TickNumber";
@@ -65,9 +66,9 @@ export default function Hero() {
                   alignItems: "center",
                 }}
               >
-                <a href="#cta" className="btn btn--primary">
+                <BookCallButton>
                   Book a Strategy Call <ArrowIcon />
-                </a>
+                </BookCallButton>
                 <a href="#how" className="btn btn--text" style={{ fontSize: 15 }}>
                   See how it works <ArrowIcon />
                 </a>

@@ -1,3 +1,4 @@
+import BookCallButton from "./BookCallButton";
 import Eyebrow from "./Eyebrow";
 
 const sitemap: Array<[string, string]> = [
@@ -5,8 +6,19 @@ const sitemap: Array<[string, string]> = [
   ["Results", "#results"],
   ["About", "#about"],
   ["Blog", "#blog"],
-  ["Book a Call", "#cta"],
 ];
+
+const footerLinkStyle = {
+  color: "rgba(245,242,236,0.8)",
+  fontSize: 15,
+  background: "transparent",
+  border: 0,
+  padding: 0,
+  margin: 0,
+  cursor: "pointer",
+  fontFamily: "inherit",
+  textAlign: "left" as const,
+};
 
 export default function Footer() {
   return (
@@ -74,6 +86,11 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <BookCallButton className="" style={footerLinkStyle}>
+                  Book a Call
+                </BookCallButton>
+              </li>
             </ul>
           </div>
           <div>
